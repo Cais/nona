@@ -100,51 +100,75 @@ function nona_login() {
 }
 // End nona_login
 
-// BNS Dynamic Copyright
-function bns_dynamic_copyright() {
-        /* Get all posts */
-        $all_posts = get_posts( 'post_status=publish&order=ASC' );
-        /* Get first post */
-        $first_post = $all_posts[0];
-        /* Get date of first post */
-        $first_date = $first_post->post_date_gmt;
-        $first_year = substr( $first_date, 0, 4 );
-        if ( $first_year == '' ) {
-            $first_year = date( 'Y' );
-        }
+// Start BNS Dynamic Copyright
+if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
+    function bns_dynamic_copyright( $args = '' ) {
+            $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
+            $args = wp_parse_args( $args, $initialize_values );
 
-        /* Display common footer copyright notice */
-        _e( 'Copyright &copy; ' );
-        /* Display first post year and current year */
-        if ( $first_year == date( 'Y' ) ) {
-            /* Only display current year if no posts in previous years */
-            echo date( 'Y' );
-        } else {
-            echo $first_year . "-" . date( 'Y' );
-        }
-        /* Display blog name from 'General Settings' page */
-        echo '  <strong>' . get_bloginfo( 'name' ) . '</strong>  ';
-        _e( 'All rights reserved.' );
+            /* Initialize the output variable to empty */
+            $output = '';
+
+            /* Start common copyright notice */
+            empty( $args['start'] ) ? $output .= sprintf( __('Copyright', 'nona') ) : $output .= $args['start'];
+
+            /* Calculate Copyright Years; and, prefix with Copyright Symbol */
+            if ( empty( $args['copy_years'] ) ) {
+                /* Get all posts */
+                $all_posts = get_posts( 'post_status=publish&order=ASC' );
+                /* Get first post */
+                $first_post = $all_posts[0];
+                /* Get date of first post */
+                $first_date = $first_post->post_date_gmt;
+
+                /* First post year versus current year */
+                $first_year = substr( $first_date, 0, 4 );
+                if ( $first_year == '' ) {
+                    $first_year = date( 'Y' );
+                }
+
+                /* Add to output string */
+                if ( $first_year == date( 'Y' ) ) {
+                    /* Only use current year if no posts in previous years */
+                    $output .= ' &copy; ' . date( 'Y' );
+                } else {
+                    $output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
+                }
+            } else {
+                $output .= ' &copy; ' . $args['copy_years'];
+            }
+
+            /* Create URL to link back to home of website */
+            empty( $args['url'] ) ? $output .= ' <a href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) .'</a>  ' : $output .= ' ' . $args['url'];
+
+            /* End common copyright notice */
+            empty( $args['end'] ) ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'shades' ) ) : $output .= ' ' . $args['end'];
+
+            /* Construct and sprintf the copyright notice */
+            $output = sprintf( __( '<span id="bns-dynamic-copyright"> %1$s </span><!-- #bns-dynamic-copyright -->', 'nona' ), $output );
+            $output = apply_filters( 'bns_dynamic_copyright', $output, $args );
+
+            echo $output;
+    }
 }
 // End BNS Dynamic Copyright
 
-// BNS Theme Version
-function bns_theme_version() {
-        $theme_version = ''; /* Clear variable */
-        /* Get details of the theme / child theme */
-        $blog_css_url = get_stylesheet_directory() . '/style.css';
-        $my_theme_data = get_theme_data( $blog_css_url );
-        $parent_blog_css_url = get_template_directory() . '/style.css';
-        $parent_theme_data = get_theme_data( $parent_blog_css_url );
+// Start BNS Theme Version
+if ( ! function_exists( 'bns_theme_version' ) ) {
+    function bns_theme_version () {
+            $theme_version = ''; /* Clear variable */
+            /* Get details of the theme / child theme */
+            $blog_css_url = get_stylesheet_directory() . '/style.css';
+            $my_theme_data = get_theme_data( $blog_css_url );
+            $parent_blog_css_url = get_template_directory() . '/style.css';
+            $parent_theme_data = get_theme_data( $parent_blog_css_url );
 
-        /* Create and append to string to be displayed */
-        $theme_version .= $my_theme_data['Name'] . ' v' . $my_theme_data['Version'];
-        if ( $blog_css_url != $parent_blog_css_url ) {
-            $theme_version .= ' a child of the ' . $parent_theme_data['Name'] . ' v' . $parent_theme_data['Version'];
-        }
-        $theme_version .= ' theme from <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.';
-        /* Display string */
-        echo '<br />' . '<span class="version">' . $theme_version . '</span><!-- .version -->';
+            if ( is_child_theme() ) {
+                printf( __( '<br /><span id="bns-theme-version">%1$s, v%2$s, was grown from the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+            } else {
+                printf( __( '<br /><span id="bns-theme-version">The %1$s theme, version %2$s, is a %3$s creation.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            }
+    }
 }
 // End BNS Theme Version
 

@@ -8,6 +8,8 @@
 == Code ==
 * Added textdomain as needed to string functions
 * Removed `show_avatar` function - not used
+* Updated 'BNS Dynamic Copyright'
+* Updated 'BNS Theme Version'
 
 == CSS ==
 * `font-size` changed to base of 115% from 18px
