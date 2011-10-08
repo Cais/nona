@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 4, 2011
+@date: October 7, 2011
 
 === Contents ===
 * To-Do
@@ -17,7 +17,7 @@
 [ ] Clean up internationalization strings ... look at providing a .pot file in future versions
 
 == Notes ==
-* Some very light background colors will make the links hard to read when hovering over them. See line #83 in style.css if you need to change this color manually.
+* Some very light background colors will make the links hard to read when hovering over them. See the CSS element `a:hover { color: #e3e3e3; }` in style.css if you want to change this color.
 
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
