@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 7, 2011
+@date: October 9, 2011
 
 === Version 1.4 ===
 * released ...
@@ -15,10 +15,10 @@
 * `font-size` changed to base of 115% from 18px
 * all font-sizes changed to percentage base; some additional adjustments made
 * more consistent formatting
-* general clean-up and minor optimizations
+* general clean-up and minor optimizations and additions
  
 == Code & CSS ==
-* ...
+* Updated menu system
 
 == Miscellaneous ==
 * Changed to 'new' changelog format

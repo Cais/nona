@@ -28,24 +28,37 @@ if ( ! function_exists( 'nona_setup' ) ):
             add_custom_background();
 
             // Add wp_nav_menu() custom menu support
-            function nona_nav_menu() {
-                    if ( function_exists( 'wp_nav_menu' ) )
-                        wp_nav_menu( array(
-                                          'theme_location' => 'top-menu',
-                                          'depth' => 1,
-                                          'fallback_cb' => 'nona_page_menu'
-                                     ) );
-                    else
-                        nona_page_menu();
+            if ( ! function_exists( 'nona_nav_menu' ) ) {
+                function nona_nav_menu() {
+                        if ( function_exists( 'wp_nav_menu' ) )
+                            wp_nav_menu( array(
+                                              'menu_class' => 'nav-menu',
+                                              'theme_location' => 'top-menu',
+                                              'fallback_cb' => 'nona_list_pages'
+                                         ) );
+                        else
+                            nona_list_pages();
+                }
             }
 
-            function nona_page_menu() {
-                    wp_page_menu( 'show_home=1&depth=1' );
+            if ( ! function_exists( 'nona_list_pages' ) ) {
+                function nona_list_pages() {
+                        if ( is_home() || is_front_page() ) { ?>
+                            <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
+                        <?php } else { ?>
+                            <ul class="nav-menu">
+                                <li><a href="<?php echo home_url(); ?>"><?php _e( 'Home', 'nona' ); ?></a></li>
+                                <?php wp_list_pages( 'title_li=' ); ?>
+                            </ul>
+                        <?php }
+                }
             }
 
             add_action( 'init', 'register_nona_menu' );
-            function register_nona_menu() {
-                    register_nav_menu( 'top-menu', __( 'Top Menu' ) );
+            if (! function_exists( 'register_nona_menu' ) ) {
+                function register_nona_menu() {
+                        register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
+                }
             }
             // wp_nav_menu() end
 
@@ -206,4 +219,4 @@ if ( function_exists( 'register_sidebar' ) )
                             ) );
 // End Widgets
 ?>
-<?php /* Last revised October 7, 2011 v1.4 */ ?>
+<?php /* Last revised October 9, 2011 v1.4 */ ?>

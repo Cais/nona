@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 7, 2011
+@date: October 9, 2011
 
 === Contents ===
 * To-Do
@@ -8,7 +8,7 @@
 * Test Environment
 
 == To-Do ==
-[ ] Menu - Theme does not currently support sub-menu items off of the main menu, this will be addressed in a future version.
+[x] Menu - Theme does not currently support sub-menu items off of the main menu, this will be addressed in a future version.
 [ ] Editor Style - stylesheet needs to be added/completed; add_editor_style() function can be un-commented afterward.
 [ ] Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
 [ ] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace

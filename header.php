@@ -44,11 +44,12 @@
                     </div> <!-- #header-title -->
                 </div> <!-- #header-top -->
                 <div id="header-middle">
-                    <!-- see 'bns_menu' in the functions.php file for additional configuration details -->
-                    <?php nona_nav_menu(); ?>
-                    <div class="clear"></div>
+        			<!-- <div class="menu"> -->
+		        	<div id="top-navigation-menu">
+				        <?php nona_nav_menu(); ?>
+			        </div>
                 </div> <!-- #header-middle -->
                 <div id="header-bottom"></div>
             </div> <!-- #header -->
             <div id="head2toe">
-<?php /* Last revised October 7, 2011 v1.4 */ ?>
+<?php /* Last revised October 9, 2011 v1.4 */ ?>
