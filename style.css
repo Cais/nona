@@ -254,7 +254,7 @@ div#top-navigation-menu {
     clear: both;
     left: 50px;
     position: relative;
-    width: 930px;
+    width: 910px;
 }
 
 .page ul.nav-menu { padding-left: 0; }
@@ -285,13 +285,13 @@ div#top-navigation-menu {
 }
 
 .nav-menu a, .nav-menu a:visited {
-	color: #ECCFA0;
+	/* color: #ECCFA0; */
 	display: block;
 	font-weight: bold;
 	padding: 8px 12px;
 }
 .nav-menu a:hover, .nav-menu a:active {
-  /* background: url("images/form-bg.png") repeat scroll 0 0 transparent; */
+    background: #fff;
 	color: #000;
 	text-decoration: none;
 }
@@ -332,13 +332,13 @@ ul.nav-menu li:hover {
 }
 
 ul.nav-menu ul {
-  /* background: url("images/form-bg.png") repeat scroll 0 0 transparent; */
-  visibility: hidden;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1098;
-  width: auto;
+    background: #fff;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1098;
+    width: auto;
 }
 
 ul.nav-menu ul li {
