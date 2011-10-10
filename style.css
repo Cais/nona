@@ -212,7 +212,7 @@ sub { /* Subscripts */ font-size: 70%; }
 	margin-top: 0;
 }
 
-#header-middle { background: url(images/Menu_Center.png); }
+#header-middle { background-image: url(images/Menu_Center.png); }
 
 #header-title {
 	text-align: center;
@@ -251,10 +251,10 @@ sub { /* Subscripts */ font-size: 70%; }
 
 /* === MENU === */
 div#top-navigation-menu {
-  clear: both;
-  left: 50px;
-  position: relative;
-  width: 930px;
+    clear: both;
+    left: 50px;
+    position: relative;
+    width: 930px;
 }
 
 .page ul.nav-menu { padding-left: 0; }
@@ -267,6 +267,7 @@ div#top-navigation-menu {
 }
 
 .nav-menu a, .nav-menu a:hover {
+  /* background: url(images/bg50.png); */
 	border: none;
 	display: block;
 	text-decoration: none;
@@ -284,12 +285,13 @@ div#top-navigation-menu {
 }
 
 .nav-menu a, .nav-menu a:visited {
+	color: #ECCFA0;
 	display: block;
 	font-weight: bold;
 	padding: 8px 12px;
 }
 .nav-menu a:hover, .nav-menu a:active {
-    background: #eee;
+  /* background: url("images/form-bg.png") repeat scroll 0 0 transparent; */
 	color: #000;
 	text-decoration: none;
 }
@@ -308,10 +310,6 @@ ul.nav-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-div#header-middle ul.nav-menu {
-    background-position: -50px 0;
-    background-image: url(images/Menu_Center.png);
 }
 
 ul.nav-menu {
@@ -334,7 +332,7 @@ ul.nav-menu li:hover {
 }
 
 ul.nav-menu ul {
-  background: #eee;
+  /* background: url("images/form-bg.png") repeat scroll 0 0 transparent; */
   visibility: hidden;
   position: absolute;
   top: 100%;
@@ -354,8 +352,7 @@ ul.nav-menu ul ul {
 }
 
 ul.nav-menu li:hover > ul {
-    background: #eee;
-    visibility: visible;
+  visibility: visible;
 }
 
 ul.nav-menu ul.sub-menu li,

@@ -44,10 +44,10 @@
                     </div> <!-- #header-title -->
                 </div> <!-- #header-top -->
                 <div id="header-middle">
-        			<!-- <div class="menu"> -->
 		        	<div id="top-navigation-menu">
 				        <?php nona_nav_menu(); ?>
 			        </div>
+                    <div class="clear"></div>
                 </div> <!-- #header-middle -->
                 <div id="header-bottom"></div>
             </div> <!-- #header -->
