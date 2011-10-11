@@ -922,14 +922,9 @@ table#wp-calendar td#today { border: 1px dashed #000; }
 #footer-bottom {}
 /*-= End Footer =-*/
 
-/*-- WordPress' plugin stylings --*/
+/*-- WordPress Plugin Styles --*/
 img#wpstats{ display: none; }
 #akismetstats{ margin: 0 auto; }
-
-/* WordPress 3.0 Navigation Menu default widget */
-.widget_nav_menu .menu { margin: 0; }
-.widget_nav_menu .menu li { display: block; float: none; /* text-align: left; */ }
-ul.menu li ul li { background-image: none; margin-bottom: -15px; }
 
 /* BNS Plugins */
 /* bns-login plugin */
