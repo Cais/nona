@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 9, 2011
+@date: October 11, 2011
 
 === Version 1.4 ===
 * released ...
@@ -16,6 +16,7 @@
 * all font-sizes changed to percentage base; some additional adjustments made
 * more consistent formatting
 * general clean-up and minor optimizations and additions
+* added `max-width` parameter to address gallery with up to ten (10) columns
  
 == Code & CSS ==
 * Updated menu system
