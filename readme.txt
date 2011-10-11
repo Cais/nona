@@ -24,8 +24,6 @@
 
 == Test Environment as reported by BNS Support plugin ==
 * Plugin URL: http://wordpress.org/extend/plugins/bns-support/
-* WordPress Version: 3.1-RC2-17229
-* PHP version: 5.2.15
-* Multisite Enabled: False
-* Theme: Nona v1.3.1
-* Current User Role: administrator
+* WordPress Version: 3.3-aortic-dissection
+* PHP version: 5.2.17
+* MySQL version: 5.1.56
