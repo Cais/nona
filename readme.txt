@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 9, 2011
+@date: October 12, 2011
 
 === Contents ===
 * To-Do
@@ -9,11 +9,11 @@
 
 == To-Do ==
 [x] Menu - Theme does not currently support sub-menu items off of the main menu, this will be addressed in a future version.
-[ ] Editor Style - stylesheet needs to be added/completed; add_editor_style() function can be un-commented afterward.
+[x] Editor Style - stylesheet needs to be added/completed; add_editor_style() function can be un-commented afterward.
 [ ] Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
-[ ] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace
-[ ] Clean up widget code in functions.php
-[ ] Clean up unnecessary backward compatibility checks
+[x] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace
+[x] Clean up widget code in functions.php
+[x] Clean up unnecessary backward compatibility checks
 [ ] Clean up internationalization strings ... look at providing a .pot file in future versions
 
 == Notes ==
@@ -24,6 +24,6 @@
 
 == Test Environment as reported by BNS Support plugin ==
 * Plugin URL: http://wordpress.org/extend/plugins/bns-support/
-* WordPress Version: 3.3-aortic-dissection
+* WordPress Version: 3.3-beta1
 * PHP version: 5.2.17
 * MySQL version: 5.1.56

@@ -10,7 +10,7 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-/* Last revised October 11, 2011 v1.4 */
+/* Last revised October 12, 2011 v1.4 */
 
 /*  Copyright 2009-2011  Edward Caissie  (email : edward.caissie@gmail.com)
 
@@ -373,9 +373,10 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
 
 /* WordPress 3.0 Navigation Menu default widget */
 .widget_nav_menu ul.sub-menu li {
-  background: none;
-  list-style: disc inside none;
-  padding: 0 0 0 15px;
+    background: none;
+    border-left: 1px dashed #000000;
+    list-style: none inside none;
+    padding: 0 0 0 15px;
 }
 /* === End: Menu === */
 
@@ -548,7 +549,7 @@ img { font-size: 75%; }
 img.wp-smiley { float: none; }
 
 p img {
-  height: auto;
+    height: auto;
 	max-width: 100%;
 	padding: 0;
 }
@@ -592,11 +593,19 @@ legend {}
   
 label {}
 
-input, textarea {}
+input, textarea {
+    margin: 5px 0;
+
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
 input:focus, textarea:focus {}
 
-textarea { width:99%; }
-textarea#text_area { max-width: 628px; }
+textarea { width: 98%; }
+textarea#text_area { max-width: 595px; }
 /* =- End Forms -= ---*/
 
 /*-= Comments =- ---*/
@@ -642,11 +651,7 @@ ul.children li { border-left: 1px dashed #000; }
 .comment-author {}
 .comment-author a {}
 
-.avatar {
-	display: inline;
-	float: left;
-	margin:0 10px 10px 0;
-}
+/* .avatar { display: inline; float: left; margin:0 10px 10px 0; } */
 
 .comment-meta, .commentmetadata {
 	font-size: 85%;
@@ -715,10 +720,11 @@ form#commentform p.form-submit input#submit {
   border-radius: 13px;
 }
 
-textarea#comment { padding: 0; }
+textarea#comment { padding: 0 0 0 5px; }
 
 #respond { margin-top: 10px; }
 /*-- End Threaded Comments --*/
+
 /*-= End Comments =-*/
 
 /*=- Miscellaneous -=*/
@@ -755,7 +761,10 @@ textarea#comment { padding: 0; }
 .form-input {}
 .form-input:focus {}
 
-input#s { width: 200px; }
+input#s {
+    padding-left: 5px;
+    width: 210px;
+}
 
 /*-- Widgets --*/
 .widget {

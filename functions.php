@@ -1,5 +1,5 @@
 <?php
-/* ... with credits to the WordPress 3.0 default theme Twenty Ten for inspiration and code */
+/* ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
 
 /*
  * Set the content width based on the theme's design and stylesheet.
@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', 'nona_setup' );
 if ( ! function_exists( 'nona_setup' ) ):
     function nona_setup() {
             // This theme styles the visual editor with editor-style.css to match the theme style.
-            add_editor_style(); /* see TO-DO list in readme.txt */
+            add_editor_style();
 
             // This theme uses post thumbnails
             add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
@@ -72,50 +72,36 @@ if ( ! function_exists( 'nona_setup' ) ):
     }
 endif;
 
-// Get the page number
-function nona_get_page_number() {
-        if ( get_query_var( 'paged' ) ) {
-            print ' | ' . __( 'Page ' , 'nona' ) . get_query_var( 'paged' );
-        }
-}
-// end get_page_number
-
-// bns_menu
-function bns_menu( $menu, $args ) {
-        if ( is_home() || is_front_page() ) {
-            $args['show_home'] = false;
-            $args['echo'] = false;
-            $args['depth'] = 1;
-            remove_filter( 'wp_page_menu', 'bns_menu', 10, 2 );
-            $menu = wp_page_menu( $args );
-        }
-        return $menu; // no need to remake the menu if nothing changed
-}
-add_filter( 'wp_page_menu', 'bns_menu', 10, 2 );
-// End bns_menu
-
 // nona_login
-function nona_login() {
-        $login_url = home_url() . '/wp-admin/';
-        if ( is_user_logged_in() ) {
-            echo '<div id="nona-logged-in" class="nona-login">' . __( 'You are logged in! ' );
-            if ( function_exists( 'get_current_site' ) ) { // WPMU, Multisite - logout returns to WPMU, or Multisite, main domain page
-                $current_site = get_current_site();
-                $home_domain = 'http://' . $current_site->domain . $current_site->path;
-                echo '<a href="' . wp_logout_url( $home_domain ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
-            } else {
-                echo '<a href="' . wp_logout_url( home_url() ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
+if ( ! function_exists( 'nona_login' ) ) {
+    function nona_login() {
+            $login_url = home_url() . '/wp-admin/';
+            if ( is_user_logged_in() ) {
+                echo '<div id="nona-logged-in" class="nona-login">' . __( 'You are logged in! ' );
+                if ( function_exists( 'get_current_site' ) ) { // WPMU, Multisite - logout returns to WPMU, or Multisite, main domain page
+                    $current_site = get_current_site();
+                    $home_domain = 'http://' . $current_site->domain . $current_site->path;
+                    echo '<a href="' . wp_logout_url( $home_domain ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
+                } else {
+                    echo '<a href="' . wp_logout_url( home_url() ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
+                }
+                echo __( ' or go to the ', 'nona' ) . '<a href="' . $login_url . '" title="' . __( 'dashboard', 'nona' ) . '">' . __( 'dashboard', 'nona' ) . '</a>.</div>';
+            } else { // Return to blog home page
+                echo '<div id="nona-logged-out" class="nona-login"><a href="' . $login_url . '" title="' . __( 'Log in here', 'nona' ) . '">' . __( 'Log in here!', 'nona' ) . '</a></div>';
             }
-            echo __( ' or go to the ', 'nona' ) . '<a href="' . $login_url . '" title="' . __( 'dashboard', 'nona' ) . '">' . __( 'dashboard', 'nona' ) . '</a>.</div>';
-        } else { // Return to blog home page
-            echo '<div id="nona-logged-out" class="nona-login"><a href="' . $login_url . '" title="' . __( 'Log in here', 'nona' ) . '">' . __( 'Log in here!', 'nona' ) . '</a></div>';
-        }
+    }
 }
 // End nona_login
 
-// Start BNS Dynamic Copyright
-if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
-    function bns_dynamic_copyright( $args = '' ) {
+/* NoNa Dynamic Copyright
+ * Derived from the original BNS Dynamic Copyright
+ *
+ * @version: 1.4
+ * @since: October 12, 2011
+ *
+ */
+if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
+    function nona_dynamic_copyright( $args = '' ) {
             $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
             $args = wp_parse_args( $args, $initialize_values );
 
@@ -155,68 +141,71 @@ if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
             empty( $args['url'] ) ? $output .= ' <a href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name', 'display' ) .'</a>  ' : $output .= ' ' . $args['url'];
 
             /* End common copyright notice */
-            empty( $args['end'] ) ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'shades' ) ) : $output .= ' ' . $args['end'];
+            empty( $args['end'] ) ? $output .= ' ' . sprintf( __( 'All rights reserved.', 'nona' ) ) : $output .= ' ' . $args['end'];
 
             /* Construct and sprintf the copyright notice */
             $output = sprintf( __( '<span id="bns-dynamic-copyright"> %1$s </span><!-- #bns-dynamic-copyright -->', 'nona' ), $output );
-            $output = apply_filters( 'bns_dynamic_copyright', $output, $args );
+            $output = apply_filters( 'nona_dynamic_copyright', $output, $args );
 
             echo $output;
     }
 }
 // End BNS Dynamic Copyright
 
-// Start BNS Theme Version
-if ( ! function_exists( 'bns_theme_version' ) ) {
-    function bns_theme_version () {
-            $theme_version = ''; /* Clear variable */
-            /* Get details of the theme / child theme */
+/* NoNa Theme Version
+ * Derived from the original BNS Theme Version
+ *
+ * @version: 1.4
+ * @since: October 12, 2011
+ *
+ **/
+if ( ! function_exists( 'nona_theme_version' ) ) {
+    function nona_theme_version () {
             $blog_css_url = get_stylesheet_directory() . '/style.css';
             $my_theme_data = get_theme_data( $blog_css_url );
             $parent_blog_css_url = get_template_directory() . '/style.css';
             $parent_theme_data = get_theme_data( $parent_blog_css_url );
 
             if ( is_child_theme() ) {
-                printf( __( '<br /><span id="bns-theme-version">%1$s, v%2$s, was grown from the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+                printf( __( '<br /><span id="bns-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
             } else {
-                printf( __( '<br /><span id="bns-theme-version">The %1$s theme, version %2$s, is a %3$s creation.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+                printf( __( '<br /><span id="bns-theme-version">Dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
             }
     }
 }
-// End BNS Theme Version
+// End: NoNa Theme Version
 
 // Widgets
-if ( function_exists( 'register_sidebar' ) )
-    register_sidebars( 3, array(
-                               'before_widget' => '<div class="widget-top"></div><div class="widget">',
-                               'after_widget' => '</div><!-- .widget--><div class="widget-bottom"></div>',
-                               'before_title' => '<h2 class="widget-title">',
-                               'after_title' => '</h2>',
-                                ) );
-    register_sidebar( array(
-                           'name' => 'Footer Left',
-                           'id' => 'footer-left',
-                           'before_widget' => '<div class="widget-top"></div><div class="footer-widget">',
-                           'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+register_sidebars( 3, array(
+                           'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+                           'after_widget' => '</div><!-- .widget--><div class="widget-bottom"></div>',
                            'before_title' => '<h2 class="widget-title">',
                            'after_title' => '</h2>',
                             ) );
-    register_sidebar( array(
-                           'name' => 'Footer Middle',
-                           'id' => 'footer-middle',
-                           'before_widget' => '<div class="widget-top"></div><div class="footer-widget">',
-                           'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-                           'before_title' => '<h2 class="widget-title">',
-                           'after_title' => '</h2>',
-                            ) );
-    register_sidebar( array(
-                           'name' => 'Footer Right',
-                           'id' => 'footer-right',
-                           'before_widget' => '<div class="widget-top"></div><div class="footer-widget">',
-                           'after_widget' => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
-                           'before_title' => '<h2 class="widget-title">',
-                           'after_title' => '</h2>',
-                            ) );
+register_sidebar( array(
+                       'name' => 'Footer Left',
+                       'id' => 'footer-left',
+                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                       'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+                       'before_title' => '<h2 class="widget-title">',
+                       'after_title' => '</h2>',
+                        ) );
+register_sidebar( array(
+                       'name' => 'Footer Middle',
+                       'id' => 'footer-middle',
+                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                       'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+                       'before_title' => '<h2 class="widget-title">',
+                       'after_title' => '</h2>',
+                        ) );
+register_sidebar( array(
+                       'name' => 'Footer Right',
+                       'id' => 'footer-right',
+                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                       'after_widget' => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
+                       'before_title' => '<h2 class="widget-title">',
+                       'after_title' => '</h2>',
+                        ) );
 // End Widgets
 ?>
-<?php /* Last revised October 9, 2011 v1.4 */ ?>
+<?php /* Last revised October 12, 2011 v1.4 */ ?>

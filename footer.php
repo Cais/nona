@@ -30,8 +30,8 @@
 
     <div id="footer-middle">
         <p>
-            <?php bns_dynamic_copyright();
-            bns_theme_version(); ?>
+            <?php nona_dynamic_copyright();
+            nona_theme_version(); ?>
         </p>
     </div> <!-- #footer-middle -->
 

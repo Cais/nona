@@ -5,6 +5,7 @@
       <w>alignright</w>
       <w>bloginfo</w>
       <w>commentlist</w>
+      <w>enqueue</w>
       <w>firefox</w>
       <w>grav</w>
       <w>gravatar</w>
@@ -13,6 +14,7 @@
       <w>multisite</w>
       <w>nocomments</w>
       <w>permalinks</w>
+      <w>pingback</w>
       <w>singlecomments</w>
       <w>userid</w>
     </words>

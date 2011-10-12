@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 11, 2011
+@date: October 12, 2011
 
 === Version 1.4 ===
 * released ...
@@ -8,8 +8,10 @@
 == Code ==
 * Added textdomain as needed to string functions
 * Removed `show_avatar` function - not used
-* Updated 'BNS Dynamic Copyright'
-* Updated 'BNS Theme Version'
+* Removed `bns_menu` function - not used
+* Removed `nona_get_page_number` function - no longer used
+* Updated 'BNS Dynamic Copyright' and renamed to 'NoNa Dynamic Copyright'
+* Updated 'BNS Theme Version' and renamed to 'NoNa Theme Version'
 
 == CSS ==
 * `font-size` changed to base of 115% from 18px
@@ -17,9 +19,12 @@
 * more consistent formatting
 * general clean-up and minor optimizations and additions
 * added `max-width` parameter to address gallery with up to ten (10) columns
+* removed .avatar class; not used (and conflicts with v3.3-beta1 Admin Bar)
+* added CSS to support `editor-style`
  
 == Code & CSS ==
 * Updated menu system
+* Cleaned up widget code in functions.php
 
 == Miscellaneous ==
 * Changed to 'new' changelog format

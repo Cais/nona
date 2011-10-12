@@ -1,1 +1,115 @@
-/* Editor Style CSS Document for Nona Theme */
+/* Editor Style CSS Document for Nona Theme
+ * Last revised October 12, 2011 v1.4
+ */
+
+html .mceContentBody { max-width: 595px; }
+
+a { color: #000000; }
+a:link {}
+a:visited {}
+a:hover { color: #e3e3e3; }
+a:focus {}
+a:active {}
+
+code { /* Use with "pre" for text styling */
+	font-family: "Courier New", Courier, sans-serif;
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+blockquote { margin: 9px 18px 9px 3px; padding-left: 30px; }
+
+em { font-style: italic; }
+
+h1, h2, h3, h4, h5, h6 { margin-top: 0; }
+h1 { font-size: 175%; margin-bottom: 9px; }
+h2 { font-size: 155%; margin-bottom: 8px; }
+h3 { font-size: 135%; margin-bottom: 7px; }
+h4 { margin-bottom: 6px; }
+h5 { font-size: 95%; margin-bottom: 5px; }
+h6 { font-size: 75%; margin-bottom: 4px; }
+
+hr { background: #939393; border: 1px solid black; margin: 2px auto; width: 100%; }
+
+/*-= Images =-*/
+img { font-size: 75%; }
+
+p img { height: auto; max-width: 100%; padding: 0; }
+
+/*-- Captions --*/
+.caption { background: #E5F2FF; border: 1px solid #E5E5FF; font-size: 105%; margin: 5px; padding: 5px; }
+
+/* Gallery columns up to three (3) are handled by default in the theme.
+ * Four (4) or more columns requires a maximum width be set for the image
+ * thumbnail; also note the height is set to 'auto' to maintain a square shape.
+ **/
+.gallery-columns-4 img { height: auto; max-width: 139px; }
+.gallery-columns-5 img { height: auto; max-width: 110px; }
+.gallery-columns-6 img { height: auto; max-width: 89px; }
+.gallery-columns-7 img { height: auto; max-width: 77px; }
+.gallery-columns-8 img { height: auto; max-width: 66px; }
+.gallery-columns-9 img { height: auto; max-width: 59px; }
+.gallery-columns-10 img { height: auto; max-width: 55px; }
+
+/*=- End Images -=*/
+
+/*-- Lists --*/
+ol { list-style: decimal inside none; }
+li ol { list-style: lower-alpha inside none; }
+li ol li ol { list-style: lower-roman inside none; }
+
+ul { list-style: disc inside none; }
+li ul { list-style: circle inside none; }
+li ul li ul { list-style: square inside none; }
+
+li { padding-left: 20px; }
+/*-- Lists --*/
+
+p { margin: 9px 0; }
+
+pre { /* Use for "code" text styling */
+	margin: 0;
+	padding: 5px;
+	border: 2px inset;
+	font-style: italic;
+	font-size: 100%;
+	color: #000;
+	text-align: left;
+	overflow: auto;
+
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+q:before, q:after { content: '"'; }
+
+strong { font-weight: bold; }
+sub { /* Subscripts */ font-size: 70%; }
+sup { /* Superscripts */ font-size: 70%; }
+
+/*-- Tables --*/
+table { width: 100%; }
+tbody {}
+tr { border: 1px solid #000; }
+tr.even { background: none; }
+th {
+	font-weight: bold;
+	font-style: italic;
+}
+td {
+	border-right: 1px solid #000;
+	padding-left: 5px;
+}
+/*-- End Tables --*/
+
+var { font-style: italic; }
