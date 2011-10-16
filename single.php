@@ -21,6 +21,15 @@
                 </div> <!-- .post #post-ID -->
                 <?php comments_template(); ?>
             <?php endwhile; ?>
+            <div id="nav-global" class="navigation">
+                <div class="left">
+                    <?php echo previous_post_link(); ?>
+                </div>
+                <div class="right">
+                    <?php echo next_post_link(); ?>
+                </div>
+            </div> <!-- .navigation -->
+            <div class="clear"></div>
         <?php else : ?>
             <h2><?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
             <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
@@ -31,4 +40,4 @@
 </div> <!-- #main-blog -->
 <?php get_sidebar(); ?>
 <?php get_footer();?>
-<?php /* Last revised October 4, 2011 v1.4 */ ?>
+<?php /* Last revised October 15, 2011 v1.4 */ ?>
