@@ -1,17 +1,11 @@
 <?php get_header(); ?>
-<?php /* This sets the $curauth variable */
-    if( isset( $_GET['author_name'] ) ) :
-        $curauth = get_userdatabylogin( $author_name );
-    else :
-        $curauth = get_userdata( intval( $author ) );
-    endif;
+<?php /* Set the $curauth variable */
+    $curauth = ( get_query_var( 'author_name ') ) ? get_user_by( 'id', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) );
 ?>
 <div id="main-blog">
     <div id="before-content"></div>
     <div id="content">
-        <div id="author" class="<?php if ( ( get_userdata( intval( $author ) )->ID ) == '1' ) echo 'administrator';
-            /* elseif ((get_userdata(intval($author))->ID) == '2') echo 'user-id-2'; */ /* sample */
-            /* add additional user_id following above example, echo the 'CSS element' you want to use for styling */ ?>">
+        <div id="author" class="<?php if ( user_can( $curauth, 'manage_options' ) ) echo 'administrator'; ?>">
             <h2><?php _e( 'About ', 'nona' ); ?><?php echo $curauth->display_name; ?></h2>
             <ul>
                 <li><?php _e( 'Website', 'nona' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e( 'or', 'nona' ); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'nona' ); ?></a></li>
@@ -28,20 +22,20 @@
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( ' on ', 'nona' ); the_time( get_option( 'date_format' ) ); ?>
-                        <?php comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) ); ?>
-                        <?php edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
+                        <?php _e( ' on ', 'nona' ); the_time( get_option( 'date_format' ) );
+                         comments_popup_link( __( ' with No Comments', 'nona' ), __( ' with 1 Comment', 'nona' ), __( ' with % Comments', 'nona' ), '', __( ' with Comments Closed', 'nona' ) );
+                         edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
                         <?php _e( ' in ', 'nona' ); the_category( ', ' ); ?><br />
                         <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } ?>
-                    <?php if ( $count == 1 ) : ?>
-                        <?php the_content(); ?>
-                    <?php else : ?>
-                        <?php the_excerpt(); ?>
-                    <?php endif; ?>
+                    }
+                    if ( $count == 1 ) :
+                        the_content();
+                    else :
+                        the_excerpt();
+                    endif; ?>
                     <div class="clear"></div> <!-- For inserted media at the end of the post -->
                 </div> <!-- .post #post-ID -->
             <?php endwhile; ?>
@@ -57,12 +51,12 @@
         <?php else : ?>
             <h2><?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
             <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
-            <?php get_search_form(); ?>
-        <?php endif; ?>
+            <?php get_search_form();
+    endif; ?>
         <!-- end the Loop -->
     </div> <!-- #content -->
     <div id="after-content"></div>
 </div> <!-- #main-blog -->
-<?php get_sidebar(); ?>
-<?php get_footer();?>
-<?php /* Last revised October 4, 2011 v1.4 */ ?>
+<?php get_sidebar();
+get_footer();?>
+<?php /* Last revised October 16, 2011 v1.4 */ ?>

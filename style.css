@@ -10,7 +10,7 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-/* Last revised October 12, 2011 v1.4 */
+/* Last revised October 16, 2011 v1.4 */
 
 /*  Copyright 2009-2011  Edward Caissie  (email : edward.caissie@gmail.com)
 
@@ -565,6 +565,16 @@ a img.aligncenter, a img.center {}
 	margin: 5px;
 	padding: 5px;
 	font-size: 105%;
+}
+
+.wp-caption img.size-full {
+    height: auto;
+    max-width: 587px;
+}
+
+.wp-caption.aligncenter {
+    margin: 0 auto;
+    max-width: 595px;
 }
 
 /* Gallery columns up to three (3) are handled by default in the theme.

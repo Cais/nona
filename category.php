@@ -8,10 +8,12 @@
     <div id="before-content"></div>
     <div id="content">
         <div id="category-title">
-            <?php if ( $paged < 2 ) { ?>
-                <?php _e( 'First page of the ', 'nona' ); ?><span id="category-name"><?php single_cat_title(); ?></span><?php _e( ' archive.', 'nona' ); ?>
-            <?php } else { ?>
-                <?php _e( 'Page ', 'nona' );?><?php _e( $paged, 'nona' ); ?><?php _e( ' of the ', 'nona' ); ?><span id="category-name"><a href="<?php echo $category_link; ?>" title="<?php echo $curr_cat; ?>"><?php single_cat_title(); ?></a></span> <?php _e( 'archive.', 'nona' ); ?>
+            <?php global $paged;
+            if ( $paged < 2 ) {
+                printf( __( 'First page of the %1$s archive', 'nona' ), '<span id="category-name">' . single_cat_title() . '</span>'  );
+                /*_e( 'First page of the ', 'nona' ); ?><span id="category-name"><?php single_cat_title(); ?></span><?php _e( ' archive.', 'nona' ); */
+            } else {
+                _e( 'Page ', 'nona' );?><?php _e( $paged, 'nona' ); ?><?php _e( ' of the ', 'nona' ); ?><span id="category-name"><a href="<?php echo $category_link; ?>" title="<?php echo $curr_cat; ?>"><?php single_cat_title(); ?></a></span> <?php _e( 'archive.', 'nona' ); ?>
             <?php } ?>
         </div> <!-- #category-title -->
         <div id="category-description">
