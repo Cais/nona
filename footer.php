@@ -39,6 +39,6 @@
 </div> <!-- #footer -->
 </div> <!-- #outside -->
 </div> <!-- #full-screen -->
-<?php /* Last Revision: January 12, 2011 v1.3 */ ?>
+<?php /* Last revised October 12, 2011 v1.4 */ ?>
 </body>
 </html>

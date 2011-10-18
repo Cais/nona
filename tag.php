@@ -8,9 +8,9 @@
         <div id="tag-title">
             <?php global $paged;
             if ( $paged < 2 ) {
-                _e( 'First page of the ', 'nona' ); ?><span id="tag-name"><?php single_tag_title(); ?></span><?php _e( ' archive.', 'nona' );
+                printf( __( 'First page of the %1$s archive', 'nona' ), '<span id="tag-name">' . single_tag_title( '', false ) . '</span>'  );
             } else {
-                _e( 'Page ', 'nona' ); _e( $paged, 'nona' ); _e( ' of the ', 'nona' ); ?><span id="tag-name"><a href="<?php echo( home_url() . "?tag=" . $curr_tag ); ?>" title="<?php echo $curr_tag; ?>"><?php single_tag_title(); ?></a></span><?php _e( ' archive.', 'nona' );
+                printf( __( 'Page %1$s of the %2$s archive.', 'nona' ), $paged, '<span id="tag-name"><a href="' . home_url() . '"?tag="' . $curr_tag . '" title="' . $curr_tag . '">' . single_tag_title( '', false ) . '</a></span>' );
             } ?>
         </div> <!-- #tag-title -->
         <div id="tag-description"><?php echo tag_description(); ?></div> <!-- #tag-description -->

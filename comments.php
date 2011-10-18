@@ -53,4 +53,4 @@ add_filter( 'comment_class', 'comment_add_userid' );
     comment_form(); /* WordPress 3.0+ required. */
     ?>
 </div> <!-- #comments-main -->
-<?php /* Last revised October 7, 2010 v1.4 */ ?>
+<?php /* Last Revision: July 6, 2010 v1.2 */ ?>

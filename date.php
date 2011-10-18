@@ -1,5 +1,6 @@
 <?php
 $display_date = '';
+global $m;
 if ( $m <> "" ) { /* works for default permalinks only */
     if ( strlen( $m ) == 8 ) {
         $display_date = strftime( "%d %B %Y", strtotime( $m ) );
@@ -9,7 +10,6 @@ if ( $m <> "" ) { /* works for default permalinks only */
     } else { /* Year only - no manipulation required */
         $display_date = $m;
     }
-    $display_date = ": " . $display_date;
 }
 ?>
 <?php get_header(); ?>
@@ -19,34 +19,34 @@ if ( $m <> "" ) { /* works for default permalinks only */
         <div id="date-title">
             <?php global $paged;
             if ( $paged < 2 ) {
-                _e( 'Posts by date', 'nona' ); echo $display_date;
+                printf( __( 'Posts by date %1$s: ', 'nona' ), $display_date );
             } else {
-                _e( 'Page ', 'nona' ); _e( $paged, 'nona' ); _e( ' of posts by date', 'nona' ); echo $display_date;
+                printf( __( 'Page %1$s of posts by date %2$s: ', 'nona' ), $paged, $display_date );
             } ?>
         </div> <!-- #date-title -->
 
         <!-- start the Loop -->
-        <?php if ( have_posts() ) : ?>
-            <?php $count = 0; ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-                <?php $count++; ?>
+        <?php if ( have_posts() ) :
+            $count = 0;
+            while ( have_posts() ) : the_post();
+                $count++; ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( 'Posted by ', 'nona' ); the_author(); _e(' on ', 'nona'); the_time( get_option( 'date_format' ) ); ?>
-                        <?php comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) ); ?>
-                        <?php edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
+                        <?php printf( __( 'Posted by %1$s on %2$s ', 'nona' ), get_the_author_meta( 'display_name' ), get_the_time( get_option( 'date_format' ) ) );
+                        comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+                        edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) ); ?><br />
                         <?php _e( ' in ', 'nona' ); the_category( ', ' ); ?><br />
                         <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } ?>
-                    <?php if ( ($count <= 3 ) && ( $paged < 2 ) ) : ?>
-                        <?php the_content(); ?>
-                    <?php else : ?>
-                        <?php the_excerpt(); ?>
-                    <?php endif; ?>
+                    }
+                    if ( ($count <= 3 ) && ( $paged < 2 ) ) :
+                        the_content();
+                    else :
+                        the_excerpt();
+                    endif; ?>
                     <div class="clear"></div> <!-- For inserted media at the end of the post -->
                 </div> <!-- .post #post-ID -->
             <?php endwhile; ?>
@@ -70,4 +70,4 @@ if ( $m <> "" ) { /* works for default permalinks only */
 </div> <!-- #main-blog -->
 <?php get_sidebar(); ?>
 <?php get_footer();?>
-<?php /* Last revised October 4, 2011 v1.4 */ ?>
+<?php /* Last revised October 17, 2011 v1.4 */ ?>

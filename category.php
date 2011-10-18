@@ -10,38 +10,37 @@
         <div id="category-title">
             <?php global $paged;
             if ( $paged < 2 ) {
-                printf( __( 'First page of the %1$s archive', 'nona' ), '<span id="category-name">' . single_cat_title() . '</span>'  );
-                /*_e( 'First page of the ', 'nona' ); ?><span id="category-name"><?php single_cat_title(); ?></span><?php _e( ' archive.', 'nona' ); */
+                printf( __( 'First page of the %1$s archive', 'nona' ), '<span id="category-name">' . single_cat_title( '', false ) . '</span>'  );
             } else {
-                _e( 'Page ', 'nona' );?><?php _e( $paged, 'nona' ); ?><?php _e( ' of the ', 'nona' ); ?><span id="category-name"><a href="<?php echo $category_link; ?>" title="<?php echo $curr_cat; ?>"><?php single_cat_title(); ?></a></span> <?php _e( 'archive.', 'nona' ); ?>
-            <?php } ?>
+                printf( __( 'Page %1$s of the %2$s archive.', 'nona' ), $paged, '<a href=' . $category_link . ' title="' . $curr_cat . '"><span id="category-name">' . single_cat_title( '', false ) . '</span></a>' );
+            } ?>
         </div> <!-- #category-title -->
         <div id="category-description">
             <?php echo category_description(); ?>
         </div> <!-- #category-description -->
 
         <!-- start the Loop -->
-        <?php if ( have_posts() ) : ?>
-            <?php $count = 0; ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-                <?php $count++; ?>
+        <?php if ( have_posts() ) :
+            $count = 0;
+            while ( have_posts() ) : the_post();
+                $count++; ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to ', 'nona' ); ?><?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( 'Posted by ', 'nona' ); the_author(); _e( ' on ', 'nona' ); the_time( get_option( 'date_format' ) ); ?>
-                        <?php comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) ); ?>
-                        <?php edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
-                        <?php _e( ' in ', 'nona' ); the_category( ', ' ); ?><br />
+                        <?php printf( __( 'Posted by %1$s on %2$s ', 'nona' ), get_the_author_meta( 'display_name' ), get_the_time( get_option( 'date_format' ) ) );
+                        comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+                        edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) ); ?><br />
+                        <?php _e( 'in ', 'nona' ); the_category( ', ' ); ?><br />
                         <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } ?>
-                    <?php if ( ( $count <= 2 ) && ( $paged < 2 ) ) : ?>
-                        <?php the_content(); ?>
-                    <?php else : ?>
-                        <?php the_excerpt(); ?>
-                    <?php endif; ?>
+                    }
+                    if ( ( $count <= 2 ) && ( $paged < 2 ) ) :
+                        the_content();
+                    else :
+                        the_excerpt();
+                    endif; ?>
                     <div class="clear"></div> <!-- For inserted media at the end of the post -->
                 </div> <!-- .post #post-ID -->
             <?php endwhile; ?>
@@ -65,4 +64,4 @@
 </div> <!-- #main-blog -->
 <?php get_sidebar(); ?>
 <?php get_footer();?>
-<?php /* Last revised October 4, 2011 v1.4 */ ?>
+<?php /* Last revised October 17, 2011 v1.4 */ ?>

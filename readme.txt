@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 12, 2011
+@date: October 17, 2011
 
 === Contents ===
 * To-Do
@@ -15,6 +15,9 @@
 [x] Clean up widget code in functions.php
 [x] Clean up unnecessary backward compatibility checks
 [ ] Clean up internationalization strings ... look at providing a .pot file in future versions
+[ ] Review date.php template for better ways to incorporate end-user time and date settings
+[ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
+[ ] Question: Should `wp_link_pages` be used after every instance of `the_content`?
 
 == Notes ==
 * Some very light background colors will make the links hard to read when hovering over them. See the CSS element `a:hover { color: #e3e3e3; }` in style.css if you want to change this color.

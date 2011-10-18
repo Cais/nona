@@ -10,7 +10,7 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-/* Last revised October 16, 2011 v1.4 */
+/* Last revised October 17, 2011 v1.4 */
 
 /*  Copyright 2009-2011  Edward Caissie  (email : edward.caissie@gmail.com)
 
@@ -516,8 +516,8 @@ td {
 /*-- Category, Tag, and Date pages --*/
 .categories {}
 
-#category-title { font-size: 180%; }
-#category-name { font-size: 205%; }
+#category-title { font-size: 150%; }
+#category-name { font-size: 125%; }
 #category-description {
 	font-style: italic;
 	padding-left: 10px;
@@ -529,8 +529,8 @@ td {
 
 .tags {}
 
-#tag-title { font-size: 180%; }
-#tag-name { font-size: 205%; }
+#tag-title { font-size: 150%; }
+#tag-name { font-size: 125%; }
 #tag-description {
 	font-style: italic;
 	padding-left: 10px;

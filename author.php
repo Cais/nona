@@ -22,10 +22,10 @@
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( ' on ', 'nona' ); the_time( get_option( 'date_format' ) );
-                         comments_popup_link( __( ' with No Comments', 'nona' ), __( ' with 1 Comment', 'nona' ), __( ' with % Comments', 'nona' ), '', __( ' with Comments Closed', 'nona' ) );
-                         edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
-                        <?php _e( ' in ', 'nona' ); the_category( ', ' ); ?><br />
+                        <?php printf( __( ' on %1$s ', 'nona' ), get_the_time( get_option( 'date_format' ) ) );
+                         comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+                         edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) ); ?><br />
+                        <?php _e( 'in ', 'nona' ); the_category( ', ' ); ?><br />
                         <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->
                     <?php if ( has_post_thumbnail() ) {

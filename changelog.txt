@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 15, 2011
+@date: October 17, 2011
 
 === Version 1.4 ===
 * released ...
@@ -11,6 +11,8 @@
 * Removed `show_avatar` function - not used
 * Removed `bns_menu` function - not used
 * Removed `nona_get_page_number` function - no longer used
+* Removed display of 'Featured Image' in `single.php` for aesthetic reasons
+* Replaced `the_author_posts_link` (deprecated) with `get_author_posts_url`
 * Updated 'BNS Dynamic Copyright' and renamed to 'NoNa Dynamic Copyright'
 * Updated 'BNS Theme Version' and renamed to 'NoNa Theme Version'
 
@@ -26,6 +28,7 @@
 == Code & CSS ==
 * Updated menu system
 * Cleaned up widget code in functions.php
+* Cleaned up template code eliminating unneeded code
 
 == Miscellaneous ==
 * Changed to 'new' changelog format

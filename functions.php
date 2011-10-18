@@ -64,9 +64,9 @@ if ( ! function_exists( 'nona_setup' ) ):
 
             // Make theme available for translation
             // Translations can be filed in the /languages/ directory
-            load_theme_textdomain( 'nona', TEMPLATEPATH . '/languages' );
+            load_theme_textdomain( 'nona', get_template_directory_uri() . '/languages' );
             $locale = get_locale();
-            $locale_file = TEMPLATEPATH . "/languages/$locale.php";
+            $locale_file = get_template_directory_uri() . "/languages/$locale.php";
             if ( is_readable( $locale_file ) )
                 require_once( $locale_file );
     }
@@ -208,4 +208,4 @@ register_sidebar( array(
                         ) );
 // End Widgets
 ?>
-<?php /* Last revised October 12, 2011 v1.4 */ ?>
+<?php /* Last revised October 17, 2011 v1.4 */ ?>
