@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 17, 2011
+@date: October 19, 2011
 
 === Contents ===
 * To-Do
@@ -14,9 +14,11 @@
 [x] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace
 [x] Clean up widget code in functions.php
 [x] Clean up unnecessary backward compatibility checks
-[ ] Clean up internationalization strings ... look at providing a .pot file in future versions
+[x] Clean up internationalization strings
+[ ] Consider providing a .pot file in future versions
 [ ] Review date.php template for better ways to incorporate end-user time and date settings
 [ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
+[ ] Re-create main background image for better seamless tiling
 [ ] Question: Should `wp_link_pages` be used after every instance of `the_content`?
 
 == Notes ==
@@ -27,6 +29,6 @@
 
 == Test Environment as reported by BNS Support plugin ==
 * Plugin URL: http://wordpress.org/extend/plugins/bns-support/
-* WordPress Version: 3.3-beta1
+* WordPress Version: 3.3-beta1-18972
 * PHP version: 5.2.17
 * MySQL version: 5.1.56
