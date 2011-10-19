@@ -23,9 +23,9 @@
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to ', 'nona' ); the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <?php _e( 'Posted by ', 'nona' ); the_author(); _e( ' on ', 'nona' ); the_time( get_option( 'date_format' ) ); ?>
-                        <?php comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) ); ?>
-                        <?php edit_post_link( __( 'Edit', 'nona' ), __( '&#124; ', 'nona' ), __( '', 'nona' ) ); ?><br />
+                        <?php printf( __( 'Posted by %1$s on %2$s ', 'nona' ), get_the_author_meta( 'display_name' ), get_the_time( get_option( 'date_format' ) ) );
+                        comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+                        edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) ); ?><br />
                         <?php _e( 'in ', 'nona' ); the_category( ', ' ); ?><br />
                         <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                     </div> <!-- .post-details -->
@@ -57,4 +57,4 @@
 </div> <!-- #main-blog -->
 <?php get_sidebar(); ?>
 <?php get_footer();?>
-<?php /* Last revised October 4, 2011 v1.4 */ ?>
+<?php /* Last revised October 19, 2011 v1.4 */ ?>

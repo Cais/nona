@@ -169,7 +169,7 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
             if ( is_child_theme() ) {
                 printf( __( '<br /><span id="bns-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
             } else {
-                printf( __( '<br /><span id="bns-theme-version">Dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+                printf( __( '<br /><span id="bns-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
             }
     }
 }
