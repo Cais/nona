@@ -43,11 +43,13 @@ if ( $m <> "" ) { /* works for default permalinks only */
                         the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
                     }
                     if ( ($count <= 3 ) && ( $paged < 2 ) ) :
-                        the_content();
+                        the_content( __( 'Read more... ', 'nona' ) ); ?>
+                        <div class="clear"></div> <!-- For inserted media at the end of the post -->
+                        <?php wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona') . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
                     else :
-                        the_excerpt();
-                    endif; ?>
-                    <div class="clear"></div> <!-- For inserted media at the end of the post -->
+                        the_excerpt(); ?>
+                        <div class="clear"></div> <!-- For inserted media at the end of the post -->
+                    <?php endif; ?>
                 </div> <!-- .post #post-ID -->
             <?php endwhile; ?>
             <div id="nav-global" class="navigation">
@@ -70,4 +72,4 @@ if ( $m <> "" ) { /* works for default permalinks only */
 </div> <!-- #main-blog -->
 <?php get_sidebar(); ?>
 <?php get_footer();?>
-<?php /* Last revised October 17, 2011 v1.4 */ ?>
+<?php /* Last revised October 21, 2011 v1.4 */ ?>
