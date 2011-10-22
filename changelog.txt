@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 21, 2011
+@date: October 22, 2011
 
 == Version 1.4 ==
 * released ...
@@ -21,10 +21,12 @@
 * `font-size` changed to base of 115% from 18px
 * all font-sizes changed to percentage base; some additional adjustments made
 * more consistent formatting
-* general clean-up and minor optimizations and additions
-* added `max-width` parameter to address gallery with up to ten (10) columns
+* general clean-up with minor optimizations and additions
+* added `max-width` parameter to address gallery with up to 10 columns
 * removed .avatar class; not used (and conflicts with v3.3-beta1 Admin Bar)
 * added CSS to support `editor-style`
+* removed Internet Explorer `lte IE 7` support
+* change main background image to `GrungeOverlayTile.png` for better seamless tiling
  
 == Code & CSS ==
 * Updated menu system
@@ -35,6 +37,7 @@
 * Changed to 'new' changelog format
 * Corrected Theme Name to NoNa
 * Update `readme.txt` with better 'markdown'
+* Update `changelog.txt` with better 'markdown'
 
 == Internet Browsers Reviewed ==
 * Apple Safari v5.1

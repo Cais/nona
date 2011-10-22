@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 21, 2011
+@date: October 22, 2011
 
 == Table of Contents ==
 * To-Do
@@ -18,16 +18,18 @@
 * [ ] Consider providing a .pot file in future versions
 * [ ] Review date.php template for better ways to incorporate end-user time and date settings
 * [ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
-* [ ] Re-create main background image for better seamless tiling
+* [x] Re-create main background image for better seamless tiling
 * [x] Question: Should `wp_link_pages` be used after every instance of `the_content`? Yes
+* [ ] Sort out Internet Explorer compatibility issues: link hover and scrolling background issues; etc.
 
 == Notes ==
+* Future changelog entries will reflect commits to the GitHub repository: https://github.com/Cais/nona
 * Some very light background colors will make the links hard to read when hovering over them. See the CSS element `a:hover { color: #e3e3e3; }` in style.css if you want to change this color.
 
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
 
 == Test Environment ==
-* WordPress Version: 3.3-beta1-18972
+* WordPress Version: 3.3-beta2
 * PHP version: 5.2.17
 * MySQL version: 5.1.56

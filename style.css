@@ -160,7 +160,7 @@ sub { /* Subscripts */ font-size: 70%; }
 
 /*-= Main Blog Layout =-*/
 #full-screen {
-	background: url(images/GrungeOverlay.png) repeat fixed center;
+	background: url(images/GrungeOverlayTile.png) repeat fixed center;
 }
 
 #outside {

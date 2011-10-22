@@ -17,9 +17,6 @@
     </title>
 
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-    <!--[if lte IE 7]>
-        <link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/ie.css" type="text/css" media="screen" />
-    <![endif]-->
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
     <?php if ( is_singular() )
@@ -37,9 +34,6 @@
                         <div id="blog-title"><span><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></div>
                         <div id="blog-description">
                             <?php bloginfo( 'description' ) ?>
-                            <!--[if lte IE 7]>
-                                <p>This theme looks much better on a current browser, perhaps you should come to terms with the advancements of today's technology.</p>
-                            <![endif]-->
                         </div> <!-- .blog-description -->
                     </div> <!-- #header-title -->
                 </div> <!-- #header-top -->
