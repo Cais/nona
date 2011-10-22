@@ -1,7 +1,7 @@
 ==== Changelog.txt ====
 @date: October 21, 2011
 
-=== Version 1.4 ===
+== Version 1.4 ==
 * released ...
 * published ...
 
@@ -34,18 +34,16 @@
 == Miscellaneous ==
 * Changed to 'new' changelog format
 * Corrected Theme Name to NoNa
+* Update `readme.txt` with better 'markdown'
 
-/* Internet Browsers Reviewed
- * ==========================
- *
- * Apple Safari v5.1
- * Firefox v7.0.1
- * Google Chrome v14.0
- * Internet Explorer v9.0
- * Opera v11.52
- * 
- */  
+== Internet Browsers Reviewed ==
+* Apple Safari v5.1
+* Firefox v7.0.1
+* Google Chrome v14.0
+* Internet Explorer v9.0
+* Opera v11.52
 
+****
 --------------------------------------------------------------------------------
 === Version 1.3.1 ===
 * released: January 13, 2011
