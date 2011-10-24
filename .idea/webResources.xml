@@ -2,13 +2,6 @@
 <project version="4">
   <component name="WebResourcesPaths">
     <contentEntries>
-      <entry url="file://$USER_HOME$/Documents/4Others/wordpress-3.2.1">
-        <entryData>
-          <resourceRoots>
-            <path value="file://$USER_HOME$/Documents/4Others/wordpress-3.2.1" />
-          </resourceRoots>
-        </entryData>
-      </entry>
       <entry url="file://$PROJECT_DIR$/../../../wp-admin">
         <entryData>
           <resourceRoots>
