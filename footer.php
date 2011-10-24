@@ -1,4 +1,3 @@
-</div> <!-- #head2toe -->
 <div id="footer">
     <div id="footer-top"></div>
 

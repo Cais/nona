@@ -19,15 +19,16 @@
 
 == CSS ==
 * `font-size` changed to base of 115% from 18px
-* all font-sizes changed to percentage base; some additional adjustments made
-* more consistent formatting
-* general clean-up with minor optimizations and additions
-* added `max-width` parameter to address gallery with up to 10 columns
-* removed .avatar class; not used (and conflicts with v3.3-beta1 Admin Bar)
-* added CSS to support `editor-style`
-* removed Internet Explorer `lte IE 7` support
-* change main background image to `GrungeOverlayTile.png` for better seamless tiling
-* move `GrungeOverlayTile.png` background property to 'body' tag and remove `#full-screen`
+* Changed font-sizes changed to percentage base; some additional adjustments made
+* Change main background image to `GrungeOverlayTile.png` for better seamless tiling
+* Change `GrungeOverlayTile.png` background property to 'body' tag and remove `#full-screen`
+* Added more consistent formatting
+* Added `max-width` parameter to address gallery with up to 10 columns
+* Added CSS to support `editor-style`
+* Removed Internet Explorer `lte IE 7` support
+* Removed `head2toe` as not needed
+* Removed .avatar class; not used (and conflicts with v3.3-beta1 Admin Bar)
+* General clean-up with minor optimizations and additions
  
 == Code & CSS ==
 * Updated menu system

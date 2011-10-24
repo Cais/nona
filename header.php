@@ -44,5 +44,4 @@
             </div> <!-- #header-middle -->
             <div id="header-bottom"></div>
         </div> <!-- #header -->
-        <div id="head2toe">
 <?php /* Last revised October 24, 2011 v1.4 */ ?>

@@ -166,7 +166,6 @@ sub { /* Subscripts */ font-size: 70%; }
 }
 
 #header {}
-#head2toe { /* Connects #header to #footer */ }
 
 #main-blog {
 	float: left;
@@ -956,7 +955,7 @@ img#wpstats{ display: none; }
 
 /* BNS Plugins */
 /* bns-login plugin */
-.bns-login { text-align: center; font-style: italic; }
+.nona-login, .bns-login { text-align: center; font-style: italic; }
 #bns-logged-in { font-weight: bold; }
 #bns-logged-out { font-weight: lighter; }
 
