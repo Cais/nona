@@ -28,6 +28,7 @@
 * Removed Internet Explorer `lte IE 7` support
 * Removed `head2toe` as not needed
 * Removed .avatar class; not used (and conflicts with v3.3-beta1 Admin Bar)
+* Removed all empty elements (except those required by WordPress guidelines)
 * General clean-up with minor optimizations and additions
  
 == Code & CSS ==

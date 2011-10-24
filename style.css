@@ -71,7 +71,6 @@ img.alignright, img.right { display: inline; margin:0 0 8px 8px; }
 body {
     background: url(images/GrungeOverlayTile.png) black;
 	color: #000000;
-	/* font-size: 18px; */
 	font-size: 115%;
 	font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;
 	margin: 0;	
@@ -79,39 +78,18 @@ body {
 }
 
 a { color: #000000; }
-a:link {}
-a:visited {}
 a:hover { color: #e3e3e3; }
-a:focus {}
-a:active {}
 
 abbr { /* Abbreviations */ }
 acronym {}
 
 h1, h2, h3, h4, h5, h6 { margin-top: 0; }
-h1 {
-	font-size: 175%;
-	margin-bottom: 9px;
-}
-h2 {
-	font-size: 155%;
-	margin-bottom: 8px;
-}
-h3 {
-	font-size: 135%;
-	margin-bottom: 7px;
-}
-h4 {
-	margin-bottom: 6px;
-}
-h5 {
-	font-size: 95%;
-	margin-bottom: 5px;
-}
-h6 {
-	font-size: 75%;
-	margin-bottom: 4px;
-}
+h1 { font-size: 175%; margin-bottom: 9px; }
+h2 { font-size: 155%; margin-bottom: 8px; }
+h3 { font-size: 135%; margin-bottom: 7px; }
+h4 { margin-bottom: 6px; }
+h5 { font-size: 95%; margin-bottom: 5px; }
+h6 { font-size: 75%; margin-bottom: 4px; }
 
 hr {
 	border: 1px solid black;
@@ -122,11 +100,11 @@ hr {
 }
 
 .hr, .pinup-meets-grunge {
-	border: none;
     background: url(images/HorizontalRule.png);
+	border: none;
     height: 50px;
-	width: 680px;
 	margin: 0 auto;
+	width: 680px;
 }
 
 p { margin: 9px 0; }
@@ -165,18 +143,13 @@ sub { /* Subscripts */ font-size: 70%; }
 	width: 990px;
 }
 
-#header {}
-
 #main-blog {
 	float: left;
 	margin: 0 -330px 0 0;
 	width: 100%;
 }
 
-#before-content {
-	background: url(images/Text_Top.png) no-repeat;
-	height: 39px;
-}
+#before-content { background: url(images/Text_Top.png) no-repeat; height: 39px; }
 
 #content {
 	background: url(images/Text_Center.png) repeat-y;
@@ -184,21 +157,10 @@ sub { /* Subscripts */ font-size: 70%; }
 	padding: 10px 15px 10px 53px;
 }
 
-#after-content {
-	background: url(images/Text_Bottom.png) no-repeat;
-	height: 26px;
-}
+#after-content { background: url(images/Text_Bottom.png) no-repeat; height: 26px; }
 
-#sidebar {
-	float: right;
-	overflow: hidden;
-	width: 320px;
-}
-
-#footer {
-	clear: both;
-	width: 100%;
-}
+#sidebar { float: right; overflow: hidden; width: 320px; }
+#footer { clear: both; width: 100%; }
 
 /*-= Header =-*/
 #header-top {
@@ -224,11 +186,7 @@ sub { /* Subscripts */ font-size: 70%; }
 }
 
 #blog-title a { color: #000; }
-#blog-title a:link {}
-#blog-title a:visited {}
 #blog-title a:hover { color: #e3e3e3; }
-#blog-title a:focus {}
-#blog-title a:active {}
 
 #blog-description {
 	color: #000;
@@ -262,8 +220,7 @@ div#top-navigation-menu {
 }
 
 .nav-menu a, .nav-menu a:hover {
-  /* background: url(images/bg50.png); */
-	border: none;
+    border: none;
 	display: block;
 	text-decoration: none;
 }
@@ -280,7 +237,6 @@ div#top-navigation-menu {
 }
 
 .nav-menu a, .nav-menu a:visited {
-	/* color: #ECCFA0; */
 	display: block;
 	font-weight: bold;
 	padding: 8px 12px;
@@ -302,28 +258,28 @@ div#top-navigation-menu {
 ul.nav-menu,
 ul.nav-menu li,
 ul.nav-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 ul.nav-menu {
-  position: relative;
-  z-index: 1097;
-  float: left;
+    float: left;
+    position: relative;
+    z-index: 1097;
 }
 
 ul.nav-menu li {
-  float: left;
-  vertical-align: middle;
-  zoom: 1;
+    float: left;
+    vertical-align: middle;
+    zoom: 1;
 }
 
 ul.nav-menu li.hover,
 ul.nav-menu li:hover {
-  position: relative;
-  z-index: 1099;
-  cursor: default;
+    cursor: default;
+    position: relative;
+    z-index: 1099;
 }
 
 ul.nav-menu ul {
@@ -336,19 +292,15 @@ ul.nav-menu ul {
     width: auto;
 }
 
-ul.nav-menu ul li {
-  float: none;
-}
+ul.nav-menu ul li { float: none; }
 
 ul.nav-menu ul ul {
-  left: 99%;
-  margin-top: -1px;
-  top: 1px;
+    left: 99%;
+    margin-top: -1px;
+    top: 1px;
 }
 
-ul.nav-menu li:hover > ul {
-  visibility: visible;
-}
+ul.nav-menu li:hover > ul { visibility: visible; }
 
 ul.nav-menu ul.sub-menu li,
 ul.nav-menu ul.children li {
@@ -360,10 +312,10 @@ ul.nav-menu ul.children li {
 /* -- Rounded Corners for Menu -- */
 .nav-menu a, .nav-menu a:visited, .nav-menu a:hover, .nav-menu a:active,
 ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-menu ul ul {
-  -moz-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 /* WordPress 3.0 Navigation Menu default widget */
@@ -384,38 +336,17 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
 }
 
 .sticky a { color: #000; }
-.sticky a:link {}
-.sticky a:visited {}
 .sticky a:hover { color: #e3e3e3; }
-.sticky a:focus {}
-.sticky a:active {}
-    
-.page {}
 
 .post {
-	padding-top: 9px;
-	padding-bottom: 9px;
 	border-bottom: thick double Black;
+	padding-bottom: 9px;
+	padding-top: 9px;
 }
-
-.post a {}
-.post a:link {}
-.post a:visited {}
-.post a:hover {}
-.post a:focus {}
-.post a:active {}
 
 .post-comments { padding-bottom: 10px; }
 
-.post p {}
-
-.post dl {}
-.post dl dt {}
 .post dl dd { margin-left: 20px; }
-
-.post pre {}
-.post code {}
-.post pre code {}
 
 blockquote {
 	background: url(images/Quotes.png) no-repeat top left;
@@ -424,8 +355,8 @@ blockquote {
 }
 
 cite {
+    border-bottom: 1px dashed #000;
 	font-style: italic;
-	border-bottom: 1px dashed #000;
 }
 
 cite.fn { border-bottom: none; }
@@ -434,14 +365,14 @@ blockquote cite { padding-left: 10px; }
 blockquote cite a { font-weight: bold; }
 
 pre { /* Use for "code" text styling */
-	margin: 0;
-	padding: 5px;
 	border: 2px inset;
-	font-style: italic;
-	font-size: 100%;
 	color: #000;
-	text-align: left;
+	font-size: 100%;
+	font-style: italic;
+    margin: 0;
+    padding: 5px;
 	overflow: auto;
+	text-align: left;
 
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
 	white-space: pre-wrap; /* css-3 */
@@ -451,10 +382,10 @@ pre { /* Use for "code" text styling */
 }
 
 code { /* Use with "pre" for text styling */
+	color: #000;
 	font-family: "Courier New", Courier, sans-serif;
 	font-size: 100%;
 	font-weight: bold;
-	color: #000;
 
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
 	white-space: pre-wrap; /* css-3 */
@@ -463,21 +394,15 @@ code { /* Use with "pre" for text styling */
 	word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
-pre code {}
-
 .post-details, #page-meta {
 	font-size: 90%;
 	font-weight: bold;
-	padding-left: 18px;
 	padding-bottom: 9px;
+	padding-left: 18px;
 }
-
-.post-comments {}
-  .post-comments a {}
 
 /*-- Tables --*/
 table { width: 100%; }
-tbody {}
 tr { border: 1px solid #000; }
 tr.even { background: none; }
 th {
@@ -490,12 +415,6 @@ td {
 }
 /*-- End Tables --*/
 
-.navigation {}
-.navigation-links {}
-.pagenav {}
-
-.page_item {}
-
 .current_page_item {
 	font-style: italic;
 	font-weight: bold;
@@ -506,23 +425,13 @@ td {
 	text-decoration: underline;
 }
 
-.current_page_parent {}
-
 /*-- Category, Tag, and Date pages --*/
-.categories {}
-
 #category-title { font-size: 150%; }
 #category-name { font-size: 125%; }
 #category-description {
 	font-style: italic;
 	padding-left: 10px;
 }
-
-.cat-item {}
-.current-cat {}
-.current-cat-parent {}
-
-.tags {}
 
 #tag-title { font-size: 150%; }
 #tag-name { font-size: 125%; }
@@ -549,17 +458,13 @@ p img {
 	padding: 0;
 }
 
-a img.alignright, a img.right {}
-a img.alignleft, a img.left {}
-a img.aligncenter, a img.center {}
-
 /*-- Captions --*/
 .caption {
-	border: 1px solid #E5E5FF;
 	background: #E5F2FF;
+	border: 1px solid #E5E5FF;
+	font-size: 105%;
 	margin: 5px;
 	padding: 5px;
-	font-size: 105%;
 }
 
 .wp-caption img.size-full {
@@ -592,11 +497,6 @@ form, fieldset, legend { /* Initialized */
 	padding: 0;
 	border: 0;
 }
-form {}
-fieldset {}
-legend {}
-  
-label {}
 
 input, textarea {
     margin: 5px 0;
@@ -607,8 +507,6 @@ input, textarea {
     border-radius: 10px;
 }
 
-input:focus, textarea:focus {}
-
 textarea { width: 98%; }
 textarea#text_area { max-width: 595px; }
 /* =- End Forms -= ---*/
@@ -617,46 +515,34 @@ textarea#text_area { max-width: 595px; }
 /*-- Threaded Comments --*/
 #comments-main { margin-top: 10px; }
 
-#comments {}
-#singlecomments {}
-
 .commentlist {
 	border: 1px solid #000;
 	padding-bottom: 10px;
 }
 
-.commentlist p {}
-
 .depth-1 { border: 1px solid #000; }
 
 ul#singlecomments.commentlist {
+    list-style: none none;
 	margin: 0;
 	padding: 0;
-    list-style: none none;
 }
 
 ul#singlecomments.commentlist li {
 	margin-top: 0;
-	padding-top: 10px;
 	padding-left: 10px;
+	padding-top: 10px;
 }
 
 ul.children {
+    list-style: none none;
 	margin: 0;
 	padding: 0;
-    list-style: none none;
 }
 
 ul.children li { border-left: 1px dashed #000; }
 
-.comment {}
-.comment-body {}
 .comment-body blockquote { margin-top: 19px; }
-
-.comment-author {}
-.comment-author a {}
-
-/* .avatar { display: inline; float: left; margin:0 10px 10px 0; } */
 
 .comment-meta, .commentmetadata {
 	font-size: 85%;
@@ -665,64 +551,51 @@ ul.children li { border-left: 1px dashed #000; }
 
 .reply { font-size: 100%; }
 
-.comment-reply-link {}
-
-.byuser{}
-
 .odd, comment-text-1 {
+	background: #af7d7a;
 	margin-top: 1px;
-	background: #af7d7a; 
 }
 
 .even, comment-text-2 {
-	margin-top: 1px;
 	background: #60606b;
+	margin-top: 1px;
 }
-
-.alt {}
 
 .user-id-1, .administrator { /* also styles author page user block */
-	margin-top: 1px;
 	background-color: #8e9ca4;
+	margin-top: 1px;
 }
 .user-id-2 { /* sample User_ID == 2 styling */
-	/* margin-top: 1px; */
 	/* background-color: #8c8680; */
+	/* margin-top: 1px; */
 }
-.user-id-3 {}
-.user-id-4 {} /* etc ... or "comment-author-authorname gets added for specific registered users" by default for comments */
 
 .nocomments {
-	text-align: center;
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
-#commentform {}
 #commentform p { margin: 2px; }
-#commentform input {}
-#commentform label {}
-#commentform textarea {}
 #commentform #submit { cursor:pointer; }
 
 p.form-allowed-tags { font-size:90%; }
 
 .form-allowed-tags code {
-	font-size: 90%;
 	text-align: justify;
+	font-size: 90%;
 }
 
-form#commentform p.form-submit {
-  text-align: right;
-}
+form#commentform p.form-submit { text-align: right; }
 
 form#commentform p.form-submit input#submit {
-  padding: 5px;
-/* optional rounded corners for browsers that support it */
-  -moz-border-radius: 13px;
-  -khtml-border-radius: 13px;
-  -webkit-border-radius: 13px;
-  border-radius: 13px;
+    padding: 5px;
+
+    /* optional rounded corners for browsers that support it */
+    -moz-border-radius: 13px;
+    -khtml-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
 }
 
 textarea#comment { padding: 0 0 0 5px; }
@@ -734,37 +607,23 @@ textarea#comment { padding: 0 0 0 5px; }
 
 /*=- Miscellaneous -=*/
 #author {
+	border: 2px solid #71380f;
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 2px solid #71380f;
 }
 
 #author ul {
+    list-style: none none;
 	margin: 0;
 	padding: 0;
-    list-style: none none;
 }
   
 #author li { padding-bottom: 10px; }
-
-#author ul li {}
 /*-= End Miscellaneous =-*/
 
 /*-= Sidebar =-*/
-#sidebar-inside {}
-
-.blogroll {}
-.linkcat {}
-
 /*-- Search / Forms --*/
-#search {}
-#searchform {}
-
 #search-container { text-align: center; }
-#search-submit {}
-
-.form-input {}
-.form-input:focus {}
 
 input#s {
     padding-left: 5px;
@@ -774,31 +633,23 @@ input#s {
 /*-- Widgets --*/
 .widget {
 	background: url(images/SideBar_Center.png);
+	color: #000;
 	padding-left: 20px;
 	padding-right: 50px;
-	color: #000;
 }
 
 .widget a { color: #000; }
-.widget a:link {}
-.widget a:visited {}
 .widget a:hover { color: #e3e3e3; }
-.widget a:focus {}
-.widget a:active {}
 
 .widget h2 { text-align: center; }
 h2.widget-title { margin: 0 auto; }
 
 .widget p { margin: 0; }
   
-.widget .tag-link {}
-  
 .widget-top {
 	background: url(images/SideBar_Top.png) no-repeat;
 	height: 40px;
 }
-
-.widget-title {}
 
 .widget-bottom {
 	background: url(images/SideBar_Bottom.png) no-repeat;
@@ -814,28 +665,18 @@ h2.widget-title { margin: 0 auto; }
 	padding:0;
 }
 
-.widget ul li {}
-.widget ul li a{}
-
 .widget ul ul li { padding-left: 10px; }
 
-.widget li {}
-.widget ol {}
-.widget ol li {}
-.widget ol li a{}
-  
 /*-- Calendar --*/
 #wp-calendar { margin: 0 auto; }
 
-.widget #wp-calendar {}
-
 .widget table#wp-calendar {
-	width: 100%;
 	text-align: center;
+	width: 100%;
 }
-.widget table#wp-calendar caption {
-  text-align: center;
-} 
+
+.widget table#wp-calendar caption { text-align: center; }
+
 table#wp-calendar th {
 	font-style: normal;
 	font-weight: normal;	
@@ -846,8 +687,6 @@ table#wp-calendar td#today { border: 1px dashed #000; }
 /*=- End Sidebar -=*/
 
 /*=- Footer -=*/
-#footer-top {}
-
 #footer-widgets-above { padding-top: 10px; }
 
 #footer-widgets .widget-top {
@@ -870,46 +709,42 @@ table#wp-calendar td#today { border: 1px dashed #000; }
 }
 
 #footer-widgets .fw-column {
-	position: relative;
 	float: left;
+	position: relative;
 }
 
 #fw-middle,
 #fw-left,
 #fw-right {
 	margin: 0 auto;
-	overflow: hidden;
 	padding: 0;
+	overflow: hidden;
 	vertical-align: top;
 }
 
-#fw-middle {
-	width: 100%;
-}
+#fw-middle { width: 100%; }
 
 #fw-left {
-	width: 330px;
-	right: 330px;
 	margin-left: -100%;
+	right: 330px;
+	width: 330px;
 }
 
 #fw-right {
-	width: 330px;
 	margin-right: -330px;
+	width: 330px;
 }
 
 /*-- Footer Widget - to style each widget --*/
 
 .footer-widget { /* matches .widget */
+    background: url(images/Footer_Widget_Center.png) repeat-y;
+    color: #000;
 	padding-left: 20px;
 	padding-right: 20px;
-	color: #000;
-	background: url(images/Footer_Widget_Center.png) repeat-y;
 }
 
 .footer widget a { color: #000; }
-
-.footer-widget p {}
 
 .footer-widget h2 { text-align: center; }
 .footer-widget h6 { /* Used for BNS-Login function */
@@ -923,20 +758,10 @@ table#wp-calendar td#today { border: 1px dashed #000; }
 	padding: 0;
 }
 
-.footer-widget ul li {}
-.footer-widget ul li a{}
-
 .footer-widget ul ul li { padding-left: 10px; }
-
-.footer-widget li {}
-.footer-widget ol {}
-.footer-widget ol li {}
-.footer-widget ol li a{}
 /*-- End Footer Widget --*/
 
-#footer-widgets-below {
-	clear: both;
-}
+#footer-widgets-below {	clear: both; }
 
 #footer-middle { margin: 20px 0; }
 
@@ -945,8 +770,6 @@ table#wp-calendar td#today { border: 1px dashed #000; }
 	padding: 0;
 	text-align: center;
 }
-
-#footer-bottom {}
 /*-= End Footer =-*/
 
 /*-- WordPress Plugin Styles --*/
