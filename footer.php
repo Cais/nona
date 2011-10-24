@@ -38,7 +38,6 @@
     <div id="footer-bottom"><?php wp_footer(); ?></div>
 </div> <!-- #footer -->
 </div> <!-- #outside -->
-</div> <!-- #full-screen -->
-<?php /* Last revised October 12, 2011 v1.4 */ ?>
+<?php /* Last revised October 24, 2011 v1.4 */ ?>
 </body>
 </html>

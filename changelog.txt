@@ -27,6 +27,7 @@
 * added CSS to support `editor-style`
 * removed Internet Explorer `lte IE 7` support
 * change main background image to `GrungeOverlayTile.png` for better seamless tiling
+* move `GrungeOverlayTile.png` background property to 'body' tag and remove `#full-screen`
  
 == Code & CSS ==
 * Updated menu system

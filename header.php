@@ -26,24 +26,23 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="full-screen">
-        <div id="outside">
-            <div id="header">
-                <div id="header-top">
-                    <div id="header-title">
-                        <div id="blog-title"><span><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></div>
-                        <div id="blog-description">
-                            <?php bloginfo( 'description' ) ?>
-                        </div> <!-- .blog-description -->
-                    </div> <!-- #header-title -->
-                </div> <!-- #header-top -->
-                <div id="header-middle">
-		        	<div id="top-navigation-menu">
-				        <?php nona_nav_menu(); ?>
-			        </div>
-                    <div class="clear"></div>
-                </div> <!-- #header-middle -->
-                <div id="header-bottom"></div>
-            </div> <!-- #header -->
-            <div id="head2toe">
-<?php /* Last revised October 9, 2011 v1.4 */ ?>
+    <div id="outside">
+        <div id="header">
+            <div id="header-top">
+                <div id="header-title">
+                    <div id="blog-title"><span><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></div>
+                    <div id="blog-description">
+                        <?php bloginfo( 'description' ) ?>
+                    </div> <!-- .blog-description -->
+                </div> <!-- #header-title -->
+            </div> <!-- #header-top -->
+            <div id="header-middle">
+                <div id="top-navigation-menu">
+                    <?php nona_nav_menu(); ?>
+                </div>
+                <div class="clear"></div>
+            </div> <!-- #header-middle -->
+            <div id="header-bottom"></div>
+        </div> <!-- #header -->
+        <div id="head2toe">
+<?php /* Last revised October 24, 2011 v1.4 */ ?>

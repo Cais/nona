@@ -69,7 +69,7 @@ img.alignright, img.right { display: inline; margin:0 0 8px 8px; }
 
 /*= The Starting Line - Edit after this point =*/
 body {
-	background-color: black;
+    background: url(images/GrungeOverlayTile.png) black;
 	color: #000000;
 	/* font-size: 18px; */
 	font-size: 115%;
@@ -159,10 +159,6 @@ sub { /* Subscripts */ font-size: 70%; }
 /* -= Begin Style =-*/
 
 /*-= Main Blog Layout =-*/
-#full-screen {
-	background: url(images/GrungeOverlayTile.png) repeat fixed center;
-}
-
 #outside {
 	border: medium double black;
 	margin: 0 auto;
