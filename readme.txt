@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 22, 2011
+@date: October 24, 2011
 
 == Table of Contents ==
 * To-Do
@@ -10,17 +10,16 @@
 == To-Do ==
 * [x] Menu - Theme does not currently support sub-menu items off of the main menu, this will be addressed in a future version.
 * [x] Editor Style - stylesheet needs to be added/completed; add_editor_style() function can be un-commented afterward.
-* [ ] Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
 * [x] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace
 * [x] Clean up widget code in functions.php
 * [x] Clean up unnecessary backward compatibility checks
 * [x] Clean up internationalization strings
-* [ ] Consider providing a .pot file in future versions
-* [ ] Review date.php template for better ways to incorporate end-user time and date settings
-* [ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
 * [x] Re-create main background image for better seamless tiling
 * [x] Question: Should `wp_link_pages` be used after every instance of `the_content`? Yes
-* [ ] Sort out Internet Explorer compatibility issues: link hover and scrolling background issues; etc.
+* [x] Sort out Internet Explorer compatibility issues: link hover and scrolling background issues; etc.
+* [ ] Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
+* [ ] Review date.php template for better ways to incorporate end-user time and date settings
+* [ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
 
 == Notes ==
 * Future changelog entries will reflect commits to the GitHub repository: https://github.com/Cais/nona
@@ -30,6 +29,6 @@
 * http://themes.trac.wordpress.org/ticket/2582
 
 == Test Environment ==
-* WordPress Version: 3.3-beta2
+* WordPress Version: 3.3-beta2 (as of Oct 24, 2011)
 * PHP version: 5.2.17
 * MySQL version: 5.1.56

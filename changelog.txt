@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 22, 2011
+@date: October 24, 2011
 
 == Version 1.4 ==
 * released ...
@@ -39,9 +39,10 @@
 * Corrected Theme Name to NoNa
 * Update `readme.txt` with better 'markdown'
 * Update `changelog.txt` with better 'markdown'
+* Add `support.txt` file
 
 == Internet Browsers Reviewed ==
-* Apple Safari v5.1
+* Apple Safari v5.1.1
 * Firefox v7.0.1
 * Google Chrome v14.0
 * Internet Explorer v9.0
