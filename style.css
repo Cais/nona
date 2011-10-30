@@ -60,7 +60,7 @@ img.alignright, img.right { display: inline; margin:0 0 8px 8px; }
 	border-radius: 3px;
 }
 .wp-caption img { margin: 0; padding: 0; border: 0 none; }
-.wp-caption p.wp-caption-text { font-size: 11px;	line-height: 17px; padding: 0 4px 5px; margin: 0; }
+.wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
 
 /* Placeholders */
 .bypostauthor {}
@@ -69,12 +69,10 @@ img.alignright, img.right { display: inline; margin:0 0 8px 8px; }
 
 /*= The Starting Line - Edit after this point =*/
 body {
-    background: url(images/GrungeOverlayTile.png) black;
+    background: black url(images/GrungeOverlayTile.png);
 	color: #000000;
 	font-size: 115%;
-	font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;
-	margin: 0;	
-	padding: 0;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
 }
 
 a { color: #000000; }
