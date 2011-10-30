@@ -77,7 +77,7 @@ if ( ! function_exists( 'nona_login' ) ) {
     function nona_login() {
             $login_url = home_url() . '/wp-admin/';
             if ( is_user_logged_in() ) {
-                echo '<div id="nona-logged-in" class="nona-login">' . __( 'You are logged in! ' );
+                echo '<div id="nona-logged-in" class="nona-login">' . __( 'You are logged in! ', 'nona' );
                 if ( function_exists( 'get_current_site' ) ) { // WPMU, Multisite - logout returns to WPMU, or Multisite, main domain page
                     $current_site = get_current_site();
                     $home_domain = 'http://' . $current_site->domain . $current_site->path;
@@ -208,4 +208,4 @@ register_sidebar( array(
                         ) );
 // End Widgets
 ?>
-<?php /* Last revised October 17, 2011 v1.4 */ ?>
+<?php /* Last revised October 29, 2011 v1.4 */ ?>
