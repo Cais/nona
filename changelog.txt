@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: October 24, 2011
+@date: November 5, 2011
 
 == Version 1.4 ==
 * released ...
@@ -9,6 +9,7 @@
 * Added textdomain as needed to string functions
 * Added previous and next post navigation in the `single.php` template
 * Added `wp_link_pages` after every instance of `the_content`
+* Added `description` parameter to `register_sidebar` definitions
 * Removed `show_avatar` function - not used
 * Removed `bns_menu` function - not used
 * Removed `nona_get_page_number` function - no longer used

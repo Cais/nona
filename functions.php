@@ -177,35 +177,39 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 
 // Widgets
 register_sidebars( 3, array(
-                           'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-                           'after_widget' => '</div><!-- .widget--><div class="widget-bottom"></div>',
-                           'before_title' => '<h2 class="widget-title">',
-                           'after_title' => '</h2>',
+                           'description'    => __( 'Sidebar located on the right side of the layout', 'nona' ),
+                           'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+                           'after_widget'   =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+                           'before_title'   => '<h2 class="widget-title">',
+                           'after_title'    => '</h2>',
                             ) );
 register_sidebar( array(
-                       'name' => 'Footer Left',
-                       'id' => 'footer-left',
-                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-                       'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-                       'before_title' => '<h2 class="widget-title">',
-                       'after_title' => '</h2>',
+                           'name'           => __( 'Footer Left', 'nona' ),
+                           'id'             => 'footer-left',
+                           'description'    => __( 'Located at the bottom of the theme to the left side of the layout.', 'nona' ),
+                           'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                           'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+                           'before_title'   => '<h2 class="widget-title">',
+                           'after_title'    => '</h2>',
                         ) );
 register_sidebar( array(
-                       'name' => 'Footer Middle',
-                       'id' => 'footer-middle',
-                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-                       'after_widget' => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-                       'before_title' => '<h2 class="widget-title">',
-                       'after_title' => '</h2>',
+                           'name'           => __( 'Footer Middle', 'nona' ),
+                           'id'             => 'footer-middle',
+                           'description'    => __( 'Located at the bottom of the theme in the middle of the layout.', 'nona' ),
+                           'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                           'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+                           'before_title'   => '<h2 class="widget-title">',
+                           'after_title'    => '</h2>',
                         ) );
 register_sidebar( array(
-                       'name' => 'Footer Right',
-                       'id' => 'footer-right',
-                       'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-                       'after_widget' => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
-                       'before_title' => '<h2 class="widget-title">',
-                       'after_title' => '</h2>',
+                           'name'           => __( 'Footer Right', 'nona' ),
+                           'id'             => 'footer-right',
+                           'description'    => __( 'Located at the bottom of the theme to the right side of the layout.', 'nona' ),
+                           'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+                           'after_widget'   => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
+                           'before_title'   => '<h2 class="widget-title">',
+                           'after_title'    => '</h2>',
                         ) );
 // End Widgets
 ?>
-<?php /* Last revised October 29, 2011 v1.4 */ ?>
+<?php /* Last revised November 5, 2011 v1.4 */ ?>
