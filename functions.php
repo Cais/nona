@@ -42,16 +42,9 @@ if ( ! function_exists( 'nona_setup' ) ):
             }
 
             if ( ! function_exists( 'nona_list_pages' ) ) {
-                function nona_list_pages() {
-                        if ( is_home() || is_front_page() ) { ?>
-                            <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
-                        <?php } else { ?>
-                            <ul class="nav-menu">
-                                <li><a href="<?php echo home_url(); ?>"><?php _e( 'Home', 'nona' ); ?></a></li>
-                                <?php wp_list_pages( 'title_li=' ); ?>
-                            </ul>
-                        <?php }
-                }
+                function nona_list_pages() { ?>
+                        <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
+                <?php }
             }
 
             add_action( 'init', 'register_nona_menu' );

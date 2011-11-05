@@ -14,6 +14,7 @@
 * Removed `bns_menu` function - not used
 * Removed `nona_get_page_number` function - no longer used
 * Removed display of 'Featured Image' in `single.php` for aesthetic reasons
+* Removed default 'Home' link in menus when not on home page; leave as end-user choice via custom menu
 * Replaced `the_author_posts_link` (deprecated) with `get_author_posts_url`
 * Updated 'BNS Dynamic Copyright' and renamed to 'NoNa Dynamic Copyright'
 * Updated 'BNS Theme Version' and renamed to 'NoNa Theme Version'
