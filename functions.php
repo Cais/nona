@@ -65,7 +65,13 @@ if ( ! function_exists( 'nona_setup' ) ):
     }
 endif;
 
-// nona_login
+/**
+ * NoNa Login
+ *
+ * @version:    1.4
+ * @since:      1.4 November 6, 2011
+ *
+ */
 if ( ! function_exists( 'nona_login' ) ) {
     function nona_login() {
             $login_url = home_url() . '/wp-admin/';
@@ -86,11 +92,12 @@ if ( ! function_exists( 'nona_login' ) ) {
 }
 // End nona_login
 
-/* NoNa Dynamic Copyright
+/**
+ * NoNa Dynamic Copyright
  * Derived from the original BNS Dynamic Copyright
  *
- * @version: 1.4
- * @since: October 12, 2011
+ * @version:    1.4
+ * @since:      1.4  October 12, 2011
  *
  */
 if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
@@ -145,13 +152,14 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 }
 // End BNS Dynamic Copyright
 
-/* NoNa Theme Version
+/**
+ * NoNa Theme Version
  * Derived from the original BNS Theme Version
  *
- * @version: 1.4
- * @since: October 12, 2011
+ * @version:    1.4
+ * @since:      1.4  October 12, 2011
  *
- **/
+ */
 if ( ! function_exists( 'nona_theme_version' ) ) {
     function nona_theme_version () {
             $blog_css_url = get_stylesheet_directory() . '/style.css';
@@ -205,4 +213,4 @@ register_sidebar( array(
                         ) );
 // End Widgets
 ?>
-<?php /* Last revised November 5, 2011 v1.4 */ ?>
+<?php /* Last revised November 6, 2011 v1.4 */ ?>

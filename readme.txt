@@ -1,5 +1,5 @@
 ==== Readme for Nona Theme ====
-@date: October 24, 2011
+@date: November 6, 2011
 
 == Table of Contents ==
 * To-Do
@@ -29,6 +29,6 @@
 * http://themes.trac.wordpress.org/ticket/2582
 
 == Test Environment ==
-* WordPress Version: 3.3-beta2 (as of Oct 24, 2011)
+* WordPress 3.3-beta2-19067
 * PHP version: 5.2.17
 * MySQL version: 5.1.56
