@@ -69,7 +69,7 @@ img.alignright, img.right { display: inline; margin:0 0 8px 8px; }
 
 /*= The Starting Line - Edit after this point =*/
 body {
-    background: black url(images/GrungeOverlayTile.png);
+    background: black url(images/GrungeOverlayTileSmall.png);
 	color: #000000;
 	font-size: 115%;
 	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;

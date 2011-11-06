@@ -1,5 +1,5 @@
 ==== Changelog.txt ====
-@date: November 5, 2011
+@date: November 6, 2011
 
 == Version 1.4 ==
 * released ...
@@ -22,8 +22,8 @@
 == CSS ==
 * `font-size` changed to base of 115% from 18px
 * Changed font-sizes changed to percentage base; some additional adjustments made
-* Change main background image to `GrungeOverlayTile.png` for better seamless tiling
-* Change `GrungeOverlayTile.png` background property to 'body' tag and remove `#full-screen`
+* Change main background image to `GrungeOverlayTileSmall.png` for better seamless tiling
+* Change `GrungeOverlayTileSmall.png` background property to 'body' tag and remove `#full-screen`
 * Added more consistent formatting
 * Added `max-width` parameter to address gallery with up to 10 columns
 * Added CSS to support `editor-style`
