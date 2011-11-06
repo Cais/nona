@@ -27,6 +27,7 @@
 
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
+* http://themes.trac.wordpress.org/ticket/5740 - version 1.4
 
 == Test Environment ==
 * WordPress 3.3-beta2-19067
