@@ -1,11 +1,7 @@
-==== Changelog.txt ====
-@date: November 6, 2011
-
+=== NoNa ===
 == Version 1.4 ==
-* released November 6, 2011
-* published ...
-
-== Code ==
+Changelog: November 6, 2011
+= Code =
 * Added textdomain as needed to string functions
 * Added previous and next post navigation in the `single.php` template
 * Added `wp_link_pages` after every instance of `the_content`
@@ -19,7 +15,7 @@
 * Updated 'BNS Dynamic Copyright' and renamed to 'NoNa Dynamic Copyright'
 * Updated 'BNS Theme Version' and renamed to 'NoNa Theme Version'
 
-== CSS ==
+= CSS =
 * `font-size` changed to base of 115% from 18px
 * Changed font-sizes changed to percentage base; some additional adjustments made
 * Change main background image to `GrungeOverlayTileSmall.png` for better seamless tiling
@@ -33,40 +29,40 @@
 * Removed all empty elements (except those required by WordPress guidelines)
 * General clean-up with minor optimizations and additions
  
-== Code & CSS ==
+= Code & CSS =
 * Updated menu system
 * Cleaned up widget code in functions.php
 * Cleaned up template code eliminating unneeded code
 
-== Miscellaneous ==
+= Miscellaneous =
 * Changed to 'new' changelog format
 * Corrected Theme Name to NoNa
 * Update `readme.txt` with better 'markdown'
 * Update `changelog.txt` with better 'markdown'
 * Add `support.txt` file
 
-== Internet Browsers Reviewed ==
+= Internet Browsers Reviewed =
 * Apple Safari v5.1.1
 * Firefox v7.0.1
 * Google Chrome v14.0
 * Internet Explorer v9.0
 * Opera v11.52
 
-****
---------------------------------------------------------------------------------
-=== Version 1.3.1 ===
+/** ------------------------------------------------------------------------- */
+
+== Version 1.3.1 ==
 * released: January 13, 2011
 * Trac ticket: http://themes.trac.wordpress.org/ticket/2582
 * correct for missing 'echo' on home_url() calls
 
-=== Version 1.3 ===
+== Version 1.3 ==
 * added WP3.0 custom menu functionality
 * modified the theme description for clarity
 * updated call to search form with get_search_form()
 * added readme.txt file (includes TO-DO list)
 * added post-thumbnail support to all templates
 
-=== Version 1.2 ===
+== Version 1.2 ==
 * released: July 5, 2010
 * NB: This theme is WordPress 3.0+ compatible, earlier versions may not be able to use it.
 * cleaned up code to meet WP Standards
@@ -74,13 +70,13 @@
 * added comment_form for WP3.0
 * miscellaneous updates to better reflect Theme Development Checklist criteria
 
-=== Version 1.1 ===
+== Version 1.1 ==
 * added clearing div to end of the_Loop
 * added wp_link_pages()
 
-=== Version 1.0.1 ===
+== Version 1.0.1 ==
 * variable name change in functions.php
 * CSS: changed '.widget p'
 
-=== Version 1.0 ===
+== Version 1.0 ==
 * Initial Release
