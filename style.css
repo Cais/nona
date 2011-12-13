@@ -2,36 +2,44 @@
 Theme Name: NoNa
 Theme URI: http://buynowshop.com/themes/nona/
 Description: Missing the pretty pin-up girl posing in the header, this grunge based theme originally known as <a href="http://buynowshop.com/themes/pinup-meets-grunge/">Pinup Meets Grunge</a> beautifully blends custom background colors. This built-in options give you the creative opportunity to truly make this theme your own. Do not be scared off by the dark look, try installing your own copy and playing with the custom background color option yourself. Remember, if you are not a fan of "blank" headers feel free to drop us a note and we can discuss additional options. <strong>NB: This Theme should be used with WordPress 3.0 or higher; earlier versions of WordPress may not support all of the features and functions used by this Theme.</strong>
-Version: 1.4
+Version: 1.4.1-alpha
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
-Tags: black, red, white, dark, light, two-columns, right-sidebar, fixed-width, custom-colors, translation-ready, threaded-comments, sticky-post, custom-background, custom-menu
+WordPress Version Required: ...
+Tested Up To: 3.3
+Tags: brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-/* Last revised November 6, 2011 v1.4 */
+/**
+ * Copyright 2009-2011  Edward Caissie  (email : edward.caissie@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2, as published by the
+ * Free Software Foundation.
+ *
+ * You may NOT assume that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to:
+ *
+ *      Free Software Foundation, Inc.
+ *      51 Franklin St, Fifth Floor
+ *      Boston, MA  02110-1301  USA
+ *
+ * The license for this software can also likely be found here:
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ */
 
-/*  Copyright 2009-2011  Edward Caissie  (email : edward.caissie@gmail.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
-
-    You may NOT assume that you can use any other version of the GPL.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-    The license for this software can also likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/**
+ * See index.php for additional program documentation and license information
+ * references.
+ */
 
 /*-- YUI Reset: Start --*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
