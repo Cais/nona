@@ -1,5 +1,5 @@
-==== Readme for Nona Theme ====
-@date: November 6, 2011
+==== Nona Readme (readme.txt) ====
+Last revised November 6, 2011
 
 == Table of Contents ==
 * To-Do
@@ -27,7 +27,7 @@
 
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
-* http://themes.trac.wordpress.org/ticket/5740 - version 1.4
+* http://themes.trac.wordpress.org/ticket/5740 - version 1.4 - approved December 12, 2011
 
 == Test Environment ==
 * WordPress 3.3-beta2-19067
