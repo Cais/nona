@@ -13,9 +13,9 @@
  * @link        https://github.com/Cais/nona/
  * @link        http://wordpress.org/extend/themes/nona
  *
- * @version     1.4.1-alpha
+ * @version     1.5
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2011, Edward Caissie
+ * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
