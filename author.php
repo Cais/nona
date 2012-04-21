@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Template
+ * Author Template
  *
  * @package     NoNa
  * @since       1.0
