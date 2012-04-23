@@ -1,7 +1,16 @@
-/* Editor Style CSS Document for Nona Theme
- * Last revised October 12, 2011 v1.4
+/**
+ * Editor Style CSS Document for Nona Theme
+ *
+ * @package     NoNa
+ * @since       1.4
+ *
+ * @link        http://buynowshop.com/themes/nona/
+ * @link        https://github.com/Cais/nona/
+ * @link        http://wordpress.org/extend/themes/nona
+ *
+ * @author      Edward Caissie <edward.caissie@gmail.com>
+ * @copyright   Copyright (c) 2009-2012, Edward Caissie
  */
-
 html .mceContentBody { max-width: 595px; }
 
 a { color: #000000; }
@@ -11,11 +20,12 @@ a:hover { color: #e3e3e3; }
 a:focus {}
 a:active {}
 
-code { /* Use with "pre" for text styling */
+code {
+    /* Use with "pre" for text styling */
+    color: #000;
 	font-family: "Courier New", Courier, sans-serif;
 	font-size: 100%;
 	font-weight: bold;
-	color: #000;
 
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
 	white-space: pre-wrap; /* css-3 */
@@ -24,7 +34,10 @@ code { /* Use with "pre" for text styling */
 	word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
-blockquote { margin: 9px 18px 9px 3px; padding-left: 30px; }
+blockquote {
+    margin: 9px 18px 9px 3px;
+    padding-left: 30px;
+}
 
 em { font-style: italic; }
 
@@ -36,15 +49,30 @@ h4 { margin-bottom: 6px; }
 h5 { font-size: 95%; margin-bottom: 5px; }
 h6 { font-size: 75%; margin-bottom: 4px; }
 
-hr { background: #939393; border: 1px solid black; margin: 2px auto; width: 100%; }
+hr {
+    background: #939393;
+    border: 1px solid black;
+    margin: 2px auto;
+    width: 100%;
+}
 
 /*-= Images =-*/
 img { font-size: 75%; }
 
-p img { height: auto; max-width: 100%; padding: 0; }
+p img {
+    height: auto;
+    max-width: 100%;
+    padding: 0;
+}
 
 /*-- Captions --*/
-.caption { background: #E5F2FF; border: 1px solid #E5E5FF; font-size: 105%; margin: 5px; padding: 5px; }
+.caption {
+    background: #E5F2FF;
+    border: 1px solid #E5E5FF;
+    font-size: 105%;
+    margin: 5px;
+    padding: 5px;
+}
 
 /* Gallery columns up to three (3) are handled by default in the theme.
  * Four (4) or more columns requires a maximum width be set for the image
@@ -74,15 +102,16 @@ li { padding-left: 20px; }
 
 p { margin: 9px 0; }
 
-pre { /* Use for "code" text styling */
+pre {
+    /* Use for "code" text styling */
+    border: 2px inset;
+    color: #000;
+   	font-style: italic;
+   	font-size: 100%;
 	margin: 0;
 	padding: 5px;
-	border: 2px inset;
-	font-style: italic;
-	font-size: 100%;
-	color: #000;
-	text-align: left;
 	overflow: auto;
+    text-align: left;
 
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
 	white-space: pre-wrap; /* css-3 */

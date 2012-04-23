@@ -1,6 +1,6 @@
 <?php
 /**
- * Comments Template
+ * Date Template
  *
  * @package     NoNa
  * @since       1.0
