@@ -105,8 +105,8 @@ endif;
  * @version 1.5
  * Added $args to function - adopted from BNS-Login plugin
  */
-if ( ! function_exists( 'NoNa_Login' ) ) {
-    function NoNa_Login( $args = '' ) {
+if ( ! function_exists( 'nona_login' ) ) {
+    function nona_login( $args = '' ) {
         $values = array( 'login' => '', 'after_login' => '', 'logout' => '', 'goto' => '', 'separator' => '' );
         $args = wp_parse_args( $args, $values );
 
@@ -122,10 +122,10 @@ if ( ! function_exists( 'NoNa_Login' ) ) {
          * @var $sep            string - $separator wrapper for styling purposes, etc. - just in case ...
          */
         $login        = empty( $args['login'] ) ? sprintf( __( 'Log in here!', 'nona-login' ) ) : $args['login'];
-        $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!', 'nona-login' ) ) : $args['after_login'];
+        $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!<br />', 'nona-login' ) ) : $args['after_login'];
         $logout       = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'nona-login' ) ) : $args['logout'];
-        $goto         = empty( $args['goto'] ) ? sprintf( __( 'Go to Dashboard', 'nona-login' ) ) : $args['goto'];
-        $separator    = empty( $args['separator'] ) ? sprintf( __( ' &deg;&deg; ' ) ) : $args['separator'];
+        $goto         = empty( $args['goto'] ) ? sprintf( __( '<br />Go to Dashboard', 'nona-login' ) ) : $args['goto'];
+        $separator    = empty( $args['separator'] ) ? sprintf( __( ' &laquo;&raquo; ' ) ) : $args['separator'];
         $sep          = '<span class="nona-login-separator">' . $separator . '</span>';
 
         /** The real work gets done next ...  */
@@ -149,7 +149,7 @@ if ( ! function_exists( 'NoNa_Login' ) ) {
             $output .= wp_register( $sep, '', false );
             $output .= '</div>';
         }
-        echo apply_filters( 'NoNa_Login', $output, $args );
+        echo apply_filters( 'nona_login', $output, $args );
     }
 }
 
