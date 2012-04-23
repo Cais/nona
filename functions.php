@@ -121,8 +121,6 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
     /**
      * NoNa Dynamic Copyright
      *
-     * Derived from the original BNS Dynamic Copyright
-     *
      * @since   1.4
      *
      * @param   string $args
@@ -182,20 +180,38 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
     /**
      * NoNa Theme Version
      *
-     * Derived from the original BNS Theme Version
-     *
      * @since   1.4
+     *
+     * Last revised April 23, 2012
+     * @version 1.5
+     * Addressed deprecated function call to `get_theme_data`
      */
     function nona_theme_version () {
-        $blog_css_url = get_stylesheet_directory() . '/style.css';
-        $my_theme_data = get_theme_data( $blog_css_url );
-        $parent_blog_css_url = get_template_directory() . '/style.css';
-        $parent_theme_data = get_theme_data( $parent_blog_css_url );
+        global $wp_version;
+        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
+            $blog_css_url = get_stylesheet_directory() . '/style.css';
+            $my_theme_data = get_theme_data( $blog_css_url );
+            $parent_blog_css_url = get_template_directory() . '/style.css';
+            $parent_theme_data = get_theme_data( $parent_blog_css_url );
 
-        if ( is_child_theme() ) {
-            printf( __( '<br /><span id="bns-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+            if ( is_child_theme() ) {
+                printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
+            } else {
+                printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            }
         } else {
-            printf( __( '<br /><span id="bns-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+            /** @var $active_theme_data - array object containing the current theme's data */
+            $active_theme_data = wp_get_theme();
+            if ( is_child_theme() ) {
+                /** @var $parent_theme_data - array object containing the Parent Theme's data */
+                $parent_theme_data = $active_theme_data->parent();
+                printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by %5$s.</span>', 'nona' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    $parent_theme_data['Name'],
+                    $parent_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
+            }
         }
     }
 }
