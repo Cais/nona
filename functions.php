@@ -90,32 +90,69 @@ if ( ! function_exists( 'nona_setup' ) ):
     }
 endif;
 
-if ( ! function_exists( 'nona_login' ) ) {
-    /**
-     * NoNa Login
-     *
-     * @since   1.4
-     *
-     * @todo Fix this mess ...
-     */
-    function nona_login() {
-        $login_url = home_url() . '/wp-admin/';
+/**
+ * NoNa Login
+ *
+ * Creates a link to the dashboard, or a login / register link.
+ *
+ * @package NoNa
+ * @since 1.4
+ *
+ * @param string $args
+ * @return mixed|string|void
+ *
+ * Last revised April 23, 2012
+ * @version 1.5
+ * Added $args to function - adopted from BNS-Login plugin
+ */
+if ( ! function_exists( 'NoNa_Login' ) ) {
+    function NoNa_Login( $args = '' ) {
+        $values = array( 'login' => '', 'after_login' => '', 'logout' => '', 'goto' => '', 'separator' => '' );
+        $args = wp_parse_args( $args, $values );
+
+        /** Initialize $output - start with an empty string */
+        $output = '';
+        /**
+         * Defaults values:
+         * @var $login          string - anchor text for log in link
+         * @var $after_login    string - user is logged in message
+         * @var $logout         string - anchor text for log out link
+         * @var $goto           string - anchor text linking to "Dashboard"
+         * @var $separator      string - characters used to separate link/message texts
+         * @var $sep            string - $separator wrapper for styling purposes, etc. - just in case ...
+         */
+        $login        = empty( $args['login'] ) ? sprintf( __( 'Log in here!', 'nona-login' ) ) : $args['login'];
+        $after_login  = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!', 'nona-login' ) ) : $args['after_login'];
+        $logout       = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'nona-login' ) ) : $args['logout'];
+        $goto         = empty( $args['goto'] ) ? sprintf( __( 'Go to Dashboard', 'nona-login' ) ) : $args['goto'];
+        $separator    = empty( $args['separator'] ) ? sprintf( __( ' &deg;&deg; ' ) ) : $args['separator'];
+        $sep          = '<span class="nona-login-separator">' . $separator . '</span>';
+
+        /** The real work gets done next ...  */
+        $login_url = home_url( '/wp-admin/' );
         if ( is_user_logged_in() ) {
-            echo '<div id="nona-logged-in" class="nona-login">' . __( 'You are logged in! ', 'nona' );
+            $output .= '<div id="nona-logged-in" class="nona-login">' . $after_login . $sep;
+            /** Multisite - logout returns to Multisite main domain page */
             if ( function_exists( 'get_current_site' ) ) {
-                // WPMU, Multisite - logout returns to WPMU, or Multisite, main domain page
                 $current_site = get_current_site();
                 $home_domain = 'http://' . $current_site->domain . $current_site->path;
-                echo '<a href="' . wp_logout_url( $home_domain ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
+                $logout_url = wp_logout_url( $home_domain );
             } else {
-                echo '<a href="' . wp_logout_url( home_url() ) . '" title="' . __( 'Logout', 'nona' ) . '">' . __( 'Logout', 'nona' ) . '</a>';
+                $logout_url = wp_logout_url( home_url() );
             }
-            echo __( ' or go to the ', 'nona' ) . '<a href="' . $login_url . '" title="' . __( 'dashboard', 'nona' ) . '">' . __( 'dashboard', 'nona' ) . '</a>.</div>';
-        } else { // Return to blog home page
-            echo '<div id="nona-logged-out" class="nona-login"><a href="' . $login_url . '" title="' . __( 'Log in here', 'nona' ) . '">' . __( 'Log in here!', 'nona' ) . '</a></div>';
+            $output .= '<a href="' . $logout_url . '" title="' . $logout . '">' . $logout . '</a>' . $sep;
+            $output .= '<a href="' . $login_url . '" title="' . $goto . '">' . $goto . '</a></div>';
+        } else {
+            /** if user is not logged in display login; or, register if allowed */
+            $output .= '<div id="nona-logged-out" class="nona-login">';
+            $output .= '<a href="' . $login_url . '" title="' . $login . '">' . $login . '</a>';
+            $output .= wp_register( $sep, '', false );
+            $output .= '</div>';
         }
+        echo apply_filters( 'NoNa_Login', $output, $args );
     }
 }
+
 
 if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
     /**
@@ -171,7 +208,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
                 : $output .= ' ' . $args['end'];
 
         /** Construct and sprintf the copyright notice */
-        $output = sprintf( __( '<span id="bns-dynamic-copyright"> %1$s </span><!-- #bns-dynamic-copyright -->', 'nona' ), $output );
+        $output = sprintf( __( '<span id="nona-dynamic-copyright"> %1$s </span><!-- #nona-dynamic-copyright -->', 'nona' ), $output );
         echo apply_filters( 'nona_dynamic_copyright', $output, $args );
     }
 }
@@ -211,6 +248,11 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
                     $parent_theme_data['Name'],
                     $parent_theme_data['Version'],
                     '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
+            } else {
+                printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ),
+                    $active_theme_data['Name'],
+                    $active_theme_data['Version'],
+                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
             }
         }
     }
