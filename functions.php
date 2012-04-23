@@ -24,8 +24,16 @@ if ( ! isset( $content_width ) ) $content_width = 595;
 
 add_action( 'after_setup_theme', 'nona_setup' );
 if ( ! function_exists( 'nona_setup' ) ):
-    /** Tell WordPress to run nona_setup() when the 'after_setup_theme' hook is run. */
+    /**
+     * NoNa Setup
+     *
+     * Tell WordPress to run nona_setup() when the 'after_setup_theme' hook is run.
+     *
+     * @version 1.5
+     * Addressed deprecated function call to `add_custom_background`
+     */
     function nona_setup() {
+        global $wp_version;
         /** This theme styles the visual editor with editor-style.css to match the theme style. */
         add_editor_style();
         /** This theme uses post thumbnails */
@@ -34,7 +42,14 @@ if ( ! function_exists( 'nona_setup' ) ):
         add_theme_support( 'automatic-feed-links' );
 
         /** This theme allows users to set a custom background */
-        add_custom_background();
+        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
+            add_custom_background();
+        } else {
+            add_theme_support( 'custom-background' /*, array(
+                'default-color' => '000000',
+                'default-image' => get_stylesheet_directory_uri() . '/images/GrungeOverlayTileSmall.png'
+            )*/ );
+        }
 
         if ( ! function_exists( 'nona_nav_menu' ) ) {
             /** Add wp_nav_menu() custom menu support */

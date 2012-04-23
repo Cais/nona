@@ -1,4 +1,18 @@
 === NoNa ===
+== Version 1.5 ==
+Changelog: April 23, 2012
+= Code =
+* Addressed deprecated function call to `add_custom_background`
+
+= Internet Browsers Reviewed =
+* Apple Safari v5.1.5
+* Firefox v11.0
+* Google Chrome v18.0
+* Internet Explorer v9.0
+* Opera v11.62
+
+/** ------------------------------------------------------------------------- */
+
 == Version 1.4 ==
 Changelog: November 6, 2011
 = Code =
@@ -40,13 +54,6 @@ Changelog: November 6, 2011
 * Update `readme.txt` with better 'markdown'
 * Update `changelog.txt` with better 'markdown'
 * Add `support.txt` file
-
-= Internet Browsers Reviewed =
-* Apple Safari v5.1.1
-* Firefox v7.0.1
-* Google Chrome v14.0
-* Internet Explorer v9.0
-* Opera v11.52
 
 /** ------------------------------------------------------------------------- */
 
