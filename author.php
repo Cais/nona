@@ -11,6 +11,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * Last revised April 23, 2012
+ * @version     1.5
+ * Added conditional check to only display website (and email) if exists, as well as only display biography if it exists
  */
 
 get_header();
@@ -22,8 +26,12 @@ $curauth = ( get_query_var( 'author_name ') ) ? get_user_by( 'id', get_query_var
         <div id="author" class="<?php if ( user_can( $curauth, 'manage_options' ) ) echo 'administrator'; ?>">
             <h2><?php _e( 'About ', 'nona' ); ?><?php echo $curauth->display_name; ?></h2>
             <ul>
-                <li><?php _e( 'Website', 'nona' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e( 'or', 'nona' ); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'nona' ); ?></a></li>
-                <li><?php _e( 'Biography', 'nona' ); ?>: <?php echo $curauth->user_description; ?></li>
+                <?php if ( ! empty( $curauth->user_url ) ) { ?>
+                    <li><?php _e( 'Website', 'nona' ); ?>: <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a> <?php _e( 'or', 'nona' ); ?> <a href="mailto:<?php echo $curauth->user_email; ?>"><?php _e( 'email', 'nona' ); ?></a></li>
+                <?php }
+                if ( ! empty( $curauth->user_description ) ) { ?>
+                    <li><?php _e( 'Biography', 'nona' ); ?>: <?php echo $curauth->user_description; ?></li>
+                <?php } ?>
             </ul>
         </div><!-- #author -->
         <h2><?php _e( 'Posts by ', 'nona' ); ?><?php echo $curauth->display_name; ?>:</h2>

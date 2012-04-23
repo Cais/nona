@@ -3,6 +3,7 @@
 Changelog: April 23, 2012
 = Code =
 * Added $args to `nona_login` function - adopted from BNS-Login plugin
+* Added conditional check to only display website (and email) if exists, as well as only display biography if it exists
 * Addressed deprecated function call to `add_custom_background`
 * Addressed deprecated function call to `get_theme_data`
 
