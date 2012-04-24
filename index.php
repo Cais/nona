@@ -37,7 +37,11 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Last revised April 23, 2012
+ * Last revised April 24, 2012
+ *
+ * @todo Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
+ * @todo Review date.php template for better ways to incorporate end-user time and date settings
+ * @todo Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
  */
 
 get_header(); ?>

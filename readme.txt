@@ -1,35 +1,23 @@
-==== Nona Readme (readme.txt) ====
-Last revised November 6, 2011
+==== Nona ====
+=== Readme.Txt ===
+Last revised April 24, 2012
 
 == Table of Contents ==
 * To-Do
 * Notes
+* Questions & Answers
 * Review Tickets
-* Test Environment
 
 == To-Do ==
-* [x] Menu - Theme does not currently support sub-menu items off of the main menu, this will be addressed in a future version.
-* [x] Editor Style - stylesheet needs to be added/completed; add_editor_style() function can be un-commented afterward.
-* [x] Clean up namespace references on theme specific functions; review generic functions using the 'bns_' namespace
-* [x] Clean up widget code in functions.php
-* [x] Clean up unnecessary backward compatibility checks
-* [x] Clean up internationalization strings
-* [x] Re-create main background image for better seamless tiling
-* [x] Question: Should `wp_link_pages` be used after every instance of `the_content`? Yes
-* [x] Sort out Internet Explorer compatibility issues: link hover and scrolling background issues; etc.
-* [ ] Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
-* [ ] Review date.php template for better ways to incorporate end-user time and date settings
-* [ ] Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
+NB: Open To-Do List is now found in 'index.php'
 
 == Notes ==
 * Future changelog entries will reflect commits to the GitHub repository: https://github.com/Cais/nona
 * Some very light background colors will make the links hard to read when hovering over them. See the CSS element `a:hover { color: #e3e3e3; }` in style.css if you want to change this color.
 
+== Questions & Answers ==
+* TBA
+
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
-* http://themes.trac.wordpress.org/ticket/5740 - version 1.4 - approved December 12, 2011
-
-== Test Environment ==
-* WordPress 3.3-beta2-19067
-* PHP version: 5.2.17
-* MySQL version: 5.1.56
+* http://themes.trac.wordpress.org/ticket/5740 - version 1.4
