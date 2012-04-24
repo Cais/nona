@@ -1,6 +1,6 @@
 === NoNa ===
 == Version 1.5 ==
-Changelog: April 23, 2012
+Changelog: April 24, 2012
 = Code =
 * Added $args to `nona_login` function - adopted from BNS-Login plugin
 * Added conditional check to only display website (and email) if exists, as well as only display biography if it exists
@@ -9,6 +9,7 @@ Changelog: April 23, 2012
 
 = CSS =
 * Corrected various class names ... changed from 'bns-' to 'nona-'
+* Form aesthetics improved
 
 = Internet Browsers Reviewed =
 * Apple Safari v5.1.5

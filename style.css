@@ -513,8 +513,29 @@ input, textarea {
     border-radius: 10px;
 }
 
-textarea { width: 98%; }
-textarea#text_area { max-width: 595px; }
+p.comment-form-author label,
+p.comment-form-email label,
+p.comment-form-url label {
+    display: inline-block;
+    float: left;
+    padding-top: 10px;
+    width: 80px;
+}
+
+p.comment-form-author span.required,
+p.comment-form-email span.required {
+    margin-left: -7px;
+}
+
+input#author,
+input#email,
+input#url { padding: 5px; }
+
+textarea { width: 97%; }
+
+div#respond form#commentform p.form-submit {
+    padding-right: 5px;
+}
 /* =- End Forms -= ---*/
 
 /*-= Comments =- ---*/
@@ -604,7 +625,7 @@ form#commentform p.form-submit input#submit {
     border-radius: 13px;
 }
 
-textarea#comment { padding: 0 0 0 5px; }
+textarea#comment { padding: 5px; }
 
 #respond { margin-top: 10px; }
 /*-- End Threaded Comments --*/
