@@ -21,3 +21,4 @@ NB: Open To-Do List is now found in 'index.php'
 == Review Tickets ==
 * http://themes.trac.wordpress.org/ticket/2582
 * http://themes.trac.wordpress.org/ticket/5740 - version 1.4
+* http://themes.trac.wordpress.org/ticket/7530 - version 1.5
