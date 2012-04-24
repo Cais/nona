@@ -4,6 +4,7 @@
       <w>alignleft</w>
       <w>alignright</w>
       <w>bloginfo</w>
+      <w>changelog</w>
       <w>commentlist</w>
       <w>enqueue</w>
       <w>firefox</w>
@@ -16,6 +17,7 @@
       <w>permalinks</w>
       <w>pingback</w>
       <w>singlecomments</w>
+      <w>textdomain</w>
       <w>userid</w>
     </words>
   </dictionary>
