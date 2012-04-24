@@ -25,7 +25,7 @@ get_header(); ?>
                     <div id="page-meta">
                         <?php
                         comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( '', 'nona' ) );
-                        edit_post_link( __( 'Edit this page', 'nona' ), __( '&gt ', 'nona' ), __( '', 'nona' ) ); ?>
+                        edit_post_link( __( 'Edit this page', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) ); ?>
                     </div><!-- #page-meta -->
                     <?php the_content( __( 'Read more ...', 'nona' ) ); ?>
                     <div class="clear"></div><!-- For inserted media at the end of the post -->

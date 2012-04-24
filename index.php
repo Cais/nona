@@ -61,7 +61,7 @@ get_header(); ?>
                         the_time( get_option( 'date_format' ) );
                     }
                     echo ' '; comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
-                    edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) );
+                    edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
                     _e( '<br />in ', 'nona' ); the_category( ', ' ); ?><br />
                     <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                 </div><!-- .post-details -->

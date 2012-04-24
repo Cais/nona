@@ -24,7 +24,7 @@ get_header(); ?>
                 <div class="post-details">
                     <?php printf( __( 'Posted by %1$s on %2$s ', 'nona' ), get_the_author_meta( 'display_name' ), get_the_time( get_option( 'date_format' ) ) ); ?> | <a class="rss" href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php _e( 'Subscribe to my feed', 'nona' ); ?>"><?php _e( 'Subscribe', 'nona' ); ?></a>
                     <?php
-                    edit_post_link( __( 'Edit', 'nona' ), __( '&#124;', 'nona' ), __( '', 'nona' ) );
+                    edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
                     _e( '<br />in ', 'nona' ); the_category( ', ' ); ?><br />
                     <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
                 </div><!-- .post-details -->
