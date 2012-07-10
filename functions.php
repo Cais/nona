@@ -29,8 +29,9 @@ if ( ! function_exists( 'nona_setup' ) ):
      *
      * Tell WordPress to run nona_setup() when the 'after_setup_theme' hook is run.
      *
-     * @version 1.5
-     * Addressed deprecated function call to `add_custom_background`
+     * @version 1.6
+     * @date    July 10, 2012
+     * Removed deprecated function call to `add_custom_background`
      */
     function nona_setup() {
         global $wp_version;
@@ -42,26 +43,19 @@ if ( ! function_exists( 'nona_setup' ) ):
         add_theme_support( 'automatic-feed-links' );
 
         /** This theme allows users to set a custom background */
-        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
-            add_custom_background();
-        } else {
-            add_theme_support( 'custom-background' /*, array(
-                'default-color' => '000000',
-                'default-image' => get_stylesheet_directory_uri() . '/images/GrungeOverlayTileSmall.png'
-            )*/ );
-        }
+        add_theme_support( 'custom-background', array(
+            'default-color' => '000000',
+            'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
+        ) );
 
         if ( ! function_exists( 'nona_nav_menu' ) ) {
             /** Add wp_nav_menu() custom menu support */
             function nona_nav_menu() {
-                if ( function_exists( 'wp_nav_menu' ) )
-                    wp_nav_menu( array(
-                        'menu_class' => 'nav-menu',
-                        'theme_location' => 'top-menu',
-                        'fallback_cb' => 'nona_list_pages'
-                    ) );
-                else
-                    nona_list_pages();
+                wp_nav_menu( array(
+                    'menu_class' => 'nav-menu',
+                    'theme_location' => 'top-menu',
+                    'fallback_cb' => 'nona_list_pages'
+                ) );
             }
         }
 
@@ -219,41 +213,27 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
      *
      * @since   1.4
      *
-     * Last revised April 23, 2012
-     * @version 1.5
-     * Addressed deprecated function call to `get_theme_data`
+     * @version 1.6
+     * @date    July 10, 2012
+     * Removed deprecated function call to `get_theme_data`
      */
     function nona_theme_version () {
-        global $wp_version;
-        if ( version_compare( $wp_version, "3.4-alpha", "<" ) ) {
-            $blog_css_url = get_stylesheet_directory() . '/style.css';
-            $my_theme_data = get_theme_data( $blog_css_url );
-            $parent_blog_css_url = get_template_directory() . '/style.css';
-            $parent_theme_data = get_theme_data( $parent_blog_css_url );
-
-            if ( is_child_theme() ) {
-                printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by <a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], $parent_theme_data['Name'], $parent_theme_data['Version'] );
-            } else {
-                printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ), $my_theme_data['Name'], $my_theme_data['Version'], '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
-            }
+        /** @var $active_theme_data - array object containing the current theme's data */
+        $active_theme_data = wp_get_theme();
+        if ( is_child_theme() ) {
+            /** @var $parent_theme_data - array object containing the Parent Theme's data */
+            $parent_theme_data = $active_theme_data->parent();
+            printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by %5$s.</span>', 'nona' ),
+                $active_theme_data['Name'],
+                $active_theme_data['Version'],
+                $parent_theme_data['Name'],
+                $parent_theme_data['Version'],
+                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
         } else {
-            /** @var $active_theme_data - array object containing the current theme's data */
-            $active_theme_data = wp_get_theme();
-            if ( is_child_theme() ) {
-                /** @var $parent_theme_data - array object containing the Parent Theme's data */
-                $parent_theme_data = $active_theme_data->parent();
-                printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by %5$s.</span>', 'nona' ),
-                    $active_theme_data['Name'],
-                    $active_theme_data['Version'],
-                    $parent_theme_data['Name'],
-                    $parent_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
-            } else {
-                printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ),
-                    $active_theme_data['Name'],
-                    $active_theme_data['Version'],
-                    '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
-            }
+            printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ),
+                $active_theme_data['Name'],
+                $active_theme_data['Version'],
+                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
         }
     }
 }
@@ -292,4 +272,4 @@ register_sidebar( array(
     'after_widget'   => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
     'before_title'   => '<h2 class="widget-title">',
     'after_title'    => '</h2>',
-) ); ?>
+) );
