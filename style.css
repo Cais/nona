@@ -725,6 +725,17 @@ table#wp-calendar th {
 table#wp-calendar tr, table#wp-calendar td { border: none; }
 table#wp-calendar td#today { border: 1px dashed #000; }
 
+.widget_archive select,
+.widget_categories select {
+    width: 100%;
+}
+
+div.widget div.textwidget { overflow: hidden; }
+div.widget_text div.textwidget div.wp-caption { margin: 0; }
+div.widget_text div.textwidget div.wp-caption a img {
+    height: auto;
+    width: 98%;
+}
 /*=- End Sidebar -=*/
 
 /*=- Footer -=*/

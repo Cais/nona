@@ -10,6 +10,7 @@ Changelog: July 10, 2012
 
 = CSS =
 * Miscellaneous minor style changes
+* Styles for default widgets updated
 
 = Internet Browsers Reviewed =
 * Apple Safari v5.1.7
