@@ -87,8 +87,15 @@ body {
 a { color: #000000; }
 a:hover { color: #e3e3e3; }
 
-abbr { /* Abbreviations */ }
-acronym {}
+abbr,
+acronym {
+    cursor: help;
+}
+
+em,
+ins {
+    font-style: italic;
+}
 
 h1, h2, h3, h4, h5, h6 { margin-top: 0; }
 h1 { font-size: 175%; margin-bottom: 9px; }
@@ -112,6 +119,11 @@ hr {
     height: 50px;
 	margin: 0 auto;
 	width: 680px;
+}
+
+kbd,
+tt {
+    font-family: monospace;
 }
 
 p { margin: 9px 0; }

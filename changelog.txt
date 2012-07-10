@@ -9,6 +9,7 @@ Changelog: July 10, 2012
 * Updated post to post navigation in 'single.php'
 
 = CSS =
+* Miscellaneous minor style changes
 
 = Internet Browsers Reviewed =
 * Apple Safari v5.1.7
