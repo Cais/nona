@@ -11,6 +11,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * @version     1.6
+ * @date        July 10, 2012
+ * Updated post to post navigation
  */
 
 get_header(); ?>
@@ -40,12 +44,12 @@ get_header(); ?>
         endwhile; ?>
             <div id="nav-global" class="navigation">
                 <div class="left">
-                    <?php echo previous_post_link(); ?>
+                    <?php next_posts_link( __( '&laquo; Older posts', 'nona' ) ); ?>
                 </div>
                 <div class="right">
-                    <?php echo next_post_link(); ?>
+                    <?php previous_posts_link( __( 'Newer posts &raquo;', 'nona' ) ); ?>
                 </div>
-            </div><!-- .navigation -->
+            </div>
             <div class="clear"></div>
         <?php else : ?>
             <h2><?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
@@ -56,4 +60,4 @@ get_header(); ?>
     <div id="after-content"></div>
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();
