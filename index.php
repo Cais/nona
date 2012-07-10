@@ -13,7 +13,7 @@
  * @link        https://github.com/Cais/nona/
  * @link        http://wordpress.org/extend/themes/nona
  *
- * @version     1.5
+ * @version     1.6
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
  *
@@ -37,7 +37,7 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Last revised April 24, 2012
+ * Last revised July 10, 2012
  *
  * @todo Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
  * @todo Review date.php template for better ways to incorporate end-user time and date settings
@@ -94,4 +94,4 @@ get_header(); ?>
     <div id="after-content"></div>
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();
