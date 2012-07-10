@@ -2,7 +2,7 @@
 Theme Name: NoNa
 Theme URI: http://buynowshop.com/themes/nona/
 Description: Missing the pretty pin-up girl posing in the header, this grunge based theme originally known as <a href="http://buynowshop.com/themes/pinup-meets-grunge/">Pinup Meets Grunge</a> beautifully blends custom background colors. This built-in options give you the creative opportunity to truly make this theme your own. Do not be scared off by the dark look, try installing your own copy and playing with the custom background color option yourself. Remember, if you are not a fan of "blank" headers feel free to drop us a note and we can discuss additional options. <strong>NB: This Theme should be used with WordPress 3.0 or higher; earlier versions of WordPress may not support all of the features and functions used by this Theme.</strong>
-Version: 1.6-alpha
+Version: 1.6
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 WordPress Version Required: 3.0
@@ -346,9 +346,10 @@ ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-m
 .sticky a:hover { color: #e3e3e3; }
 
 .post {
-	border-bottom: thick double Black;
-	padding-bottom: 9px;
-	padding-top: 9px;
+    border-bottom: thick double Black;
+    overflow: hidden;
+    padding-bottom: 9px;
+    padding-top: 9px;
 }
 
 .post-comments { padding-bottom: 10px; }
@@ -570,7 +571,7 @@ ul.children {
 
 ul.children li { border-left: 1px dashed #000; }
 
-.comment-body blockquote { margin-top: 19px; }
+.comment-body blockquote { margin: 19px 5px 0 0; }
 
 .comment-meta, .commentmetadata {
 	font-size: 85%;
