@@ -3,6 +3,7 @@
 Changelog: July 10, 2012
 
 = Code =
+* Added `nona_wp_title` to be used with `wp_title` filter
 * Removed deprecated function call to `add_custom_background`
 * Removed deprecated function call to `get_theme_data`
 

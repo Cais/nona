@@ -12,22 +12,15 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * @version     1.6
+ * @date        July 10, 2012
+ * Updated `wp_title` usage
  */ ?>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-    <title><?php
-        /** ... as influenced by Twenty Ten and Twenty Eleven */
-        global $page, $paged;
-        wp_title( '|', true, 'right' ); bloginfo( 'name' );
-        /** Add the blog description (tagline) for the home/front page. */
-        $site_tagline = get_bloginfo( 'description', 'display' );
-        if ( $site_tagline && ( is_home() || is_front_page() ) )
-            echo " | $site_tagline";
-        /** Add a page number if necessary */
-        if ( $paged >= 2 || $page >= 2 )
-            echo ' | ' . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) ); ?>
-    </title>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php

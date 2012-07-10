@@ -273,3 +273,41 @@ register_sidebar( array(
     'before_title'   => '<h2 class="widget-title">',
     'after_title'    => '</h2>',
 ) );
+
+if ( ! function_exists( 'nona_wp_title' ) ) {
+    /**
+     * NoNa WP Title
+     * Utilizes the `wp_title` filter to add text to the default output
+     *
+     * @package NoNa
+     * @since   1.6
+     *
+     * @link    http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
+     * @link    https://gist.github.com/1410493
+     *
+     * @param   string $old_title - default title text
+     * @param   string $sep - separator character
+     * @param   string $sep_location - left|right - separator placement in relationship to title
+     *
+     * @return  string - new title text
+     */
+    function nona_wp_title( $old_title, $sep, $sep_location ) {
+        global $page, $paged;
+        /** Set initial title text */
+        $nona_title_text = $old_title . get_bloginfo( 'name' );
+        /** Add wrapping spaces to separator character */
+        $sep = ' ' . $sep . ' ';
+
+        /** Add the blog description (tagline) for the home/front page */
+        $site_tagline = get_bloginfo( 'description', 'display' );
+        if ( $site_tagline && ( is_home() || is_front_page() ) )
+            $nona_title_text .= "$sep$site_tagline";
+
+        /** Add a page number if necessary */
+        if ( $paged >= 2 || $page >= 2 )
+            $nona_title_text .= $sep . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) );
+
+        return $nona_title_text;
+    }
+}
+add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
