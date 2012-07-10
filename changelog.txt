@@ -9,11 +9,11 @@ Changelog: July 10, 2012
 = CSS =
 
 = Internet Browsers Reviewed =
-* Apple Safari v5.1.5
-* Firefox v11.0
-* Google Chrome v18.0
+* Apple Safari v5.1.7
+* Firefox v13.0.1
+* Google Chrome v20.0
 * Internet Explorer v9.0
-* Opera v11.62
+* Opera v12.0
 
 /** ------------------------------------------------------------------------- */
 == Version 1.5 ==
