@@ -55,4 +55,4 @@ get_header(); ?>
     <div id="after-content"></div>
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();

@@ -86,4 +86,4 @@ $category_link = get_category_link ( $cat_id ); ?>
     <div id="after-content"></div>
 </div><!-- #main-blog -->
 <?php get_sidebar();
-get_footer(); ?>
+get_footer();
