@@ -2,13 +2,12 @@
 Theme Name: NoNa
 Theme URI: http://buynowshop.com/themes/nona/
 Description: Missing the pretty pin-up girl posing in the header, this grunge based theme originally known as <a href="http://buynowshop.com/themes/pinup-meets-grunge/">Pinup Meets Grunge</a> beautifully blends custom background colors. This built-in options give you the creative opportunity to truly make this theme your own. Do not be scared off by the dark look, try installing your own copy and playing with the custom background color option yourself. Remember, if you are not a fan of "blank" headers feel free to drop us a note and we can discuss additional options. <strong>NB: This Theme should be used with WordPress 3.0 or higher; earlier versions of WordPress may not support all of the features and functions used by this Theme.</strong>
-Version: 1.6
+Version: 1.7
 Author: Edward Caissie
 Author URI: http://edwardcaissie.com/
 WordPress Version Required: 3.0
-Tested Up To: 3.4
+Tested Up To: 3.5
 Tags: brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
-Textdomain: nona
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -35,11 +34,6 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
- */
-
-/**
- * See index.php for additional program documentation and license information
- * references.
  */
 
 /*-- YUI Reset: Start --*/
@@ -796,7 +790,7 @@ div.widget_text div.textwidget div.wp-caption a img {
 	padding-right: 20px;
 }
 
-.footer widget a { color: #000; }
+.footer .widget a { color: #000; }
 
 .footer-widget h2 { text-align: center; }
 .footer-widget h6 { /* Used for BNS-Login function */

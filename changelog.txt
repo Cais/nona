@@ -1,7 +1,22 @@
 === NoNa ===
+== Version 1.7 ==
+Changelog: December 10, 2012
+= Code =
+
+= CSS =
+
+= Miscellaneous =
+
+= Current Internet Browsers Reviewed =
+* Apple Safari
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Opera
+
+/** ------------------------------------------------------------------------- */
 == Version 1.6 ==
 Changelog: July 10, 2012
-
 = Code =
 * Added `nona_wp_title` to be used with `wp_title` filter
 * Removed deprecated function call to `add_custom_background`
