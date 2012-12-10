@@ -10,6 +10,7 @@ Changelog: December 10, 2012
 
 = Miscellaneous =
 * PHPDocs style documentation updates and additions
+* Minor change to output text in 'NoNa Theme Version'
 
 = Current Internet Browsers Reviewed =
 * Apple Safari

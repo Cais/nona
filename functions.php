@@ -251,6 +251,10 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
      * @version 1.6
      * @date    July 10, 2012
      * Removed deprecated function call to `get_theme_data`
+     *
+     * @version 1.7
+     * @date    December 10, 2012
+     * Minor change to output text
      */
     function nona_theme_version () {
         /** @var $active_theme_data - array object containing the current theme's data */
@@ -258,14 +262,14 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
         if ( is_child_theme() ) {
             /** @var $parent_theme_data - array object containing the Parent Theme's data */
             $parent_theme_data = $active_theme_data->parent();
-            printf( __( '<br /><span id="nona-theme-version">%1$s, v%2$s, accessorizes the %3$s theme, v%4$s, created by %5$s.</span>', 'nona' ),
+            printf( __( '<br /><span id="nona-theme-version">%1$s (v%2$s) accessorizes the %3$s theme (v%4$s) created by %5$s.</span>', 'nona' ),
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
                 $parent_theme_data['Name'],
                 $parent_theme_data['Version'],
                 '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
         } else {
-            printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme, version %2$s, from %3$s.</span>', 'nona' ),
+            printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'nona' ),
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
                 '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
