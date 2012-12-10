@@ -6,8 +6,6 @@ Changelog: December 10, 2012
 * Refactored sidebar definitions to include names and descriptions for all areas
 * Refactored `wp_nav_menu` support code
 
-= CSS =
-
 = Miscellaneous =
 * PHPDocs style documentation updates and additions
 * Minor change to output text in 'NoNa Theme Version'
