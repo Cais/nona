@@ -11,6 +11,9 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ *
+ * @version     1.7
+ * @date        December 10, 2012
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -249,17 +252,34 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 }
 
 /** Widgets */
-register_sidebars( 3, array(
-    'description'    => __( 'Sidebar located on the right side of the layout', 'nona' ),
-    'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'   =>'</div><!-- .widget--><div class="widget-bottom"></div>',
-    'before_title'   => '<h2 class="widget-title">',
-    'after_title'    => '</h2>',
+register_sidebar( array(
+    'name'          => __( 'Sidebar 1', 'nona' ),
+    'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
+    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+) );
+register_sidebar( array(
+    'name'          => __( 'Sidebar 2', 'nona' ),
+    'description'   => __( 'Second sidebar area located on the right side of the layout', 'nona' ),
+    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+) );
+register_sidebar( array(
+    'name'          => __( 'Sidebar 3', 'nona' ),
+    'description'   => __( 'Third sidebar area located on the right side of the layout', 'nona' ),
+    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
 ) );
 register_sidebar( array(
     'name'           => __( 'Footer Left', 'nona' ),
     'id'             => 'footer-left',
-    'description'    => __( 'Located at the bottom of the theme to the left side of the layout.', 'nona' ),
+    'description'    => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'nona' ),
     'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
     'before_title'   => '<h2 class="widget-title">',
@@ -268,7 +288,7 @@ register_sidebar( array(
 register_sidebar( array(
     'name'           => __( 'Footer Middle', 'nona' ),
     'id'             => 'footer-middle',
-    'description'    => __( 'Located at the bottom of the theme in the middle of the layout.', 'nona' ),
+    'description'    => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'nona' ),
     'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
     'before_title'   => '<h2 class="widget-title">',
@@ -277,7 +297,7 @@ register_sidebar( array(
 register_sidebar( array(
     'name'           => __( 'Footer Right', 'nona' ),
     'id'             => 'footer-right',
-    'description'    => __( 'Located at the bottom of the theme to the right side of the layout.', 'nona' ),
+    'description'    => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'nona' ),
     'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
     'after_widget'   => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
     'before_title'   => '<h2 class="widget-title">',
