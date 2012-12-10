@@ -2,6 +2,7 @@
 == Version 1.7 ==
 Changelog: December 10, 2012
 = Code =
+* Fixed spacing issue in meta details if post has no tags
 
 = CSS =
 

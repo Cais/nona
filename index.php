@@ -63,8 +63,13 @@ get_header(); ?>
                     }
                     echo ' '; comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
                     edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
-                    _e( '<br />in ', 'nona' ); the_category( ', ' ); ?><br />
-                    <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?><br />
+                    _e( '<br />in ', 'nona' ); the_category( ', ' ); ?>
+                    <?php
+                    $nona_post_tags = get_the_tags();
+                    if ( $nona_post_tags ) { ?>
+                        <br />
+                        <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); } ?>
+                    <br />
                 </div><!-- .post-details -->
                 <?php
                 if ( has_post_thumbnail() ) {
