@@ -3,6 +3,7 @@
 Changelog: December 10, 2012
 = Code =
 * Fixed spacing issue in meta details if post has no tags
+* Refactored `wp_nav_menu` support code
 
 = CSS =
 

@@ -48,8 +48,16 @@ if ( ! function_exists( 'nona_setup' ) ):
             'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
         ) );
 
+        /** Add wp_nav_menu support */
         if ( ! function_exists( 'nona_nav_menu' ) ) {
-            /** Add wp_nav_menu() custom menu support */
+            /**
+             * NoNa Nav Menu
+             * Add wp_nav_menu() custom menu support
+             *
+             * @package NoNa
+             *
+             * @uses    wp_nav_menu
+             */
             function nona_nav_menu() {
                 wp_nav_menu( array(
                     'menu_class' => 'nav-menu',
@@ -58,24 +66,26 @@ if ( ! function_exists( 'nona_setup' ) ):
                 ) );
             }
         }
-
         if ( ! function_exists( 'nona_list_pages' ) ) {
-            /** NoNa List Pages */
+            /**
+             * NoNa List Pages
+             *
+             * @package NoNa
+             *
+             * @uses    wp_list_pages
+             */
             function nona_list_pages() { ?>
                 <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
             <?php
             }
         }
+        register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
+        /** End wp_nav_menu support */
 
-        add_action( 'init', 'register_nona_menu' );
-        if ( ! function_exists( 'register_nona_menu' ) ) {
-            function register_nona_menu() {
-                register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
-            }
-        }
-
-        /** Make theme available for translation */
-        /** Translations can be filed in the /languages/ directory */
+        /**
+         * Make theme available for translation
+         * @internal Translations can be filed in the /languages/ directory
+         */
         load_theme_textdomain( 'nona', get_template_directory_uri() . '/languages' );
         $locale = get_locale();
         $locale_file = get_template_directory_uri() . "/languages/$locale.php";
