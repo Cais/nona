@@ -9,6 +9,7 @@ Changelog: December 10, 2012
 = CSS =
 
 = Miscellaneous =
+* PHPDocs style documentation updates and additions
 
 = Current Internet Browsers Reviewed =
 * Apple Safari

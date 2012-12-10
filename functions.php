@@ -14,6 +14,7 @@
  *
  * @version     1.7
  * @date        December 10, 2012
+ * PHPDocs style documentation updates and additions
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -51,7 +52,7 @@ if ( ! function_exists( 'nona_setup' ) ):
             'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
         ) );
 
-        /** Add wp_nav_menu support */
+        /** wp_nav_menu support */
         if ( ! function_exists( 'nona_nav_menu' ) ) {
             /**
              * NoNa Nav Menu
@@ -99,14 +100,22 @@ endif;
 
 /**
  * NoNa Login
- *
  * Creates a link to the dashboard, or a login / register link.
  *
  * @package NoNa
- * @since 1.4
+ * @since   1.4
  *
- * @param string $args
- * @return mixed|string|void
+ * @param   string $args
+ *
+ * @uses    apply_filters
+ * @uses    get_current_site
+ * @uses    home_url
+ * @uses    is_user_logged_in
+ * @uses    wp_logout_url
+ * @uses    wp_parse_args
+ * @uses    wp_register
+ *
+ * @return  mixed|string|void
  *
  * Last revised April 23, 2012
  * @version 1.5
@@ -165,9 +174,17 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
     /**
      * NoNa Dynamic Copyright
      *
+     * @package NoNa
      * @since   1.4
      *
      * @param   string $args
+     *
+     * @uses    apply_filters
+     * @uses    get_bloginfo
+     * @uses    get_posts
+     * @uses    home_url
+     * @uses    post_date_gmt
+     * @uses    wp_parse_args
      */
     function nona_dynamic_copyright( $args = '' ) {
         $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
@@ -224,7 +241,12 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
     /**
      * NoNa Theme Version
      *
+     * @package NoNa
      * @since   1.4
+     *
+     * @uses    is_child_theme
+     * @uses    wp_get_theme
+     * @uses    WP_Theme::parent
      *
      * @version 1.6
      * @date    July 10, 2012
@@ -251,7 +273,11 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
     }
 }
 
-/** Widgets */
+/**
+ * Widgets Areas
+ *
+ * @uses    register_sidebar
+ */
 register_sidebar( array(
     'name'          => __( 'Sidebar 1', 'nona' ),
     'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
@@ -318,6 +344,12 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
      * @param   string $old_title - default title text
      * @param   string $sep - separator character
      * @param   string $sep_location - left|right - separator placement in relationship to title
+     *
+     * @uses    (global) var $page
+     * @uses    (global) var $paged
+     * @uses    get_bloginfo
+     * @uses    is_front_page
+     * @uses    is_home
      *
      * @return  string - new title text
      */
