@@ -1,4 +1,20 @@
 === NoNa ===
+== Version 1.8 ==
+Changelog: March 13, 2013
+= Code =
+
+= CSS =
+
+= Miscellaneous =
+
+= Current Internet Browsers Reviewed =
+* Apple Safari
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Opera
+
+/** ------------------------------------------------------------------------- */
 == Version 1.7 ==
 Changelog: December 10, 2012
 = Code =
@@ -9,13 +25,6 @@ Changelog: December 10, 2012
 = Miscellaneous =
 * PHPDocs style documentation updates and additions
 * Minor change to output text in 'NoNa Theme Version'
-
-= Current Internet Browsers Reviewed =
-* Apple Safari
-* Firefox
-* Google Chrome
-* Internet Explorer
-* Opera
 
 /** ------------------------------------------------------------------------- */
 == Version 1.6 ==

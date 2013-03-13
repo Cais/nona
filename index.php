@@ -14,7 +14,10 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ *
+ * @internal    WordPress Version Required: 3.0
+ * @internal    WordPress Tested Version: 3.5.1
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -38,6 +41,9 @@
  *
  * @version 1.7
  * @date    December 10, 2012
+ *
+ * @version 1.8
+ * @date    March 2013
  *
  * @todo Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
  * @todo Review date.php template for better ways to incorporate end-user time and date settings
