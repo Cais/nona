@@ -430,7 +430,7 @@ add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
  * @uses    wp_enqueue_script
  */
 if ( ! function_exists( 'nona_enqueue_comment_reply' ) ) {
-    function gf_enqueue_comment_reply() {
+    function nona_enqueue_comment_reply() {
         if ( is_singular() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
         } /** End if - is singular */
