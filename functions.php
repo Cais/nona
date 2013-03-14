@@ -413,3 +413,27 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
     } /** End function - title */
 } /** End if - function exists */
 add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
+
+
+/**
+ * Enqueue Comment Reply Script
+ * If the page being viewed is a single post/page; and, comments are open; and,
+ * threaded comments are turned on then enqueue the built-in comment-reply
+ * script.
+ *
+ * @package NoNa
+ * @since   1.8
+ *
+ * @uses    comments_open
+ * @uses    get_option
+ * @uses    is_singular
+ * @uses    wp_enqueue_script
+ */
+if ( ! function_exists( 'nona_enqueue_comment_reply' ) ) {
+    function gf_enqueue_comment_reply() {
+        if ( is_singular() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        } /** End if - is singular */
+    } /** End function - enqueue comment reply */
+} /** End if - function exists */
+add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );

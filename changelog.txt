@@ -4,10 +4,12 @@ Changelog: March 14, 2013
 = Code =
 * Added code block termination comments
 * Changed conditional to use `is_multisite` for Multisite testing
+* Move Comment Reply script enqueue to 'functions.php'
 * Refactored code formatting
 * Refactored to be more i18n compatible
 * Refactored widget area definitions into `nona_widgets` function and attached to `widgets_init` action hook
 * Remove 'searchform.php' template in favor of using WordPress core version
+* Updated DOCTYPE and other related header elements
 
 = CSS =
 

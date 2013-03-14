@@ -1,4 +1,3 @@
-<!DOCTYPE PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 /**
  * Header Template
@@ -11,23 +10,29 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @version     1.6
  * @date        July 10, 2012
  * Updated `wp_title` usage
+ *
+ * @version     1.8
+ * @date        March 14, 2013
+ * Updated DOCTYPE and other related header elements
+ * Code formatting to be more easily read
+ * Move Comment Reply script enqueue to 'functions.php'
  */ ?>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
-    <meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <?php
-    if ( is_singular() )
-        wp_enqueue_script( 'comment-reply' );
-    wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
 <div id="outside">
     <div id="header">
