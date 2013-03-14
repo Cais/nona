@@ -46,13 +46,9 @@
  * @date    March 2013
  * Added code block termination comments
  * Refactored code formatting
+ * Refactored no post title code
  * Refactored to be more i18n compatible
  * Remove 'searchform.php' template in favor of using WordPress core version
- *
- * @todo Custom Header Images - further work is required to add appropriate code to make use of the existing child themes available from http://buynowshop.com/themes/nona/
- * @todo Review date.php template for better ways to incorporate end-user time and date settings
- * @todo Review changing post without title to use `Posted` instead of date (see Shades Theme); definitely implement if post-formats are used.
- * @todo Review addition of a "loop" template as well as other template parts to tidy up the code. (see Shades v1.8 / Ground Floor v1.9)
  */
 
 get_header(); ?>
