@@ -2,6 +2,9 @@
 == Version 1.8 ==
 Changelog: March 14, 2013
 = Code =
+* Added code block termination comments
+* Refactored code formatting
+* Refactored to be more i18n compatible
 * Remove 'searchform.php' template in favor of using WordPress core version
 
 = CSS =

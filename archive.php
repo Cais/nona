@@ -53,11 +53,10 @@ get_header(); ?>
 
                         edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-                        printf( sprintf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ), get_the_category_list( ', ' ) ) ); ?>
-
-                        <?php the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
-
-                        <br />
+                        printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+                            get_the_category_list( ', ' )
+                        );
+                        the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
 
                     </div><!-- .post-details -->
 
@@ -88,7 +87,10 @@ get_header(); ?>
         <?php } else { ?>
 
             <h2>
-                <?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+                <?php
+                printf( __( 'Search Results for: %s', 'nona' ),
+                        '<span>' . esc_html( get_search_query() ) . '</span>'
+                ); ?>
             </h2>
 
             <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
