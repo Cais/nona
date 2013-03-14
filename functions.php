@@ -10,11 +10,15 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @version     1.7
  * @date        December 10, 2012
  * PHPDocs style documentation updates and additions
+ *
+ * @version     1.8
+ * @date        March 14, 2013
+ * Refactored widget area definitions into `nona_widgets` function and attached to `widgets_init` action hook
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -24,10 +28,12 @@
  * Used to set the width of images and content. Should be equal to the width the theme
  * is designed for, generally via the style.css stylesheet.
  */
-if ( ! isset( $content_width ) ) $content_width = 595;
+if ( ! isset( $content_width ) ) {
+    $content_width = 595;
+} /** End if - not isset content width */
 
 add_action( 'after_setup_theme', 'nona_setup' );
-if ( ! function_exists( 'nona_setup' ) ):
+if ( ! function_exists( 'nona_setup' ) ) {
     /**
      * NoNa Setup
      *
@@ -52,6 +58,7 @@ if ( ! function_exists( 'nona_setup' ) ):
             'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
         ) );
 
+
         /** wp_nav_menu support */
         if ( ! function_exists( 'nona_nav_menu' ) ) {
             /**
@@ -68,8 +75,10 @@ if ( ! function_exists( 'nona_setup' ) ):
                     'theme_location' => 'top-menu',
                     'fallback_cb' => 'nona_list_pages'
                 ) );
-            }
-        }
+            } /** End function - nav menu */
+        } /** End if - function exists */
+
+
         if ( ! function_exists( 'nona_list_pages' ) ) {
             /**
              * NoNa List Pages
@@ -81,8 +90,8 @@ if ( ! function_exists( 'nona_setup' ) ):
             function nona_list_pages() { ?>
                 <ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
             <?php
-            }
-        }
+            } /** End function - list pages */
+        } /** End if - function exists */
         register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
         /** End wp_nav_menu support */
 
@@ -93,10 +102,12 @@ if ( ! function_exists( 'nona_setup' ) ):
         load_theme_textdomain( 'nona', get_template_directory_uri() . '/languages' );
         $locale = get_locale();
         $locale_file = get_template_directory_uri() . "/languages/$locale.php";
-        if ( is_readable( $locale_file ) )
+        if ( is_readable( $locale_file ) ) {
             require_once( $locale_file );
-    }
-endif;
+        } /** End if - is readable */
+
+    } /** End function - setup */
+} /** End if - function exists */
 
 /**
  * NoNa Login
@@ -110,6 +121,7 @@ endif;
  * @uses    apply_filters
  * @uses    get_current_site
  * @uses    home_url
+ * @uses    is_multisite
  * @uses    is_user_logged_in
  * @uses    wp_logout_url
  * @uses    wp_parse_args
@@ -117,9 +129,13 @@ endif;
  *
  * @return  mixed|string|void
  *
- * Last revised April 23, 2012
  * @version 1.5
+ * @date    April 23, 2012
  * Added $args to function - adopted from BNS-Login plugin
+ *
+ * @version 1.8
+ * @date    March 14, 2013
+ * Changed conditional to use `is_multisite` for Multisite testing
  */
 if ( ! function_exists( 'nona_login' ) ) {
     function nona_login( $args = '' ) {
@@ -147,27 +163,33 @@ if ( ! function_exists( 'nona_login' ) ) {
         /** The real work gets done next ...  */
         $login_url = home_url( '/wp-admin/' );
         if ( is_user_logged_in() ) {
+
             $output .= '<div id="nona-logged-in" class="nona-login">' . $after_login . $sep;
             /** Multisite - logout returns to Multisite main domain page */
-            if ( function_exists( 'get_current_site' ) ) {
+            if ( is_multisite() ) {
                 $current_site = get_current_site();
                 $home_domain = 'http://' . $current_site->domain . $current_site->path;
                 $logout_url = wp_logout_url( $home_domain );
             } else {
                 $logout_url = wp_logout_url( home_url() );
-            }
+            } /** End if - is multisite */
+
             $output .= '<a href="' . $logout_url . '" title="' . $logout . '">' . $logout . '</a>' . $sep;
             $output .= '<a href="' . $login_url . '" title="' . $goto . '">' . $goto . '</a></div>';
+
         } else {
+
             /** if user is not logged in display login; or, register if allowed */
             $output .= '<div id="nona-logged-out" class="nona-login">';
             $output .= '<a href="' . $login_url . '" title="' . $login . '">' . $login . '</a>';
             $output .= wp_register( $sep, '', false );
             $output .= '</div>';
-        }
+
+        } /** End if - is user logged in */
+
         echo apply_filters( 'nona_login', $output, $args );
-    }
-}
+    } /** End function - login */
+} /** End if - function exists */
 
 
 if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
@@ -207,8 +229,9 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 
             /** First post year versus current year */
             $first_year = substr( $first_date, 0, 4 );
-            if ( $first_year == '' )
+            if ( $first_year == '' ) {
                 $first_year = date( 'Y' );
+            } /** End if - first year */
 
             /** Add to output string */
             if ( $first_year == date( 'Y' ) ) {
@@ -216,10 +239,13 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
                 $output .= ' &copy; ' . date( 'Y' );
             } else {
                 $output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
-            }
+            } /** End if - first year */
+
         } else {
+
             $output .= ' &copy; ' . $args['copy_years'];
-        }
+
+        } /** End if - empty - copy years */
 
         /** Create URL to link back to home of website */
         empty( $args['url'] )
@@ -234,8 +260,10 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
         /** Construct and sprintf the copyright notice */
         $output = sprintf( __( '<span id="nona-dynamic-copyright"> %1$s </span><!-- #nona-dynamic-copyright -->', 'nona' ), $output );
         echo apply_filters( 'nona_dynamic_copyright', $output, $args );
-    }
-}
+
+    } /** End function - dynamic copyright */
+} /** End if - function exists */
+
 
 if ( ! function_exists( 'nona_theme_version' ) ) {
     /**
@@ -273,66 +301,72 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
                 '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
-        }
-    }
-}
+        } /** End if - is child theme */
+
+    } /** End function - theme version */
+} /** End if - function exists */
+
 
 /**
  * Widgets Areas
  *
  * @uses    register_sidebar
  */
-register_sidebar( array(
-    'name'          => __( 'Sidebar 1', 'nona' ),
-    'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-    'name'          => __( 'Sidebar 2', 'nona' ),
-    'description'   => __( 'Second sidebar area located on the right side of the layout', 'nona' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-    'name'          => __( 'Sidebar 3', 'nona' ),
-    'description'   => __( 'Third sidebar area located on the right side of the layout', 'nona' ),
-    'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-    'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-) );
-register_sidebar( array(
-    'name'           => __( 'Footer Left', 'nona' ),
-    'id'             => 'footer-left',
-    'description'    => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'nona' ),
-    'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-    'before_title'   => '<h2 class="widget-title">',
-    'after_title'    => '</h2>',
-) );
-register_sidebar( array(
-    'name'           => __( 'Footer Middle', 'nona' ),
-    'id'             => 'footer-middle',
-    'description'    => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'nona' ),
-    'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-    'before_title'   => '<h2 class="widget-title">',
-    'after_title'    => '</h2>',
-) );
-register_sidebar( array(
-    'name'           => __( 'Footer Right', 'nona' ),
-    'id'             => 'footer-right',
-    'description'    => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'nona' ),
-    'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-    'after_widget'   => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
-    'before_title'   => '<h2 class="widget-title">',
-    'after_title'    => '</h2>',
-) );
+function nona_widgets() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 1', 'nona' ),
+        'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 2', 'nona' ),
+        'description'   => __( 'Second sidebar area located on the right side of the layout', 'nona' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Sidebar 3', 'nona' ),
+        'description'   => __( 'Third sidebar area located on the right side of the layout', 'nona' ),
+        'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+        'after_widget'  =>'</div><!-- .widget--><div class="widget-bottom"></div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'           => __( 'Footer Left', 'nona' ),
+        'id'             => 'footer-left',
+        'description'    => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'nona' ),
+        'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+        'before_title'   => '<h2 class="widget-title">',
+        'after_title'    => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'           => __( 'Footer Middle', 'nona' ),
+        'id'             => 'footer-middle',
+        'description'    => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'nona' ),
+        'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'   => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+        'before_title'   => '<h2 class="widget-title">',
+        'after_title'    => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'           => __( 'Footer Right', 'nona' ),
+        'id'             => 'footer-right',
+        'description'    => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'nona' ),
+        'before_widget'  => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'   => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
+        'before_title'   => '<h2 class="widget-title">',
+        'after_title'    => '</h2>',
+    ) );
+} /** End function - widgets */
+add_action( 'widgets_init', 'nona_widgets' );
+
 
 if ( ! function_exists( 'nona_wp_title' ) ) {
     /**
@@ -366,14 +400,16 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 
         /** Add the blog description (tagline) for the home/front page */
         $site_tagline = get_bloginfo( 'description', 'display' );
-        if ( $site_tagline && ( is_home() || is_front_page() ) )
+        if ( $site_tagline && ( is_home() || is_front_page() ) ) {
             $nona_title_text .= "$sep$site_tagline";
+        } /** End if - site tagline */
 
         /** Add a page number if necessary */
-        if ( $paged >= 2 || $page >= 2 )
+        if ( $paged >= 2 || $page >= 2 ) {
             $nona_title_text .= $sep . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) );
+        } /** End if - paged */
 
         return $nona_title_text;
-    }
-}
+    } /** End function - title */
+} /** End if - function exists */
 add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
