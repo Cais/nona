@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2012, Edward Caissie
+ * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * Last revised April 23, 2012
  * @version     1.5
