@@ -11,6 +11,10 @@
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ *
+ * @version     1.8
+ * @date        March 15, 2013
+ * Drop `nona_login` call ... better left as plugin territory, see BNS Login.
  */ ?>
 
 <div id="footer">
@@ -24,7 +28,6 @@
                 <div class="widget-top"></div>
                 <div class="footer-widget">
                     <!-- Middle Footer Widget -->
-                    <?php nona_login(); ?>
                 </div>
             <div class="widget-bottom"></div>
             <?php endif; ?><!-- end widget zone footer-middle -->

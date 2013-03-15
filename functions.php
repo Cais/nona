@@ -136,6 +136,8 @@ if ( ! function_exists( 'nona_setup' ) ) {
  * @version 1.8
  * @date    March 14, 2013
  * Changed conditional to use `is_multisite` for Multisite testing
+ * Deprecated ... see BNS Login http://wordpress.org/extend/plugins/bns-login as
+ * a replacement
  */
 if ( ! function_exists( 'nona_login' ) ) {
     function nona_login( $args = '' ) {

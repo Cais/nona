@@ -17,6 +17,7 @@ Changelog: March 15, 2013
 * Minor adjustment to handle default 'searchform' output
 
 = Miscellaneous =
+* Deprecate `nona_login`, recommend using plugin BNS Login instead.
 
 = Current Internet Browsers Reviewed =
 * Apple Safari
