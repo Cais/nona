@@ -1,6 +1,6 @@
 === NoNa ===
 == Version 1.8 ==
-Changelog: March 14, 2013
+Changelog: March 15, 2013
 = Code =
 * Added code block termination comments
 * Changed conditional to use `is_multisite` for Multisite testing
@@ -13,7 +13,7 @@ Changelog: March 14, 2013
 * Updated DOCTYPE and other related header elements
 
 = CSS =
-* Minor adjustments to handle the "Monster" test widget for default widgets
+* Minor adjustments to handle default widgets (based on the "Monster" widget)
 * Minor adjustment to handle default 'searchform' output
 
 = Miscellaneous =

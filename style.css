@@ -822,6 +822,15 @@ div.widget_text div.textwidget div.wp-caption a img {
 }
 /*-= End Footer =-*/
 
+/*-- Default Widgets --*/
+div.widget_rss ul li {
+    margin-bottom: 10px;
+}
+
+div.widget_rss ul li div.rssSummary {
+    font-size: 90%;
+}
+
 /*-- WordPress Plugin Styles --*/
 img#wpstats{ display: none; }
 #akismetstats{ margin: 0 auto; }
