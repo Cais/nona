@@ -16,7 +16,7 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
- * @internal    WordPress Version Required: 3.0
+ * @internal    WordPress Version Required: 3.4
  * @internal    WordPress Tested Version: 3.5.1
  *
  * This program is free software; you can redistribute it and/or modify it under
