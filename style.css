@@ -544,6 +544,10 @@ textarea { width: 97%; }
 div#respond form#commentform p.form-submit {
     padding-right: 5px;
 }
+
+div.widget div.textwidget form select {
+    width: 98%;
+}
 /* =- End Forms -= ---*/
 
 /*-= Comments =- ---*/
@@ -662,7 +666,7 @@ textarea#comment { padding: 5px; }
 
 input#s {
     padding-left: 5px;
-    width: 210px;
+    width: 70%;
 }
 
 /*-- Widgets --*/

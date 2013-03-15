@@ -13,6 +13,8 @@ Changelog: March 14, 2013
 * Updated DOCTYPE and other related header elements
 
 = CSS =
+* Minor adjustments to handle the "Monster" test widget for default widgets
+* Minor adjustment to handle default 'searchform' output
 
 = Miscellaneous =
 
