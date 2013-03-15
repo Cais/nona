@@ -827,6 +827,10 @@ div.widget_rss ul li {
     margin-bottom: 10px;
 }
 
+div.widget_rss ul li:last-child {
+    margin-bottom: 0;
+}
+
 div.widget_rss ul li div.rssSummary {
     font-size: 90%;
 }
