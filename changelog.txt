@@ -1,4 +1,18 @@
 === NoNa ===
+== Version 1.8.1 ==
+Changelog: April 23, 2013
+= Code =
+* Added constant 'NONA_HOME_URL'
+* Used 'NONA_HOME_URL' where appropriate
+
+= Current Internet Browsers Reviewed =
+* Apple Safari
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Opera
+
+/** ------------------------------------------------------------------------- */
 == Version 1.8 ==
 Changelog: March 15, 2013
 = Code =
@@ -19,13 +33,6 @@ Changelog: March 15, 2013
 = Miscellaneous =
 * Deprecate `nona_login`, recommend using plugin BNS Login instead.
 * Update "WordPress Required Version" to 3.4
-
-= Current Internet Browsers Reviewed =
-* Apple Safari
-* Firefox
-* Google Chrome
-* Internet Explorer
-* Opera
 
 /** ------------------------------------------------------------------------- */
 == Version 1.7 ==

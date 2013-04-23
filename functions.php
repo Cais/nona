@@ -20,9 +20,15 @@
  * @date        March 15, 2013
  * Deprecated `nona-login`
  * Refactored widget area definitions into `nona_widgets` function and attached to `widgets_init` action hook
+ *
+ * @version     1.8.1
+ * @date        April 23, 2013
+ * Added constant 'NONA_HOME_URL'
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
+
+define(  'NONA_HOME_URL', 'BuyNowShop.com' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -202,6 +208,10 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
      * @version 1.7
      * @date    December 10, 2012
      * Minor change to output text
+     *
+     * @version 1.8.1
+     * @date    April 23, 2013
+     * Used 'NONA_HOME_URL' where appropriate
      */
     function nona_theme_version () {
         /** @var $active_theme_data - array object containing the current theme's data */
@@ -214,12 +224,12 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
                 $active_theme_data['Version'],
                 $parent_theme_data['Name'],
                 $parent_theme_data['Version'],
-                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>');
+                '<a href="http://' . NONA_HOME_URL . '" title="' . NONA_HOME_URL . '">' . NONA_HOME_URL . '</a>');
         } else {
             printf( __( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'nona' ),
                 $active_theme_data['Name'],
                 $active_theme_data['Version'],
-                '<a href="http://buynowshop.com/" title="BuyNowShop.com">BuyNowShop.com</a>' );
+                '<a href="http://' . NONA_HOME_URL . '" title="' . NONA_HOME_URL . '">' . NONA_HOME_URL . '</a>' );
         } /** End if - is child theme */
 
     } /** End function - theme version */
