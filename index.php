@@ -17,7 +17,7 @@
  * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @internal    WordPress Version Required: 3.4
- * @internal    WordPress Tested Version: 3.5.1
+ * @internal    WordPress Tested Version: 3.6
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -49,6 +49,9 @@
  * Refactored no post title code
  * Refactored to be more i18n compatible
  * Remove 'searchform.php' template in favor of using WordPress core version
+ *
+ * @version 1.8.1
+ * @date    July 2013
  */
 
 get_header(); ?>

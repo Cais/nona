@@ -5,12 +5,8 @@ Changelog: April 23, 2013
 * Added constant 'NONA_HOME_URL'
 * Used 'NONA_HOME_URL' where appropriate
 
-= Current Internet Browsers Reviewed =
-* Apple Safari
-* Firefox
-* Google Chrome
-* Internet Explorer
-* Opera
+= CSS =
+* Adjusted `img` and 'caption' related properties
 
 /** ------------------------------------------------------------------------- */
 == Version 1.8 ==
