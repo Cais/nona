@@ -3,6 +3,7 @@
 Changelog: April 23, 2013
 = Code =
 * Added constant 'NONA_HOME_URL'
+* Refactored Featured Image display code into function `nona_show_featured_image( $size )`
 * Used 'NONA_HOME_URL' where appropriate
 
 = CSS =

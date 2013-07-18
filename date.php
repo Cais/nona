@@ -92,9 +92,7 @@ get_header(); ?>
                     </div><!-- .post-details -->
 
                     <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } /** End if - has post thumbnail */
+                    nona_show_featured_image( 'full' );
 
                     if ( ( $count <= 3 ) && ( $paged < 2 ) ) {
 

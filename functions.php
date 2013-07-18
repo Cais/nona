@@ -22,8 +22,9 @@
  * Refactored widget area definitions into `nona_widgets` function and attached to `widgets_init` action hook
  *
  * @version     1.8.1
- * @date        April 23, 2013
+ * @date        July 18, 2013
  * Added constant 'NONA_HOME_URL'
+ * Added function `nona_show_featured_image( $size )`
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -451,3 +452,22 @@ if ( ! function_exists( 'nona_login' ) ) {
         echo apply_filters( 'nona_login', $output, $args );
     } /** End function - login */
 } /** End if - function exists */
+
+
+/**
+ * Show Featured Image
+ * Displays the Featured Image allowing the size to be set
+ *
+ * @package NoNa
+ * @since   1.8.1
+ *
+ * @param   $size
+ *
+ * @uses    has_post_thumbnail
+ * @uses    the_post_thumbnail
+ */
+function nona_show_featured_image( $size ) {
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail( $size, array( 'class' => 'aligncenter' ) );
+    } /** End if - has post thumbnail */
+} /** End function - show featured image */

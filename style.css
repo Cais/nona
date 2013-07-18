@@ -472,7 +472,14 @@ td {
 
 /*-= Images =-*/
 img { font-size: 75%; }
-img.wp-smiley { float: none; }
+
+img.wp-smiley { display: none; }
+
+/** Keeps Featured Images to width of container */
+img.wp-post-image {
+    height: auto;
+    width: 100%;
+}
 
 p img {
     height: auto;

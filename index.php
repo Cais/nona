@@ -105,10 +105,7 @@ get_header(); ?>
                     </div><!-- .post-details -->
 
                     <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } /** End if - has post thumbnail */
-
+                    nona_show_featured_image( 'full' );
                     the_content( __( 'Read more... ', 'nona' ) ); ?>
 
                     <div class="clear"></div><!-- For inserted media at the end of the post -->

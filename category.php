@@ -87,9 +87,7 @@ $category_link = get_category_link ( $cat_id ); ?>
                     </div><!-- .post-details -->
 
                     <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
-                    } /** End if - has post thumbnail */
+                    nona_show_featured_image( 'full' );
 
                     if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
 
