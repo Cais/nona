@@ -693,6 +693,10 @@ input#s {
     width: 70%;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 /*-- Widgets --*/
 .widget {
 	background: url(images/SideBar_Center.png);

@@ -15,6 +15,10 @@
  * @version     1.8
  * @date        March 15, 2013
  * Drop `nona_login` call ... better left as plugin territory, see BNS Login.
+ *
+ * @version     1.8.1
+ * @date        July 18, 2013
+ * @todo Fix hack to hide middle footer widget area frame if it is empty
  */ ?>
 
 <div id="footer">
@@ -24,12 +28,13 @@
     <!-- NB: It is very important to maintain the order of the following widget code to insure the formatting and style does not break!!! -->
     <div id="footer-widgets">
         <div id="fw-middle" class="fw-column">
-            <?php if ( dynamic_sidebar( "footer-middle" ) ) : else : ?>
-                <div class="widget-top"></div>
-                <div class="footer-widget">
-                    <!-- Middle Footer Widget -->
-                </div>
-            <div class="widget-bottom"></div>
+            <?php
+            if ( dynamic_sidebar( "footer-middle" ) ) :
+            else :
+                if ( ! is_active_sidebar( 'footer-middle' ) ) {
+                    echo '<div class="hidden">' . __( 'This is hidden for aesthetics but still required for the layout!', 'nona' ) . '</div>';
+                } /** End if - not active sidebar */
+            ?>
             <?php endif; ?><!-- end widget zone footer-middle -->
         </div><!-- #fw-middle -->
 

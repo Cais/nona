@@ -52,6 +52,8 @@
  *
  * @version 1.8.1
  * @date    July 2013
+ *
+ * @todo Remove `nona_login` function at version 1.9?
  */
 
 get_header(); ?>
