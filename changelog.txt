@@ -1,6 +1,6 @@
 === NoNa ===
 == Version 1.8.1 ==
-Changelog: April 23, 2013
+Changelog: July 18, 2013
 = Code =
 * Added constant 'NONA_HOME_URL'
 * Hide middle footer widget area frame if it is empty
