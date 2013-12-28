@@ -18,44 +18,50 @@
  *
  * @version     1.8.1
  * @date        July 18, 2013
- * @todo Fix hack to hide middle footer widget area frame if it is empty
- */ ?>
+ * @todo        Fix hack to hide middle footer widget area frame if it is empty
+ */
+?>
 
 <div id="footer">
-    <div id="footer-top"></div>
+	<div id="footer-top"></div>
 
-    <div id="footer-widgets-above"></div>
-    <!-- NB: It is very important to maintain the order of the following widget code to insure the formatting and style does not break!!! -->
-    <div id="footer-widgets">
-        <div id="fw-middle" class="fw-column">
-            <?php
-            if ( dynamic_sidebar( "footer-middle" ) ) :
-            else :
-                if ( ! is_active_sidebar( 'footer-middle' ) ) {
-                    echo '<div class="hidden">' . __( 'This is hidden for aesthetics but still required for the layout!', 'nona' ) . '</div>';
-                } /** End if - not active sidebar */
-            ?>
-            <?php endif; ?><!-- end widget zone footer-middle -->
-        </div><!-- #fw-middle -->
+	<div id="footer-widgets-above"></div>
+	<!-- NB: It is very important to maintain the order of the following widget code to insure the formatting and style does not break!!! -->
+	<div id="footer-widgets">
+		<div id="fw-middle" class="fw-column">
+			<?php
+			if (dynamic_sidebar( "footer-middle" )) :
+			else :
+			if ( ! is_active_sidebar( 'footer-middle' ) ) {
+				echo '<div class="hidden">' . __( 'This is hidden for aesthetics but still required for the layout!', 'nona' ) . '</div>';
+			} /** End if - not active sidebar */
+			?>
+			<?php endif; ?><!-- end widget zone footer-middle -->
+		</div>
+		<!-- #fw-middle -->
 
-        <div id="fw-left" class="fw-column">
-            <?php if ( dynamic_sidebar( "footer-left" ) ) : else : endif; ?>
-        </div><!-- #fw-left -->
+		<div id="fw-left" class="fw-column">
+			<?php if ( dynamic_sidebar( "footer-left" ) ) : else : endif; ?>
+		</div>
+		<!-- #fw-left -->
 
-        <div id="fw-right" class="fw-column">
-            <?php if ( dynamic_sidebar( "footer-right" ) ) : else : endif; ?>
-        </div><!-- #fw-right -->
-    </div><!-- #footer-widgets -->
-    <div id="footer-widgets-below"></div>
+		<div id="fw-right" class="fw-column">
+			<?php if ( dynamic_sidebar( "footer-right" ) ) : else : endif; ?>
+		</div>
+		<!-- #fw-right -->
+	</div>
+	<!-- #footer-widgets -->
+	<div id="footer-widgets-below"></div>
 
-    <div id="footer-middle">
-        <p>
-            <?php nona_dynamic_copyright();
-            nona_theme_version(); ?>
-        </p>
-    </div><!-- #footer-middle -->
+	<div id="footer-middle">
+		<p>
+			<?php nona_dynamic_copyright();
+			nona_theme_version(); ?>
+		</p>
+	</div>
+	<!-- #footer-middle -->
 
-    <div id="footer-bottom"><?php wp_footer(); ?></div>
+	<div id="footer-bottom"><?php wp_footer(); ?></div>
 </div><!-- #footer -->
 </div><!-- #outside -->
 </body>

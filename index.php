@@ -39,117 +39,122 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version 1.7
- * @date    December 10, 2012
+ * @version     1.7
+ * @date        December 10, 2012
  *
- * @version 1.8
- * @date    March 2013
+ * @version     1.8
+ * @date        March 2013
  * Added code block termination comments
  * Refactored code formatting
  * Refactored no post title code
  * Refactored to be more i18n compatible
  * Remove 'searchform.php' template in favor of using WordPress core version
  *
- * @version 1.8.1
- * @date    July 2013
+ * @version     1.8.1
+ * @date        July 2013
  *
- * @todo Remove `nona_login` function at version 1.9?
+ * @todo        Remove `nona_login` function at version 1.9?
  */
 
 get_header(); ?>
 
-<div id="main-blog">
+	<div id="main-blog">
 
-    <div id="before-content"></div>
+		<div id="before-content"></div>
 
-    <div id="content">
+		<div id="content">
 
-        <?php
-        if ( have_posts() ) {
-            while ( have_posts() ) {
-                the_post(); ?>
+			<?php
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post(); ?>
 
-                <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-                    <h2>
-                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                    </h2>
+						<h2>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+						</h2>
 
-                    <div class="post-details">
+						<div class="post-details">
 
-                        <?php
-                        /**
-                         * For posts without titles - create a permalink using
-                         * the post date referencing the post ID
-                         */
-                        $nona_title = get_the_title();
-                        $nona_post_title = empty( $nona_title )
-                                ? sprintf( '<a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to post ' . get_the_id() . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>' )
-                                : get_the_time( get_option( 'date_format' ) );
+							<?php
+							/**
+							 * For posts without titles - create a permalink using
+							 * the post date referencing the post ID
+							 */
+							$nona_title = get_the_title();
+							$nona_post_title = empty( $nona_title )
+								? sprintf( '<a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to post ' . get_the_id() . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>' )
+								: get_the_time( get_option( 'date_format' ) );
 
-                        printf( __('Posted by %1$s on %2$s', 'nona'),
-                            get_the_author_meta( 'display_name' ),
-                            $nona_post_title
-                        );
+							printf( __( 'Posted by %1$s on %2$s', 'nona' ),
+								get_the_author_meta( 'display_name' ),
+								$nona_post_title
+							);
 
-                        if ( ! post_password_required() ) {
-                            echo ' ';
-                            comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
-                        } /** End if - not post password required */
+							if ( ! post_password_required() ) {
+								echo ' ';
+								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+							}
+							/** End if - not post password required */
 
-                        edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
+							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-                        printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
-                            get_the_category_list( ', ' )
-                        );
-                        the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
+							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+								get_the_category_list( ', ' )
+							);
+							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
 
-                    </div><!-- .post-details -->
+						</div>
+						<!-- .post-details -->
 
-                    <?php
-                    nona_show_featured_image( 'full' );
-                    the_content( __( 'Read more... ', 'nona' ) ); ?>
+						<?php
+						nona_show_featured_image( 'full' );
+						the_content( __( 'Read more... ', 'nona' ) ); ?>
 
-                    <div class="clear"></div><!-- For inserted media at the end of the post -->
+						<div class="clear"></div>
+						<!-- For inserted media at the end of the post -->
 
-                    <?php wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona') . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
 
-                </div><!-- .post #post-ID -->
+					</div><!-- .post #post-ID -->
 
-            <?php } /** End while - have posts */ ?>
+				<?php } /** End while - have posts */ ?>
 
-            <div id="nav-global" class="navigation">
-                <div class="left">
-                    <?php next_posts_link( __( '&laquo; Previous entries ', 'nona' ) ); ?>
-                </div>
-                <div class="right">
-                    <?php previous_posts_link( __( ' Next entries &raquo;', 'nona' ) ); ?>
-                </div>
-            </div><!-- .navigation -->
+				<div id="nav-global" class="navigation">
+					<div class="left">
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'nona' ) ); ?>
+					</div>
+					<div class="right">
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'nona' ) ); ?>
+					</div>
+				</div><!-- .navigation -->
 
-            <div class="clear"></div>
+				<div class="clear"></div>
 
-        <?php } else { ?>
+			<?php } else { ?>
 
-            <h2>
-                <?php
-                printf( __( 'Search Results for: %s', 'nona' ),
-                        '<span>' . esc_html( get_search_query() ) . '</span>'
-                ); ?>
-            </h2>
+				<h2>
+					<?php
+					printf( __( 'Search Results for: %s', 'nona' ),
+						'<span>' . esc_html( get_search_query() ) . '</span>'
+					); ?>
+				</h2>
 
-            <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
 
-            <?php
-            get_search_form();
+				<?php
+				get_search_form();
 
-        } /** End if - have posts */ ?>
+			} /** End if - have posts */
+			?>
 
-    </div><!-- #content -->
+		</div>
+		<!-- #content -->
 
-    <div id="after-content"></div>
+		<div id="after-content"></div>
 
-</div><!-- #main-blog -->
+	</div><!-- #main-blog -->
 
 <?php
 get_sidebar();

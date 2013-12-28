@@ -21,118 +21,126 @@
 
 get_header(); ?>
 
-<div id="main-blog">
+	<div id="main-blog">
 
-    <div id="before-content"></div>
+		<div id="before-content"></div>
 
-    <div id="content">
+		<div id="content">
 
-        <div id="tag-title">
-            <?php
-            global $paged;
-            if ( $paged < 2 ) {
-                printf( __( 'First page of the %1$s archive', 'nona' ),
-                        '<span id="tag-name">' . single_tag_title( '', false ) . '</span>'
-                );
-            } else {
-                $curr_tag = single_tag_title( "", false );
-                printf( __( 'Page %1$s of the %2$s archive.', 'nona' ),
-                    $paged,
-                    '<span id="tag-name"><a href="' . home_url() . '"?tag="' . $curr_tag . '" title="' . $curr_tag . '">' . single_tag_title( '', false ) . '</a></span>'
-                );
-            } /** End if - paged */ ?>
-        </div><!-- #tag-title -->
+			<div id="tag-title">
+				<?php
+				global $paged;
+				if ( $paged < 2 ) {
+					printf( __( 'First page of the %1$s archive', 'nona' ),
+						'<span id="tag-name">' . single_tag_title( '', false ) . '</span>'
+					);
+				} else {
+					$curr_tag = single_tag_title( "", false );
+					printf( __( 'Page %1$s of the %2$s archive.', 'nona' ),
+						$paged,
+						'<span id="tag-name"><a href="' . home_url() . '"?tag="' . $curr_tag . '" title="' . $curr_tag . '">' . single_tag_title( '', false ) . '</a></span>'
+					);
+				} /** End if - paged */
+				?>
+			</div>
+			<!-- #tag-title -->
 
-        <div id="tag-description">
-            <?php echo tag_description(); ?>
-        </div><!-- #tag-description -->
+			<div id="tag-description">
+				<?php echo tag_description(); ?>
+			</div>
+			<!-- #tag-description -->
 
-        <!-- start the Loop -->
-        <?php
-        if ( have_posts() ) {
-            $count = 0;
-            while ( have_posts() ) {
-                the_post();
-                $count++; ?>
+			<!-- start the Loop -->
+			<?php
+			if ( have_posts() ) {
+				$count = 0;
+				while ( have_posts() ) {
+					the_post();
+					$count ++; ?>
 
-                <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-                    <h2>
-                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to ', 'nona' ); the_title_attribute(); ?>"><?php the_title(); ?></a>
-                    </h2>
+						<h2>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to ', 'nona' );
+							the_title_attribute(); ?>"><?php the_title(); ?></a>
+						</h2>
 
-                    <div class="post-details">
-                        <?php
-                        printf( __( 'Posted by %1$s on %2$s ', 'nona' ),
-                            get_the_author_meta( 'display_name' ),
-                            get_the_time( get_option( 'date_format' ) )
-                        );
+						<div class="post-details">
+							<?php
+							printf( __( 'Posted by %1$s on %2$s ', 'nona' ),
+								get_the_author_meta( 'display_name' ),
+								get_the_time( get_option( 'date_format' ) )
+							);
 
-                        if ( ! post_password_required() ) {
-                            echo ' ';
-                            comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
-                        } /** End if - not post password required */
+							if ( ! post_password_required() ) {
+								echo ' ';
+								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
+							}
+							/** End if - not post password required */
 
-                        edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
+							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-                        printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
-                            get_the_category_list( ', ' )
-                        );
-                        the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
+							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+								get_the_category_list( ', ' )
+							);
+							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
 
-                    </div><!-- .post-details -->
+						</div>
+						<!-- .post-details -->
 
-                    <?php
-                    if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
+						<?php
+						if ( ( $count <= 2 ) && ( $paged < 2 ) ) {
 
-                        the_content( __( 'Read more... ', 'nona' ) ); ?>
+							the_content( __( 'Read more... ', 'nona' ) ); ?>
 
-                        <div class="clear"></div><!-- For inserted media at the end of the post -->
+							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
-                        <?php
-                        wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona') . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
+							<?php
+							wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
 
-                    } else {
+						} else {
 
-                        the_excerpt(); ?>
-                        <div class="clear"></div><!-- For inserted media at the end of the post -->
+							the_excerpt(); ?>
+							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
-                    <?php } /** End if - count */ ?>
+						<?php } /** End if - count */ ?>
 
-                </div><!-- .post #post-ID -->
+					</div><!-- .post #post-ID -->
 
-            <?php } /** End while - have posts */ ?>
+				<?php } /** End while - have posts */ ?>
 
-            <div id="nav-global" class="navigation">
-                <div class="left">
-                    <?php next_posts_link( __( '&laquo; Previous entries ', 'nona' ) ); ?>
-                </div>
-                <div class="right">
-                    <?php previous_posts_link( __( ' Next entries &raquo;', 'nona' ) ); ?>
-                </div>
-            </div><!-- .navigation -->
+				<div id="nav-global" class="navigation">
+					<div class="left">
+						<?php next_posts_link( __( '&laquo; Previous entries ', 'nona' ) ); ?>
+					</div>
+					<div class="right">
+						<?php previous_posts_link( __( ' Next entries &raquo;', 'nona' ) ); ?>
+					</div>
+				</div><!-- .navigation -->
 
-            <div class="clear"></div>
+				<div class="clear"></div>
 
-        <?php } else { ?>
+			<?php } else { ?>
 
-            <h2>
-                <?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
-            </h2>
+				<h2>
+					<?php printf( __( 'Search Results for: %s', 'nona' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+				</h2>
 
-            <p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
+				<p><?php _e( 'Sorry, but you are looking for something that is not here.', 'nona' ); ?></p>
 
-            <?php
-            get_search_form();
+				<?php
+				get_search_form();
 
-        } /** End if - have posts */ ?>
-        <!-- end the Loop -->
+			} /** End if - have posts */
+			?>
+			<!-- end the Loop -->
 
-    </div><!-- #content -->
+		</div>
+		<!-- #content -->
 
-    <div id="after-content"></div>
+		<div id="after-content"></div>
 
-</div><!-- #main-blog -->
+	</div><!-- #main-blog -->
 
 <?php
 get_sidebar();

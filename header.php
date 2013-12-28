@@ -21,49 +21,57 @@
  * Updated DOCTYPE and other related header elements
  * Code formatting to be more easily read
  * Move Comment Reply script enqueue to 'functions.php'
- */ ?>
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="outside"><!-- closes in 'footer.php' -->
 
-    <div id="header">
+	<div id="header">
 
-        <div id="header-top">
+		<div id="header-top">
 
-            <div id="header-title">
+			<div id="header-title">
 
-                <div id="blog-title">
-                    <a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                </div><!-- #blog-title -->
+				<div id="blog-title">
+					<a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</div>
+				<!-- #blog-title -->
 
-                <div id="blog-description">
-                    <?php bloginfo( 'description' ); ?>
-                </div><!-- .blog-description -->
+				<div id="blog-description">
+					<?php bloginfo( 'description' ); ?>
+				</div>
+				<!-- .blog-description -->
 
-            </div><!-- #header-title -->
+			</div>
+			<!-- #header-title -->
 
-        </div><!-- #header-top -->
+		</div>
+		<!-- #header-top -->
 
-        <div id="header-middle">
+		<div id="header-middle">
 
-            <div id="top-navigation-menu">
-                <?php nona_nav_menu(); ?>
-            </div><!-- #top-navigation -->
+			<div id="top-navigation-menu">
+				<?php nona_nav_menu(); ?>
+			</div>
+			<!-- #top-navigation -->
 
-            <div class="clear"></div>
+			<div class="clear"></div>
 
-        </div><!-- #header-middle -->
+		</div>
+		<!-- #header-middle -->
 
-        <div id="header-bottom"></div>
+		<div id="header-bottom"></div>
 
-    </div><!-- #header -->
+	</div>
+	<!-- #header -->
