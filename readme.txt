@@ -1,6 +1,6 @@
 ==== Nona ====
 === Readme.Txt ===
-Last revised July 2013
+Last revised December 2013
 
 == Table of Contents ==
 * To-Do
@@ -26,3 +26,4 @@ NB: Open To-Do List is now found in 'index.php'
 * http://themes.trac.wordpress.org/ticket/10307 - version 1.7
 * http://themes.trac.wordpress.org/ticket/11704 - version 1.8 - March 2013
 * http://themes.trac.wordpress.org/ticket/13448 - version 1.8.1 - July 2013
+* http://themes.trac.wordpress.org/ticket/15897 - version 1.9 - December 28, 2013
