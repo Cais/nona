@@ -416,73 +416,10 @@ add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );
  *
  * @return  mixed|string|void
  *
- * @version 1.5
- * @date    April 23, 2012
- * Added $args to function - adopted from BNS-Login plugin
- *
- * @version 1.8
- * @date    March 14, 2013
- * Changed conditional to use `is_multisite` for Multisite testing
- * Deprecated ... see BNS Login http://wordpress.org/extend/plugins/bns-login as
- * a replacement
+ * @version	1.9
+ * @date	December 28, 2013
+ * Removed: see BNS Login http://wordpress.org/extend/plugins/bns-login
  */
-if ( ! function_exists( 'nona_login' ) ) {
-	function nona_login( $args = '' ) {
-		$values = array( 'login' => '', 'after_login' => '', 'logout' => '', 'goto' => '', 'separator' => '' );
-		$args   = wp_parse_args( $args, $values );
-
-		/** Initialize $output - start with an empty string */
-		$output = '';
-		/**
-		 * Defaults values:
-		 * @var $login          string - anchor text for log in link
-		 * @var $after_login    string - user is logged in message
-		 * @var $logout         string - anchor text for log out link
-		 * @var $goto           string - anchor text linking to "Dashboard"
-		 * @var $separator      string - characters used to separate link/message texts
-		 * @var $sep            string - $separator wrapper for styling purposes, etc. - just in case ...
-		 */
-		$login       = empty( $args['login'] ) ? sprintf( __( 'Log in here!', 'nona-login' ) ) : $args['login'];
-		$after_login = empty( $args['after_login'] ) ? sprintf( __( 'You are logged in!<br />', 'nona-login' ) ) : $args['after_login'];
-		$logout      = empty( $args['logout'] ) ? sprintf( __( 'Logout', 'nona-login' ) ) : $args['logout'];
-		$goto        = empty( $args['goto'] ) ? sprintf( __( '<br />Go to Dashboard', 'nona-login' ) ) : $args['goto'];
-		$separator   = empty( $args['separator'] ) ? sprintf( __( ' &laquo;&raquo; ' ) ) : $args['separator'];
-		$sep         = '<span class="nona-login-separator">' . $separator . '</span>';
-
-		/** The real work gets done next ...  */
-		$login_url = home_url( '/wp-admin/' );
-		if ( is_user_logged_in() ) {
-
-			$output .= '<div id="nona-logged-in" class="nona-login">' . $after_login . $sep;
-			/** Multisite - logout returns to Multisite main domain page */
-			if ( is_multisite() ) {
-				$current_site = get_current_site();
-				$home_domain  = 'http://' . $current_site->domain . $current_site->path;
-				$logout_url   = wp_logout_url( $home_domain );
-			} else {
-				$logout_url = wp_logout_url( home_url() );
-			}
-			/** End if - is multisite */
-
-			$output .= '<a href="' . $logout_url . '" title="' . $logout . '">' . $logout . '</a>' . $sep;
-			$output .= '<a href="' . $login_url . '" title="' . $goto . '">' . $goto . '</a></div>';
-
-		} else {
-
-			/** if user is not logged in display login; or, register if allowed */
-			$output .= '<div id="nona-logged-out" class="nona-login">';
-			$output .= '<a href="' . $login_url . '" title="' . $login . '">' . $login . '</a>';
-			$output .= wp_register( $sep, '', false );
-			$output .= '</div>';
-
-		}
-		/** End if - is user logged in */
-
-		echo apply_filters( 'nona_login', $output, $args );
-	}
-	/** End function - login */
-}
-/** End if - function exists */
 
 
 /**

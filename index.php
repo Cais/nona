@@ -17,7 +17,7 @@
  * @copyright   Copyright (c) 2009-2013, Edward Caissie
  *
  * @internal    WordPress Version Required: 3.4
- * @internal    WordPress Tested Version: 3.6
+ * @internal    WordPress Tested Version: 3.8.1
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -39,9 +39,6 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version     1.7
- * @date        December 10, 2012
- *
  * @version     1.8
  * @date        March 2013
  * Added code block termination comments
@@ -53,7 +50,8 @@
  * @version     1.8.1
  * @date        July 2013
  *
- * @todo        Remove `nona_login` function at version 1.9?
+ * @version		1.9
+ * @date		December 2013
  */
 
 get_header(); ?>

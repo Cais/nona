@@ -1,8 +1,9 @@
 === NoNa ===
-== Version 1.8.2 ==
+== Version 1.9 ==
 Changelog: December 28, 2013
 = Code =
 * Code reformatted to better meet WordPress Coding Standards (see https://gist.github.com/Cais/8023722)
+* Remove `nona_login` function - see BNS Login http://wordpress.org/extend/plugins/bns-login
 
 /** ------------------------------------------------------------------------- */
 == Version 1.8.1 ==
