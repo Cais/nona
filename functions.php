@@ -328,9 +328,8 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * @link             http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 	 * @link             https://gist.github.com/1410493
 	 *
-	 * @param   string $old_title    - default title text
-	 * @param   string $sep          - separator character
-	 * @param   string $sep_location - left|right - separator placement in relationship to title
+	 * @param   string $old_title - default title text
+	 * @param   string $sep       - separator character
 	 *
 	 * @uses    (global) var $page
 	 * @uses    (global) var $paged
@@ -339,8 +338,12 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * @uses             is_home
 	 *
 	 * @return  string - new title text
+	 *
+	 * @version			1.9
+	 * @date			December 28, 2013
+	 * Removed the unused variable `$sep_location`
 	 */
-	function nona_wp_title( $old_title, $sep, $sep_location ) {
+	function nona_wp_title( $old_title, $sep ) {
 		global $page, $paged;
 		/** Set initial title text */
 		$nona_title_text = $old_title . get_bloginfo( 'name' );
@@ -366,7 +369,7 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	/** End function - title */
 }
 /** End if - function exists */
-add_filter( 'wp_title', 'nona_wp_title', 10, 3 );
+add_filter( 'wp_title', 'nona_wp_title', 10, 2 );
 
 
 /**
@@ -400,24 +403,24 @@ add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );
  * NoNa Login
  * Creates a link to the dashboard, or a login / register link.
  *
- * @package NoNa
- * @since   1.4
+ * @package    NoNa
+ * @since      1.4
  *
  * @param   string $args
  *
- * @uses    apply_filters
- * @uses    get_current_site
- * @uses    home_url
- * @uses    is_multisite
- * @uses    is_user_logged_in
- * @uses    wp_logout_url
- * @uses    wp_parse_args
- * @uses    wp_register
+ * @uses       apply_filters
+ * @uses       get_current_site
+ * @uses       home_url
+ * @uses       is_multisite
+ * @uses       is_user_logged_in
+ * @uses       wp_logout_url
+ * @uses       wp_parse_args
+ * @uses       wp_register
  *
  * @return  mixed|string|void
  *
- * @version	1.9
- * @date	December 28, 2013
+ * @version    1.9
+ * @date       December 28, 2013
  * Removed: see BNS Login http://wordpress.org/extend/plugins/bns-login
  */
 
