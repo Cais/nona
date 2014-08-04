@@ -1,4 +1,11 @@
 === NoNa ===
+== Version 1.9.2 ==
+Changelog: ...
+= Code =
+= CSS =
+= Miscellaneous =
+
+/** ------------------------------------------------------------------------- */
 == Version 1.9.1 ==
 Changelog: August 4, 2014
 = Code =
