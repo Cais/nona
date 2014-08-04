@@ -5,6 +5,7 @@ Changelog: August 3, 2014
 * Minor code refactoring to better meet WordPress Coding Standards
 
 = CSS =
+* Improved aesthetics of Post Password form display
 
 = Miscellaneous =
 * Update copyright to 2014

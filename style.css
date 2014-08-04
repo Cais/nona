@@ -823,6 +823,12 @@ div.widget div.textwidget form select {
 	width: 98%;
 }
 
+form.post-password-form input {
+	padding: 4px;
+	position: relative;
+	top: -3px;
+}
+
 /* =- End Forms -= ---*/
 
 /*-= Comments =- ---*/
@@ -875,12 +881,12 @@ ul.children li {
 	font-size: 100%;
 }
 
-.odd, comment-text-1 {
+.odd, .comment-text-1 {
 	background: #af7d7a;
 	margin-top: 1px;
 }
 
-.even, comment-text-2 {
+.even, .comment-text-2 {
 	background: #60606b;
 	margin-top: 1px;
 }
