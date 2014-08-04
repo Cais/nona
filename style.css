@@ -798,6 +798,12 @@ input, textarea {
 	border-radius: 10px;
 }
 
+form.searchform input {
+	padding: 4px;
+	position: relative;
+	top: -3px;
+}
+
 p.comment-form-author label,
 p.comment-form-email label,
 p.comment-form-url label {
