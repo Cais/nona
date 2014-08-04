@@ -1050,31 +1050,36 @@ h2.widget-title {
 }
 
 /*-- Calendar --*/
-#wp-calendar {
-	margin: 0 auto;
-}
-
-.widget table#wp-calendar {
-	text-align: center;
-	width: 100%;
-}
-
-.widget table#wp-calendar caption {
-	text-align: center;
-}
-
-table#wp-calendar th {
-	font-style: normal;
-	font-weight: normal;
+table#wp-calendar td#today {
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	font-weight: bold;
 }
 
 table#wp-calendar tr, table#wp-calendar td {
 	border: none;
 }
 
-table#wp-calendar td#today {
-	border: 1px dashed #000;
+#wp-calendar {
+	margin: 0 auto;
 }
+
+table#wp-calendar {
+	text-align: center;
+	width: 100%;
+}
+
+table#wp-calendar caption {
+	text-align: center;
+}
+
+table#wp-calendar th {
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+}
+
+/* End Calendar */
 
 .widget_archive select,
 .widget_categories select {

@@ -9,6 +9,7 @@ Changelog: August 3, 2014
 * Make sure Twitter embeds are not fixed width
 * Update `gallery-caption` class to better handle high quantity column displays
 * Added `post-title` class and styles to better handle long titles
+* Updated default Calendar widget styles
 
 = Miscellaneous =
 * Update copyright to 2014
