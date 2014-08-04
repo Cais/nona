@@ -1221,6 +1221,12 @@ img#wpstats {
 	margin: 0 auto;
 }
 
+/* Miscellaneous */
+/** Make sure Twitter embeds are not fixed width */
+#content .twitter-tweet-rendered {
+	width: 100% !important;
+}
+
 /* BNS Plugins */
 /* bns-login plugin */
 .nona-login, .bns-login {

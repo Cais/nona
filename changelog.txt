@@ -6,6 +6,7 @@ Changelog: August 3, 2014
 
 = CSS =
 * Improved aesthetics of Post Password form display
+* Make sure Twitter embeds are not fixed width
 
 = Miscellaneous =
 * Update copyright to 2014
