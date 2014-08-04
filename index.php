@@ -69,7 +69,7 @@ get_header(); ?>
 
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-						<h2>
+						<h2 class="post-title">
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h2>
 

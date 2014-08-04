@@ -8,6 +8,7 @@ Changelog: August 3, 2014
 * Improved aesthetics of Post Password form display
 * Make sure Twitter embeds are not fixed width
 * Update `gallery-caption` class to better handle high quantity column displays
+* Added `post-title` class and styles to better handle long titles
 
 = Miscellaneous =
 * Update copyright to 2014
