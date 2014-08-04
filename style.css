@@ -307,6 +307,7 @@ sub {
 }
 
 #main-blog {
+	border-top: medium double black;
 	float: left;
 	margin: 0 -330px 0 0;
 	width: 100%;
@@ -329,6 +330,7 @@ sub {
 }
 
 #sidebar {
+	border-top: medium double black;
 	float: right;
 	overflow: hidden;
 	width: 320px;
@@ -498,6 +500,7 @@ ul.nav-menu ul.sub-menu li,
 ul.nav-menu ul.children li {
 	border: none;
 	list-style: none;
+	text-align: left;
 }
 
 /* End: Horizontal CSS Drop-Down Menu Module */

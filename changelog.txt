@@ -8,8 +8,9 @@ Changelog: August 4, 2014
 * Added `post-title` class and styles to better handle long titles
 * Improved aesthetics of Post Password form display
 * Improved aesthetics of Search form display
-* Make sure Twitter embeds are not fixed width
-* Update `gallery-caption` class to better handle high quantity column displays
+* Made sure Twitter embeds are not fixed width
+* Minor adjustment to child-menu item alignment (now left instead of centered)
+* Updated `gallery-caption` class to better handle high quantity column displays
 * Updated default Calendar widget styles
 
 = Miscellaneous =
