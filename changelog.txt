@@ -17,6 +17,7 @@ Changelog: August 4, 2014
 * Documentation clean up and updates
 * Update copyright to 2014
 * Update Tested Up To version to WordPress 4.0
+* Update `screenshot.png` to 880x660 size
 
 /** ------------------------------------------------------------------------- */
 == Version 1.9 ==
