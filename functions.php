@@ -12,10 +12,6 @@
  * @author      Edward Caissie <edward.caissie@gmail.com>
  * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
- * @version     1.7
- * @date        December 10, 2012
- * PHPDocs style documentation updates and additions
- *
  * @version     1.8
  * @date        March 15, 2013
  * Deprecated `nona-login`
@@ -25,6 +21,10 @@
  * @date        July 18, 2013
  * Added constant 'NONA_HOME_URL'
  * Added function `nona_show_featured_image( $size )`
+ *
+ * @version     1.9.1
+ * @date        August 4, 2014
+ * Documentation clean up and updates
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -41,18 +41,27 @@ if ( ! isset( $content_width ) ) {
 }
 /** End if - not isset content width */
 
-add_action( 'after_setup_theme', 'nona_setup' );
+
 if ( ! function_exists( 'nona_setup' ) ) {
 	/**
 	 * NoNa Setup
-	 *
 	 * Tell WordPress to run nona_setup() when the 'after_setup_theme' hook is run.
 	 *
-	 * @version 1.6
-	 * @date    July 10, 2012
+	 * @package    NoNa
+	 *
+	 * @uses       add_editor_style
+	 * @uses       add_theme_support
+	 * @uses       register_nav_menu
+	 * @uses       load_textdomain
+	 * @uses       get_template_directory_uri
+	 * @uses       get_locale
+	 *
+	 * @version    1.6
+	 * @date       July 10, 2012
 	 * Removed deprecated function call to `add_custom_background`
 	 */
 	function nona_setup() {
+
 		global $wp_version;
 		/** This theme styles the visual editor with editor-style.css to match the theme style. */
 		add_editor_style();
@@ -69,7 +78,6 @@ if ( ! function_exists( 'nona_setup' ) ) {
 			)
 		);
 
-
 		/** wp_nav_menu support */
 		if ( ! function_exists( 'nona_nav_menu' ) ) {
 			/**
@@ -81,6 +89,7 @@ if ( ! function_exists( 'nona_setup' ) ) {
 			 * @uses    wp_nav_menu
 			 */
 			function nona_nav_menu() {
+
 				wp_nav_menu(
 					array(
 						'menu_class'     => 'nav-menu',
@@ -88,15 +97,17 @@ if ( ! function_exists( 'nona_setup' ) ) {
 						'fallback_cb'    => 'nona_list_pages'
 					)
 				);
+
 			}
 			/** End function - nav menu */
+
 		}
 		/** End if - function exists */
-
 
 		if ( ! function_exists( 'nona_list_pages' ) ) {
 			/**
 			 * NoNa List Pages
+			 * Menu callback function
 			 *
 			 * @package NoNa
 			 *
@@ -108,8 +119,10 @@ if ( ! function_exists( 'nona_setup' ) ) {
 			<?php
 			}
 			/** End function - list pages */
+
 		}
 		/** End if - function exists */
+
 		register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
 		/** End wp_nav_menu support */
 
@@ -127,19 +140,23 @@ if ( ! function_exists( 'nona_setup' ) ) {
 
 	}
 	/** End function - setup */
+
 }
 /** End if - function exists */
+add_action( 'after_setup_theme', 'nona_setup' );
 
 
 if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 	/**
 	 * NoNa Dynamic Copyright
+	 * Creates the copyright string based on the published posts date(s)
 	 *
 	 * @package NoNa
 	 * @since   1.4
 	 *
 	 * @param   string $args
 	 *
+	 * @uses    __
 	 * @uses    apply_filters
 	 * @uses    get_bloginfo
 	 * @uses    get_posts
@@ -148,6 +165,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 	 * @uses    wp_parse_args
 	 */
 	function nona_dynamic_copyright( $args = '' ) {
+
 		$initialize_values = array(
 			'start'      => '',
 			'copy_years' => '',
@@ -164,6 +182,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 
 		/** Calculate Copyright Years; and, prefix with Copyright Symbol */
 		if ( empty( $args['copy_years'] ) ) {
+
 			/** Get all posts */
 			$all_posts = get_posts( 'post_status=publish&order=ASC' );
 			/** Get first post */
@@ -173,6 +192,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 
 			/** First post year versus current year */
 			$first_year = substr( $first_date, 0, 4 );
+
 			if ( $first_year == '' ) {
 				$first_year = date( 'Y' );
 			}
@@ -180,10 +200,14 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 
 			/** Add to output string */
 			if ( $first_year == date( 'Y' ) ) {
+
 				/** Only use current year if no posts in previous years */
 				$output .= ' &copy; ' . date( 'Y' );
+
 			} else {
+
 				$output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
+
 			}
 			/** End if - first year */
 
@@ -210,6 +234,7 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 
 	}
 	/** End function - dynamic copyright */
+
 }
 /** End if - function exists */
 
@@ -218,29 +243,29 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 	/**
 	 * NoNa Theme Version
 	 *
-	 * @package NoNa
-	 * @since   1.4
+	 * @package            NoNa
+	 * @since              1.4
 	 *
-	 * @uses    is_child_theme
-	 * @uses    wp_get_theme
-	 * @uses    WP_Theme::parent
+	 * @uses    (constant) NONA_HOME_URL
+	 * @uses               __
+	 * @uses               is_child_theme
+	 * @uses               wp_get_theme
 	 *
-	 * @version 1.6
-	 * @date    July 10, 2012
-	 * Removed deprecated function call to `get_theme_data`
-	 *
-	 * @version 1.7
-	 * @date    December 10, 2012
+	 * @version            1.7
+	 * @date               December 10, 2012
 	 * Minor change to output text
 	 *
-	 * @version 1.8.1
-	 * @date    April 23, 2013
+	 * @version            1.8.1
+	 * @date               April 23, 2013
 	 * Used 'NONA_HOME_URL' where appropriate
 	 */
 	function nona_theme_version() {
+
 		/** @var $active_theme_data - array object containing the current theme's data */
 		$active_theme_data = wp_get_theme();
+
 		if ( is_child_theme() ) {
+
 			/** @var $parent_theme_data - array object containing the Parent Theme's data */
 			$parent_theme_data = $active_theme_data->parent();
 			printf(
@@ -251,28 +276,37 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 				$parent_theme_data['Version'],
 				'<a href="http://' . NONA_HOME_URL . '" title="' . NONA_HOME_URL . '">' . NONA_HOME_URL . '</a>'
 			);
+
 		} else {
+
 			printf(
 				__( '<br /><span id="nona-theme-version">This site is dressed in the %1$s theme (v%2$s) from %3$s.</span>', 'nona' ),
 				$active_theme_data['Name'],
 				$active_theme_data['Version'],
 				'<a href="http://' . NONA_HOME_URL . '" title="' . NONA_HOME_URL . '">' . NONA_HOME_URL . '</a>'
 			);
+
 		}
 		/** End if - is child theme */
 
 	}
 	/** End function - theme version */
+
 }
 /** End if - function exists */
 
 
 /**
  * Widgets Areas
+ * Registers the sidebars
  *
- * @uses    register_sidebar
+ * @package    NoNa
+ *
+ * @uses       __
+ * @uses       register_sidebar
  */
 function nona_widgets() {
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Sidebar 1', 'nona' ),
@@ -283,6 +317,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Sidebar 2', 'nona' ),
@@ -293,6 +328,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Sidebar 3', 'nona' ),
@@ -303,6 +339,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer Left', 'nona' ),
@@ -314,6 +351,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer Middle', 'nona' ),
@@ -325,6 +363,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer Right', 'nona' ),
@@ -336,6 +375,7 @@ function nona_widgets() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 }
 
 /** End function - widgets */
@@ -369,6 +409,7 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * Removed the unused variable `$sep_location`
 	 */
 	function nona_wp_title( $old_title, $sep ) {
+
 		global $page, $paged;
 		/** Set initial title text */
 		$nona_title_text = $old_title . get_bloginfo( 'name' );
@@ -377,6 +418,7 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 
 		/** Add the blog description (tagline) for the home/front page */
 		$site_tagline = get_bloginfo( 'description', 'display' );
+
 		if ( $site_tagline && ( is_home() || is_front_page() ) ) {
 			$nona_title_text .= "$sep$site_tagline";
 		}
@@ -390,64 +432,44 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 		/** End if - paged */
 
 		return $nona_title_text;
+
 	}
 	/** End function - title */
+
 }
 /** End if - function exists */
 add_filter( 'wp_title', 'nona_wp_title', 10, 2 );
 
 
-/**
- * Enqueue Comment Reply Script
- * If the page being viewed is a single post/page; and, comments are open; and,
- * threaded comments are turned on then enqueue the built-in comment-reply
- * script.
- *
- * @package NoNa
- * @since   1.8
- *
- * @uses    comments_open
- * @uses    get_option
- * @uses    is_singular
- * @uses    wp_enqueue_script
- */
 if ( ! function_exists( 'nona_enqueue_comment_reply' ) ) {
+
+	/**
+	 * Enqueue Comment Reply Script
+	 * If the page being viewed is a single post/page; and, comments are open; and,
+	 * threaded comments are turned on then enqueue the built-in comment-reply
+	 * script.
+	 *
+	 * @package NoNa
+	 * @since   1.8
+	 *
+	 * @uses    comments_open
+	 * @uses    get_option
+	 * @uses    is_singular
+	 * @uses    wp_enqueue_script
+	 */
 	function nona_enqueue_comment_reply() {
+
 		if ( is_singular() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 		/** End if - is singular */
+
 	}
 	/** End function - enqueue comment reply */
+
 }
 /** End if - function exists */
 add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );
-
-
-/**
- * NoNa Login
- * Creates a link to the dashboard, or a login / register link.
- *
- * @package    NoNa
- * @since      1.4
- *
- * @param   string $args
- *
- * @uses       apply_filters
- * @uses       get_current_site
- * @uses       home_url
- * @uses       is_multisite
- * @uses       is_user_logged_in
- * @uses       wp_logout_url
- * @uses       wp_parse_args
- * @uses       wp_register
- *
- * @return  mixed|string|void
- *
- * @version    1.9
- * @date       December 28, 2013
- * Removed: see BNS Login http://wordpress.org/extend/plugins/bns-login
- */
 
 
 /**
@@ -463,8 +485,10 @@ add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );
  * @uses    the_post_thumbnail
  */
 function nona_show_featured_image( $size ) {
+
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( $size, array( 'class' => 'aligncenter' ) );
 	}
 	/** End if - has post thumbnail */
+
 } /** End function - show featured image */

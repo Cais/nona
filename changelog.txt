@@ -12,6 +12,7 @@ Changelog: August 3, 2014
 * Updated default Calendar widget styles
 
 = Miscellaneous =
+* Documentation clean up and updates
 * Update copyright to 2014
 * Update Tested Up To version to WordPress 4.0
 
