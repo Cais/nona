@@ -133,11 +133,13 @@ img.alignright, img.right {
 	margin: 0;
 }
 
-/* Placeholders */
-.bypostauthor {
+.gallery-caption {
+	word-wrap: normal;
+	word-break: break-all;
 }
 
-.gallery-caption {
+/* Placeholders */
+.bypostauthor {
 }
 
 /*-- End WordPress Rules --*/
