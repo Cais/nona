@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     1.6
  * @date        July 10, 2012
@@ -44,14 +44,16 @@ get_header(); ?>
 
 						<div class="post-details">
 							<?php
-							printf( __( 'Posted by %1$s on %2$s', 'nona' ),
+							printf(
+								__( 'Posted by %1$s on %2$s', 'nona' ),
 								get_the_author_meta( 'display_name' ),
 								get_the_time( get_option( 'date_format' ) )
 							);
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -64,11 +66,18 @@ get_header(); ?>
 						<div class="clear"></div>
 						<!-- For inserted media at the end of the post -->
 
-						<?php wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
+						<?php wp_link_pages(
+							array(
+								'before'         => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>',
+								'after'          => '</p>',
+								'next_or_number' => 'number'
+							)
+						); ?>
 
 						<div id="author-link">
 							<?php
-							printf( __( '... other posts by %1$s', 'nona' ),
+							printf(
+								__( '... other posts by %1$s', 'nona' ),
 								'<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>'
 							); ?>
 						</div>
@@ -95,7 +104,8 @@ get_header(); ?>
 
 				<h2>
 					<?php
-					printf( __( 'Search Results for: %s', 'nona' ),
+					printf(
+						__( 'Search Results for: %s', 'nona' ),
 						'<span>' . esc_html( get_search_query() ) . '</span>'
 					); ?>
 				</h2>

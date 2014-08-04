@@ -1,4 +1,16 @@
 === NoNa ===
+== Version 1.9.1 ==
+Changelog: August 3, 2014
+= Code =
+* Minor code refactoring to better meet WordPress Coding Standards
+
+= CSS =
+
+= Miscellaneous =
+* Update copyright to 2014
+* Update Tested Up To version to WordPress 4.0
+
+/** ------------------------------------------------------------------------- */
 == Version 1.9 ==
 Changelog: December 28, 2013
 = Code =

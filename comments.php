@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -99,7 +99,12 @@ add_filter( 'comment_class', 'comment_add_userid' ); ?>
 		</h4>
 
 		<ul class="commentlist" id="singlecomments">
-			<?php wp_list_comments( array( 'avatar_size' => 60, 'reply_text' => __( '&raquo; Reply to this Comment &laquo;', 'nona' ) ) ); ?>
+			<?php wp_list_comments(
+				array(
+					'avatar_size' => 60,
+					'reply_text'  => __( '&raquo; Reply to this Comment &laquo;', 'nona' )
+				)
+			); ?>
 		</ul>
 
 		<div class="navigation">

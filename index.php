@@ -6,18 +6,18 @@
  * grunge based theme originally known as Pinup Meets Grunge beautifully blends
  * custom background colors.
  *
- * @package     NoNa
- * @since       1.0
+ * @package        NoNa
+ * @since          1.0
  *
- * @link        http://buynowshop.com/themes/nona/
- * @link        https://github.com/Cais/nona/
- * @link        http://wordpress.org/extend/themes/nona
+ * @link           http://buynowshop.com/themes/nona/
+ * @link           https://github.com/Cais/nona/
+ * @link           http://wordpress.org/extend/themes/nona
  *
- * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @author         Edward Caissie <edward.caissie@gmail.com>
+ * @copyright      Copyright (c) 2009-2014, Edward Caissie
  *
- * @internal    WordPress Version Required: 3.4
- * @internal    WordPress Tested Version: 3.8.1
+ * @internal       WordPress Version Required: 3.4
+ * @internal       WordPress Tested Version: 4.0
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -39,19 +39,19 @@
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * @version     1.8
- * @date        March 2013
+ * @version        1.8
+ * @date           March 2013
  * Added code block termination comments
  * Refactored code formatting
  * Refactored no post title code
  * Refactored to be more i18n compatible
  * Remove 'searchform.php' template in favor of using WordPress core version
  *
- * @version     1.8.1
- * @date        July 2013
+ * @version        1.8.1
+ * @date           July 2013
  *
- * @version		1.9
- * @date		December 2013
+ * @version        1.9
+ * @date           December 2013
  */
 
 get_header(); ?>
@@ -85,7 +85,8 @@ get_header(); ?>
 								? sprintf( '<a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to post ' . get_the_id() . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>' )
 								: get_the_time( get_option( 'date_format' ) );
 
-							printf( __( 'Posted by %1$s on %2$s', 'nona' ),
+							printf(
+								__( 'Posted by %1$s on %2$s', 'nona' ),
 								get_the_author_meta( 'display_name' ),
 								$nona_post_title
 							);
@@ -98,7 +99,8 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -113,7 +115,13 @@ get_header(); ?>
 						<div class="clear"></div>
 						<!-- For inserted media at the end of the post -->
 
-						<?php wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
+						<?php wp_link_pages(
+							array(
+								'before'         => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>',
+								'after'          => '</p>',
+								'next_or_number' => 'number'
+							)
+						); ?>
 
 					</div><!-- .post #post-ID -->
 
@@ -134,7 +142,8 @@ get_header(); ?>
 
 				<h2>
 					<?php
-					printf( __( 'Search Results for: %s', 'nona' ),
+					printf(
+						__( 'Search Results for: %s', 'nona' ),
 						'<span>' . esc_html( get_search_query() ) . '</span>'
 					); ?>
 				</h2>

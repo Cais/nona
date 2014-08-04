@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -46,11 +46,13 @@ get_header(); ?>
 				<?php
 				global $paged;
 				if ( $paged < 2 ) {
-					printf( __( 'Posts by date %1$s: ', 'nona' ),
+					printf(
+						__( 'Posts by date %1$s: ', 'nona' ),
 						$display_date
 					);
 				} else {
-					printf( __( 'Page %1$s of posts by date %2$s: ', 'nona' ),
+					printf(
+						__( 'Page %1$s of posts by date %2$s: ', 'nona' ),
 						$paged,
 						$display_date
 					);
@@ -75,7 +77,8 @@ get_header(); ?>
 
 						<div class="post-details">
 							<?php
-							printf( __( 'Posted by %1$s on %2$s ', 'nona' ),
+							printf(
+								__( 'Posted by %1$s on %2$s ', 'nona' ),
 								get_the_author_meta( 'display_name' ),
 								get_the_time( get_option( 'date_format' ) )
 							);
@@ -88,7 +91,8 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -106,7 +110,13 @@ get_header(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
 							<?php
-							wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
+								)
+							);
 
 						} else {
 
@@ -134,7 +144,8 @@ get_header(); ?>
 			<?php } else { ?>
 
 				<h2>
-					<?php printf( __( 'Search Results for: %s', 'nona' ),
+					<?php printf(
+						__( 'Search Results for: %s', 'nona' ),
 						'<span>' . esc_html( get_search_query() ) . '</span>'
 					); ?>
 				</h2>

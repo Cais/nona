@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * Last revised April 23, 2012
  * @version     1.5
@@ -48,7 +48,8 @@ $curauth = ( get_query_var( 'author_name ' ) )
 					<?php if ( ! empty( $curauth->user_url ) ) { ?>
 						<li>
 							<?php
-							printf( __( 'Website %1$s or %2$s', 'nona' ),
+							printf(
+								__( 'Website %1$s or %2$s', 'nona' ),
 								sprintf( '<a href="%1$s">%1$s</a>', $curauth->user_url ),
 								sprintf( '<a href="mailto:%1$s">email</a>', $curauth->user_email )
 							); ?>
@@ -89,7 +90,8 @@ $curauth = ( get_query_var( 'author_name ' ) )
 						<div class="post-details">
 
 							<?php
-							printf( __( 'on %1$s ', 'nona' ),
+							printf(
+								__( 'on %1$s ', 'nona' ),
 								get_the_time( get_option( 'date_format' ) )
 							);
 
@@ -101,7 +103,8 @@ $curauth = ( get_query_var( 'author_name ' ) )
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -116,7 +119,13 @@ $curauth = ( get_query_var( 'author_name ' ) )
 							the_content( __( 'Read more... ', 'nona' ) ); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 							<?php
-							wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
+								)
+							);
 						} else {
 							the_excerpt(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
@@ -141,7 +150,8 @@ $curauth = ( get_query_var( 'author_name ' ) )
 
 				<h2>
 					<?php
-					printf( __( 'Search Results for: %s', 'nona' ),
+					printf(
+						__( 'Search Results for: %s', 'nona' ),
 						'<span>' . esc_html( get_search_query() ) . '</span>'
 					); ?>
 				</h2>

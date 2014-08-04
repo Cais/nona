@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -35,13 +35,15 @@ get_header(); ?>
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 						<h2>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"
+							   title="<?php _e( 'Permanent Link to', 'nona' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h2>
 
 						<div class="post-details">
 
 							<?php
-							printf( __( 'Posted by %1$s on %2$s', 'nona' ),
+							printf(
+								__( 'Posted by %1$s on %2$s', 'nona' ),
 								get_the_author_meta( 'display_name' ),
 								get_the_time( get_option( 'date_format' ) )
 							);
@@ -54,7 +56,8 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -88,7 +91,8 @@ get_header(); ?>
 
 				<h2>
 					<?php
-					printf( __( 'Search Results for: %s', 'nona' ),
+					printf(
+						__( 'Search Results for: %s', 'nona' ),
 						'<span>' . esc_html( get_search_query() ) . '</span>'
 					); ?>
 				</h2>

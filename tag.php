@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2013, Edward Caissie
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -31,12 +31,14 @@ get_header(); ?>
 				<?php
 				global $paged;
 				if ( $paged < 2 ) {
-					printf( __( 'First page of the %1$s archive', 'nona' ),
+					printf(
+						__( 'First page of the %1$s archive', 'nona' ),
 						'<span id="tag-name">' . single_tag_title( '', false ) . '</span>'
 					);
 				} else {
 					$curr_tag = single_tag_title( "", false );
-					printf( __( 'Page %1$s of the %2$s archive.', 'nona' ),
+					printf(
+						__( 'Page %1$s of the %2$s archive.', 'nona' ),
 						$paged,
 						'<span id="tag-name"><a href="' . home_url() . '"?tag="' . $curr_tag . '" title="' . $curr_tag . '">' . single_tag_title( '', false ) . '</a></span>'
 					);
@@ -67,7 +69,8 @@ get_header(); ?>
 
 						<div class="post-details">
 							<?php
-							printf( __( 'Posted by %1$s on %2$s ', 'nona' ),
+							printf(
+								__( 'Posted by %1$s on %2$s ', 'nona' ),
 								get_the_author_meta( 'display_name' ),
 								get_the_time( get_option( 'date_format' ) )
 							);
@@ -80,7 +83,8 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
-							printf( __( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
+							printf(
+								__( '<div class="nona-categories-list">in %1$s</div>', 'nona' ),
 								get_the_category_list( ', ' )
 							);
 							the_tags( __( 'as ', 'nona' ), ', ', '' ); ?>
@@ -96,7 +100,13 @@ get_header(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
 							<?php
-							wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>', 'after' => '</p>', 'next_or_number' => 'number' ) );
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>' . __( 'Pages: ', 'nona' ) . '</strong>',
+									'after'          => '</p>',
+									'next_or_number' => 'number'
+								)
+							);
 
 						} else {
 
