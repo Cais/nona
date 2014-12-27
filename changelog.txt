@@ -4,10 +4,14 @@ Changelog: December 27, 2014
 = Code =
 * Additional minor code refactoring to better meet WordPress Coding Standards
 * Added `nona_content_width` function to be used in `*_head` hooks
+* Added sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )`
 * Removed call to unused `$wp_version` global in `nona_setup`
 
 = CSS =
+
+
 = Miscellaneous =
+* Added BNS Login compatibility to display dashicons instead of text links
 * Cleaned up theme description
 
 /** ------------------------------------------------------------------------- */

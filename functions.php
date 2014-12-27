@@ -88,8 +88,9 @@ if ( ! function_exists( 'nona_setup' ) ) {
 	 * @date       July 10, 2012
 	 * Removed deprecated function call to `add_custom_background`
 	 *
-	 * @version 1.9.2
-	 * @date    December 27, 2014
+	 * @version    1.9.2
+	 * @date       December 27, 2014
+	 * Added `title-tag` support
 	 * Removed call to unused `$wp_version` global
 	 */
 	function nona_setup() {
@@ -108,6 +109,9 @@ if ( ! function_exists( 'nona_setup' ) ) {
 				'default-image' => get_template_directory_uri() . '/images/GrungeOverlayTileSmall.png'
 			)
 		);
+
+		/** Add support for the `<title />` tag */
+		add_theme_support( 'title-tag' );
 
 		/** wp_nav_menu support */
 		if ( ! function_exists( 'nona_nav_menu' ) ) {
@@ -436,31 +440,44 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * @version 1.9
 	 * @date    December 28, 2013
 	 * Removed the unused variable `$sep_location`
+	 *
+	 * @version 1.9.2
+	 * @date    December 27, 2014
+	 * Added sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )`
 	 */
 	function nona_wp_title( $old_title, $sep ) {
 
-		global $page, $paged;
-		/** Set initial title text */
-		$nona_title_text = $old_title . get_bloginfo( 'name' );
-		/** Add wrapping spaces to separator character */
-		$sep = ' ' . $sep . ' ';
+		/** Sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )` */
+		if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
-		/** Add the blog description (tagline) for the home/front page */
-		$site_tagline = get_bloginfo( 'description', 'display' );
+			global $page, $paged;
+			/** Set initial title text */
+			$nona_title_text = $old_title . get_bloginfo( 'name' );
+			/** Add wrapping spaces to separator character */
+			$sep = ' ' . $sep . ' ';
 
-		if ( $site_tagline && ( is_home() || is_front_page() ) ) {
-			$nona_title_text .= "$sep$site_tagline";
-		}
-		/** End if - site tagline */
+			/** Add the blog description (tagline) for the home/front page */
+			$site_tagline = get_bloginfo( 'description', 'display' );
 
-		/** Add a page number if necessary */
-		if ( $paged >= 2 || $page >= 2 ) {
-			$nona_title_text .= $sep . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) );
-		}
+			if ( $site_tagline && ( is_home() || is_front_page() ) ) {
+				$nona_title_text .= "$sep$site_tagline";
+			}
+			/** End if - site tagline */
 
-		/** End if - paged */
+			/** Add a page number if necessary */
+			if ( $paged >= 2 || $page >= 2 ) {
+				$nona_title_text .= $sep . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) );
+			}
 
-		return $nona_title_text;
+			/** End if - paged */
+
+			return $nona_title_text;
+
+		} else {
+
+			return null;
+
+		} /** End if - sanity check for WordPress 4.1 */
 
 	}
 	/** End function - title */
@@ -521,3 +538,8 @@ function nona_show_featured_image( $size ) {
 	/** End if - has post thumbnail */
 
 } /** End function - show featured image */
+
+/** ------------------------------------------------------------------------- */
+
+/** BNS Login Compatibility - Use Dashicons instead of text links */
+add_filter( 'bns_login_dashed_set', '__return_true' );
