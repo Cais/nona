@@ -26,43 +26,46 @@
  * @date        August 4, 2014
  * Documentation clean up and updates
  *
- * @version 1.9.2
- * @date    December 27, 2014
+ * @version     1.9.2
+ * @date        December 27, 2014
  * Added `nona_content_width` function to be used in "*_head" hooks
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
 
+/** Set specific URL for DRY reasons */
 define( 'NONA_HOME_URL', 'BuyNowShop.com' );
 
-/**
- * Content Width
- *
- * Set the content width based on the theme's design and stylesheet.
- * Used to set the width of images and content. Should be equal to the width the theme
- * is designed for, generally via the style.css stylesheet.
- *
- * @package NoNa
- * @since   1.9.2
- *
- * @uses    (GLOBAL) $content_width
- */
-function nona_content_width() {
 
-	/** Get the global variable */
-	global $content_width;
+if ( ! function_exists( 'nona_content_width' ) ) {
+	/**
+	 * Content Width
+	 *
+	 * Set the content width based on the theme's design and stylesheet.
+	 * Used to set the width of images and content. Should be equal to the width the theme
+	 * is designed for, generally via the style.css stylesheet.
+	 *
+	 * @package NoNa
+	 * @since   1.9.2
+	 *
+	 * @uses    (GLOBAL) $content_width
+	 */
+	function nona_content_width() {
 
-	/** Sanity check - if there is no value set */
-	if ( ! isset( $content_width ) ) {
-		$content_width = 595;
+		/** Get the global variable */
+		global $content_width;
+
+		/** Sanity check - if there is no value set */
+		if ( ! isset( $content_width ) ) {
+			$content_width = 595;
+		}
+		/** End if - not isset content width */
+
 	}
-	/** End if - not isset content width */
+	/** End functions - content width */
 
 }
-
-/** End functions - content width */
-
-/** Hook into the appropriate places to ensure $content width is set */
+/** End if - function exists */
 add_action( 'admin_head', 'nona_content_width' );
 add_action( 'wp_head', 'nona_content_width', 0 );
 
@@ -84,10 +87,13 @@ if ( ! function_exists( 'nona_setup' ) ) {
 	 * @version    1.6
 	 * @date       July 10, 2012
 	 * Removed deprecated function call to `add_custom_background`
+	 *
+	 * @version 1.9.2
+	 * @date    December 27, 2014
+	 * Removed call to unused `$wp_version` global
 	 */
 	function nona_setup() {
 
-		global $wp_version;
 		/** This theme styles the visual editor with editor-style.css to match the theme style. */
 		add_editor_style();
 		/** This theme uses post thumbnails */
@@ -412,25 +418,23 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * NoNa WP Title
 	 * Utilizes the `wp_title` filter to add text to the default output
 	 *
-	 * @package            NoNa
-	 * @since              1.6
-	 *
-	 * @link               http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
-	 * @link               https://gist.github.com/1410493
+	 * @package NoNa
+	 * @since   1.6
 	 *
 	 * @param   string $old_title - default title text
 	 * @param   string $sep       - separator character
 	 *
-	 * @uses               (global)   var $page
-	 * @uses               (global)   var $paged
-	 * @uses               get_bloginfo
-	 * @uses               is_front_page
-	 * @uses               is_home
+	 * @uses    (GLOBAL) $page
+	 * @uses    (GLOBAL) $paged
+	 * @uses    __
+	 * @uses    get_bloginfo
+	 * @uses    is_front_page
+	 * @uses    is_home
 	 *
 	 * @return  string - new title text
 	 *
-	 * @version            1.9
-	 * @date               December 28, 2013
+	 * @version 1.9
+	 * @date    December 28, 2013
 	 * Removed the unused variable `$sep_location`
 	 */
 	function nona_wp_title( $old_title, $sep ) {

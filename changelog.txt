@@ -3,7 +3,8 @@
 Changelog: December 27, 2014
 = Code =
 * Additional minor code refactoring to better meet WordPress Coding Standards
-* Added `nona_content_width` function to be used in "*_head" hooks
+* Added `nona_content_width` function to be used in `*_head` hooks
+* Removed call to unused `$wp_version` global in `nona_setup`
 
 = CSS =
 = Miscellaneous =
