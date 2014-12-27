@@ -22,8 +22,8 @@
 get_header();
 
 /** used to create dynamic category link */
-$curr_cat = single_cat_title( '', false );
-$cat_id = get_cat_ID( $curr_cat );
+$curr_cat      = single_cat_title( '', false );
+$cat_id        = get_cat_ID( $curr_cat );
 $category_link = get_category_link( $cat_id ); ?>
 
 	<div id="main-blog">

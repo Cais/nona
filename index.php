@@ -86,7 +86,7 @@ get_header(); ?>
 							 * For posts without titles - create a permalink using
 							 * the post date referencing the post ID
 							 */
-							$nona_title = get_the_title();
+							$nona_title      = get_the_title();
 							$nona_post_title = empty( $nona_title )
 								? sprintf( '<a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to post ' . get_the_id() . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>' )
 								: get_the_time( get_option( 'date_format' ) );

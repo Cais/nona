@@ -1,7 +1,9 @@
 === NoNa ===
 == Version 1.9.2 ==
-Changelog: ...
+Changelog: December 27, 2014
 = Code =
+* Additional minor code refactoring to better meet WordPress Coding Standards
+
 = CSS =
 = Miscellaneous =
 

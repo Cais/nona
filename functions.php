@@ -246,7 +246,7 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 	 * @package            NoNa
 	 * @since              1.4
 	 *
-	 * @uses    (constant) NONA_HOME_URL
+	 * @uses               (constant) NONA_HOME_URL
 	 * @uses               __
 	 * @uses               is_child_theme
 	 * @uses               wp_get_theme
@@ -396,8 +396,8 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 	 * @param   string $old_title - default title text
 	 * @param   string $sep       - separator character
 	 *
-	 * @uses    (global)   var $page
-	 * @uses    (global)   var $paged
+	 * @uses               (global)   var $page
+	 * @uses               (global)   var $paged
 	 * @uses               get_bloginfo
 	 * @uses               is_front_page
 	 * @uses               is_home
