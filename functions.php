@@ -25,6 +25,10 @@
  * @version     1.9.1
  * @date        August 4, 2014
  * Documentation clean up and updates
+ *
+ * @version 1.9.2
+ * @date    December 27, 2014
+ * Added `nona_content_width` function to be used in "*_head" hooks
  */
 
 /** ... with credits to the Twenty Ten theme from WordPress for inspiration and code */
@@ -32,14 +36,35 @@
 define( 'NONA_HOME_URL', 'BuyNowShop.com' );
 
 /**
+ * Content Width
+ *
  * Set the content width based on the theme's design and stylesheet.
  * Used to set the width of images and content. Should be equal to the width the theme
  * is designed for, generally via the style.css stylesheet.
+ *
+ * @package NoNa
+ * @since   1.9.2
+ *
+ * @uses    (GLOBAL) $content_width
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 595;
+function nona_content_width() {
+
+	/** Get the global variable */
+	global $content_width;
+
+	/** Sanity check - if there is no value set */
+	if ( ! isset( $content_width ) ) {
+		$content_width = 595;
+	}
+	/** End if - not isset content width */
+
 }
-/** End if - not isset content width */
+
+/** End functions - content width */
+
+/** Hook into the appropriate places to ensure $content width is set */
+add_action( 'admin_head', 'nona_content_width' );
+add_action( 'wp_head', 'nona_content_width', 0 );
 
 
 if ( ! function_exists( 'nona_setup' ) ) {

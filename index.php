@@ -6,18 +6,18 @@
  * grunge based theme originally known as Pinup Meets Grunge beautifully blends
  * custom background colors.
  *
- * @package        NoNa
- * @since          1.0
+ * @package     NoNa
+ * @version     1.9.2
  *
- * @link           http://buynowshop.com/themes/nona/
- * @link           https://github.com/Cais/nona/
- * @link           http://wordpress.org/extend/themes/nona
+ * @link        http://buynowshop.com/themes/nona/
+ * @link        https://github.com/Cais/nona/
+ * @link        http://wordpress.org/extend/themes/nona
  *
- * @author         Edward Caissie <edward.caissie@gmail.com>
- * @copyright      Copyright (c) 2009-2014, Edward Caissie
+ * @author      Edward Caissie <edward.caissie@gmail.com>
+ * @copyright   Copyright (c) 2009-2014, Edward Caissie
  *
- * @internal       WordPress Version Required: 3.4
- * @internal       WordPress Tested Version: 4.0
+ * @internal    WordPress Version Required: 3.4
+ * @internal    WordPress Tested Version: 4.1
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
@@ -38,26 +38,6 @@
  *
  * The license for this software can also likely be found here:
  * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * @version        1.8
- * @date           March 2013
- * Added code block termination comments
- * Refactored code formatting
- * Refactored no post title code
- * Refactored to be more i18n compatible
- * Remove 'searchform.php' template in favor of using WordPress core version
- *
- * @version        1.8.1
- * @date           July 2013
- *
- * @version        1.9
- * @date           December 2013
- *
- * @version        1.9.1
- * @date           August 2014
- *
- * @version        1.9.2
- * @date           ...
  */
 
 get_header(); ?>
