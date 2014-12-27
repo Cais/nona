@@ -8,7 +8,7 @@ Changelog: December 27, 2014
 * Removed call to unused `$wp_version` global in `nona_setup`
 
 = CSS =
-
+* Re-implemented `.hidden` class to use `display: none;` property
 
 = Miscellaneous =
 * Added BNS Login compatibility to display dashicons instead of text links

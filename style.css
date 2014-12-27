@@ -294,7 +294,7 @@ sub {
 }
 
 .hidden {
-	/* display: none; */
+	display: none;
 }
 
 /* -= Begin Style =-*/
