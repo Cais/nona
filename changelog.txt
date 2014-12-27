@@ -8,6 +8,7 @@ Changelog: December 27, 2014
 
 = CSS =
 = Miscellaneous =
+* Cleaned up theme description
 
 /** ------------------------------------------------------------------------- */
 == Version 1.9.1 ==
