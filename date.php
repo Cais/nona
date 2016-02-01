@@ -32,7 +32,6 @@ if ( strlen( $m ) == 8 ) {
 	/** Year only - no manipulation required */
 	$display_date = $m;
 }
-/** End if - string length of date */
 
 get_header(); ?>
 
@@ -56,8 +55,7 @@ get_header(); ?>
 						$paged,
 						$display_date
 					);
-				} /** End if - paged less than 2 */
-				?>
+				} /** End if - paged less than 2 */ ?>
 			</div>
 			<!-- #date-title -->
 
@@ -87,7 +85,6 @@ get_header(); ?>
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
 							}
-							/** End if - not post password required */
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
@@ -124,11 +121,11 @@ get_header(); ?>
 
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
-						<?php } /** End if - count */ ?>
+						<?php } ?>
 
 					</div><!-- .post #post-ID -->
 
-				<?php } /** End while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -155,8 +152,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have post */
-			?>
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

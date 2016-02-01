@@ -56,14 +56,13 @@ $curauth = ( get_query_var( 'author_name ' ) )
 						</li>
 						<?php
 					}
-					/** End if - not empty current author url */
 
 					if ( ! empty( $curauth->user_description ) ) {
 						?>
 						<li>
 							<?php printf( __( 'Biography: %1$s', 'nona' ), $curauth->user_description ); ?>
 						</li>
-					<?php } /** End if - not empty current author description */ ?>
+					<?php } ?>
 				</ul>
 
 			</div>
@@ -99,7 +98,6 @@ $curauth = ( get_query_var( 'author_name ' ) )
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
 							}
-							/** End if - not post password required */
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
@@ -129,11 +127,11 @@ $curauth = ( get_query_var( 'author_name ' ) )
 						} else {
 							the_excerpt(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
-						<?php } /** end if - count is 1 */ ?>
+						<?php } ?>
 
 					</div><!-- .post #post-ID -->
 
-				<?php } /** End while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -161,8 +159,7 @@ $curauth = ( get_query_var( 'author_name ' ) )
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

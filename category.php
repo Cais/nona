@@ -46,8 +46,7 @@ $category_link = get_category_link( $cat_id ); ?>
 						$paged,
 						'<a href=' . $category_link . ' title="' . $curr_cat . '"><span id="category-name">' . single_cat_title( '', false ) . '</span></a>'
 					);
-				} /** End if - paged less than 2 */
-				?>
+				} ?>
 			</div>
 			<!-- #category-title -->
 
@@ -82,7 +81,6 @@ $category_link = get_category_link( $cat_id ); ?>
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
 							}
-							/** End if - not post password required */
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
@@ -116,11 +114,11 @@ $category_link = get_category_link( $cat_id ); ?>
 							the_excerpt(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
-						<?php } /** End if - count */ ?>
+						<?php } ?>
 
 					</div><!-- .post #post-ID -->
 
-				<?php } /** End while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -148,8 +146,7 @@ $category_link = get_category_link( $cat_id ); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

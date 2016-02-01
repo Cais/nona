@@ -22,14 +22,13 @@
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 	die ( __( 'Please do not load this page directly. Thanks!', 'nona' ) );
 }
-/** End if - not empty */
+
 if ( post_password_required() ) {
 	?>
 	<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'nona' ); ?></p>
 	<?php
 	return;
 }
-/** End if - post password required */
 
 
 /**
@@ -48,13 +47,10 @@ function comment_add_microid( $classes ) {
 		$classes[] = $microid;
 	}
 
-	/** End if - not empty */
-
 	return $classes;
 
 }
 
-/** End function - add micro ID */
 add_filter( 'comment_class', 'comment_add_microid' );
 
 
@@ -75,7 +71,6 @@ function comment_add_userid( $classes ) {
 		/** All other users - NB: user-id-0 -> non-registered user */
 		$userid = "user-id-" . ( $comment->user_id );
 	}
-	/** End if - comment user ID is 1 */
 
 	$classes[] = $userid;
 
@@ -83,7 +78,6 @@ function comment_add_userid( $classes ) {
 
 }
 
-/** End if - comment user ID is 1 */
 add_filter( 'comment_class', 'comment_add_userid' ); ?>
 
 
@@ -122,10 +116,8 @@ add_filter( 'comment_class', 'comment_add_userid' ); ?>
 		} else {
 			/** Comments are closed */
 		}
-		/** End if - comment are open */
 
 	}
-	/** End if - have comments */
 
 	comment_form(); ?>
 

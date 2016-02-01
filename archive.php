@@ -52,7 +52,6 @@ get_header(); ?>
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
 							}
-							/** End if - not post password required */
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
@@ -74,7 +73,7 @@ get_header(); ?>
 
 					</div><!-- .post #post-ID -->
 
-				<?php } /** End while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -102,8 +101,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

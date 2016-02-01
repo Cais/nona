@@ -67,9 +67,8 @@ get_header(); ?>
 
 					<?php
 				}
-				/** End while - have posts */
-			} else {
-				?>
+
+			} else { ?>
 
 				<h2>
 					<?php printf(
@@ -83,8 +82,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 
 		</div>
 		<!-- #content -->

@@ -42,8 +42,7 @@ get_header(); ?>
 						$paged,
 						'<span id="tag-name"><a href="' . home_url() . '"?tag="' . $curr_tag . '" title="' . $curr_tag . '">' . single_tag_title( '', false ) . '</a></span>'
 					);
-				} /** End if - paged */
-				?>
+				} ?>
 			</div>
 			<!-- #tag-title -->
 
@@ -79,7 +78,6 @@ get_header(); ?>
 								echo ' ';
 								comments_popup_link( __( 'with No Comments', 'nona' ), __( 'with 1 Comment', 'nona' ), __( 'with % Comments', 'nona' ), '', __( 'with Comments Closed', 'nona' ) );
 							}
-							/** End if - not post password required */
 
 							edit_post_link( __( 'Edit', 'nona' ), __( ' | ', 'nona' ), __( '', 'nona' ) );
 
@@ -113,11 +111,11 @@ get_header(); ?>
 							the_excerpt(); ?>
 							<div class="clear"></div><!-- For inserted media at the end of the post -->
 
-						<?php } /** End if - count */ ?>
+						<?php } ?>
 
 					</div><!-- .post #post-ID -->
 
-				<?php } /** End while - have posts */ ?>
+				<?php } ?>
 
 				<div id="nav-global" class="navigation">
 					<div class="left">
@@ -141,8 +139,7 @@ get_header(); ?>
 				<?php
 				get_search_form();
 
-			} /** End if - have posts */
-			?>
+			} ?>
 			<!-- end the Loop -->
 
 		</div>

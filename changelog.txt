@@ -5,6 +5,7 @@
 * Added `id` to sidebar widget definitions
 * Added sanity check before registering widgets
 * Added `screen-reader-text` required CSS definitions
+* Remove extraneous/minor comments to clean up code
 
 /** ------------------------------------------------------------------------- */
 == Version 1.9.2 ==
