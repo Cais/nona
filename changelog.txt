@@ -1,7 +1,7 @@
 === NoNa ===
 == Version 1.9.3 ==
 * Released February 2016
-* Update to copyright year
+* Update copyright year
 * Added `id` to sidebar widget definitions
 * Added sanity check before registering widgets
 * Added `screen-reader-text` required CSS definitions
