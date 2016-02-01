@@ -7,10 +7,10 @@
  *
  * @link        http://buynowshop.com/themes/nona/
  * @link        https://github.com/Cais/nona/
- * @link        http://wordpress.org/extend/themes/nona
+ * @link        https://wordpress.org/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2016, Edward Caissie
  *
  * Last revised April 23, 2012
  * @version     1.5
@@ -54,7 +54,7 @@ $curauth = ( get_query_var( 'author_name ' ) )
 								sprintf( '<a href="mailto:%1$s">email</a>', $curauth->user_email )
 							); ?>
 						</li>
-					<?php
+						<?php
 					}
 					/** End if - not empty current author url */
 

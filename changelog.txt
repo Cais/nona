@@ -1,4 +1,8 @@
 === NoNa ===
+== Version 1.9.3 ==
+* Released January 2016
+* Update to copyright year
+
 == Version 1.9.2 ==
 Changelog: December 27, 2014
 = Code =

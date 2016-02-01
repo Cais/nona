@@ -7,10 +7,10 @@
  *
  * @link        http://buynowshop.com/themes/nona/
  * @link        https://github.com/Cais/nona/
- * @link        http://wordpress.org/extend/themes/nona
+ * @link        https://wordpress.org/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2016, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -65,7 +65,7 @@ get_header(); ?>
 
 					</div><!-- #page-content -->
 
-				<?php
+					<?php
 				}
 				/** End while - have posts */
 			} else {

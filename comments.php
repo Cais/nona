@@ -7,10 +7,10 @@
  *
  * @link        http://buynowshop.com/themes/nona/
  * @link        https://github.com/Cais/nona/
- * @link        http://wordpress.org/extend/themes/nona
+ * @link        https://wordpress.org/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2016, Edward Caissie
  *
  * @version     1.8
  * @date        March 14, 2013
@@ -112,7 +112,7 @@ add_filter( 'comment_class', 'comment_add_userid' ); ?>
 			<div class="alignright"><?php next_comments_link() ?></div>
 		</div><!-- .navigation -->
 
-	<?php
+		<?php
 	} else {
 
 		/** This is displayed if there are no comments so far */

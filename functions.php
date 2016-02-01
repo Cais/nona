@@ -10,7 +10,7 @@
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2016, Edward Caissie
  *
  * @version     1.8
  * @date        March 15, 2013
@@ -151,7 +151,7 @@ if ( ! function_exists( 'nona_setup' ) ) {
 			function nona_list_pages() {
 				?>
 				<ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
-			<?php
+				<?php
 			}
 			/** End function - list pages */
 
@@ -477,7 +477,8 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 
 			return null;
 
-		} /** End if - sanity check for WordPress 4.1 */
+		}
+		/** End if - sanity check for WordPress 4.1 */
 
 	}
 	/** End function - title */
@@ -537,7 +538,9 @@ function nona_show_featured_image( $size ) {
 	}
 	/** End if - has post thumbnail */
 
-} /** End function - show featured image */
+}
+
+/** End function - show featured image */
 
 /** ------------------------------------------------------------------------- */
 

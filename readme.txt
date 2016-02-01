@@ -1,12 +1,63 @@
 ==== Nona ====
 === Readme.Txt ===
-Last revised December 2014
+Last revised January 2016
 
 == Table of Contents ==
+* Recent Changelog
 * To-Do
 * Notes
 * Questions & Answers
 * Review Tickets
+
+== Recent Changelog ==
+
+
+== Version 1.9.2 ==
+Changelog: December 27, 2014
+= Code =
+* Additional minor code refactoring to better meet WordPress Coding Standards
+* Added `nona_content_width` function to be used in `*_head` hooks
+* Added sanity check for WordPress 4.1 `add_theme_support( 'title-tag' )`
+* Removed call to unused `$wp_version` global in `nona_setup`
+
+= CSS =
+* Re-implemented `.hidden` class to use `display: none;` property
+
+= Miscellaneous =
+* Added BNS Login compatibility to display dashicons instead of text links
+* Cleaned up theme description
+
+/** ------------------------------------------------------------------------- */
+== Version 1.9.1 ==
+Changelog: August 4, 2014
+= Code =
+* Minor code refactoring to better meet WordPress Coding Standards
+
+= CSS =
+* Added `post-title` class and styles to better handle long titles
+* Improved aesthetics of Post Password form display
+* Improved aesthetics of Search form display
+* Made sure Twitter embeds are not fixed width
+* Minor adjustment to child-menu item alignment (now left instead of centered)
+* Updated `gallery-caption` class to better handle high quantity column displays
+* Updated default Calendar widget styles
+
+= Miscellaneous =
+* Documentation clean up and updates
+* Update copyright to 2014
+* Update Tested Up To version to WordPress 4.0
+* Update `screenshot.png` to 880x660 size
+
+/** ------------------------------------------------------------------------- */
+== Version 1.9 ==
+Changelog: December 28, 2013
+= Code =
+* Code reformatted to better meet WordPress Coding Standards (see https://gist.github.com/Cais/8023722)
+* Remove `nona_login` function - see BNS Login http://wordpress.org/extend/plugins/bns-login
+* Removed the unused variable `$sep_location`
+
+/** ------------------------------------------------------------------------- */
+For older changelog entries see `changelog.txt`
 
 == To-Do ==
 NB: Open To-Do List is now found in 'index.php'

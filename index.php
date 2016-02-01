@@ -7,17 +7,17 @@
  * custom background colors.
  *
  * @package     NoNa
- * @version     1.9.2
+ * @version     1.9.3
  *
  * @link        http://buynowshop.com/themes/nona/
  * @link        https://github.com/Cais/nona/
  * @link        http://wordpress.org/extend/themes/nona
  *
  * @author      Edward Caissie <edward.caissie@gmail.com>
- * @copyright   Copyright (c) 2009-2014, Edward Caissie
+ * @copyright   Copyright (c) 2009-2016, Edward Caissie
  *
  * @internal    WordPress Version Required: 3.4
- * @internal    WordPress Tested Version: 4.1
+ * @internal    WordPress Tested Version: 4.4.2
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2, as published by the
