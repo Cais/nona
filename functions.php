@@ -59,13 +59,10 @@ if ( ! function_exists( 'nona_content_width' ) ) {
 		if ( ! isset( $content_width ) ) {
 			$content_width = 595;
 		}
-		/** End if - not isset content width */
 
 	}
-	/** End functions - content width */
 
 }
-/** End if - function exists */
 add_action( 'admin_head', 'nona_content_width' );
 add_action( 'wp_head', 'nona_content_width', 0 );
 
@@ -134,10 +131,8 @@ if ( ! function_exists( 'nona_setup' ) ) {
 				);
 
 			}
-			/** End function - nav menu */
 
 		}
-		/** End if - function exists */
 
 		if ( ! function_exists( 'nona_list_pages' ) ) {
 			/**
@@ -153,10 +148,8 @@ if ( ! function_exists( 'nona_setup' ) ) {
 				<ul class="nav-menu"><?php wp_list_pages( 'title_li=' ); ?></ul>
 				<?php
 			}
-			/** End function - list pages */
 
 		}
-		/** End if - function exists */
 
 		register_nav_menu( 'top-menu', __( 'Top Menu', 'nona' ) );
 		/** End wp_nav_menu support */
@@ -171,13 +164,10 @@ if ( ! function_exists( 'nona_setup' ) ) {
 		if ( is_readable( $locale_file ) ) {
 			require_once( $locale_file );
 		}
-		/** End if - is readable */
 
 	}
-	/** End function - setup */
 
 }
-/** End if - function exists */
 add_action( 'after_setup_theme', 'nona_setup' );
 
 
@@ -231,7 +221,6 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 			if ( $first_year == '' ) {
 				$first_year = date( 'Y' );
 			}
-			/** End if - first year */
 
 			/** Add to output string */
 			if ( $first_year == date( 'Y' ) ) {
@@ -244,14 +233,12 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 				$output .= ' &copy; ' . $first_year . "-" . date( 'Y' );
 
 			}
-			/** End if - first year */
 
 		} else {
 
 			$output .= ' &copy; ' . $args['copy_years'];
 
 		}
-		/** End if - empty - copy years */
 
 		/** Create URL to link back to home of website */
 		empty( $args['url'] )
@@ -268,10 +255,8 @@ if ( ! function_exists( 'nona_dynamic_copyright' ) ) {
 		echo apply_filters( 'nona_dynamic_copyright', $output, $args );
 
 	}
-	/** End function - dynamic copyright */
 
 }
-/** End if - function exists */
 
 
 if ( ! function_exists( 'nona_theme_version' ) ) {
@@ -322,98 +307,103 @@ if ( ! function_exists( 'nona_theme_version' ) ) {
 			);
 
 		}
-		/** End if - is child theme */
 
 	}
-	/** End function - theme version */
-
-}
-/** End if - function exists */
-
-
-/**
- * Widgets Areas
- * Registers the sidebars
- *
- * @package    NoNa
- *
- * @uses       __
- * @uses       register_sidebar
- */
-function nona_widgets() {
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Sidebar 1', 'nona' ),
-			'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Sidebar 2', 'nona' ),
-			'description'   => __( 'Second sidebar area located on the right side of the layout', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Sidebar 3', 'nona' ),
-			'description'   => __( 'Third sidebar area located on the right side of the layout', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer Left', 'nona' ),
-			'id'            => 'footer-left',
-			'description'   => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-			'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer Middle', 'nona' ),
-			'id'            => 'footer-middle',
-			'description'   => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-			'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer Right', 'nona' ),
-			'id'            => 'footer-right',
-			'description'   => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'nona' ),
-			'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
-			'after_widget'  => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
 
 }
 
-/** End function - widgets */
+
+if ( ! function_exists( 'nona_widgets' ) ) {
+	/**
+	 * Widgets Areas
+	 * Registers the sidebars
+	 *
+	 * @package    NoNa
+	 *
+	 * @uses       __
+	 * @uses       register_sidebar
+	 *
+	 * @version    1.9.3
+	 * @date       February 1, 2016
+	 * Added `id` to sidebar widget definitions
+	 */
+	function nona_widgets() {
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar 1', 'nona' ),
+				'id'            => 'sidebar-1',
+				'description'   => __( 'First sidebar area located on the right side of the layout. This contains the default theme sidebar widgets. Drag and drop a widget into this to clear *ALL* of the default widgets of the theme.', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar 2', 'nona' ),
+				'id'            => 'sidebar-2',
+				'description'   => __( 'Second sidebar area located on the right side of the layout', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar 3', 'nona' ),
+				'id'            => 'sidebar-3',
+				'description'   => __( 'Third sidebar area located on the right side of the layout', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div><!-- .widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer Left', 'nona' ),
+				'id'            => 'footer-left',
+				'description'   => __( 'Sidebar area located at the bottom of the theme to the left side of the layout.', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+				'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer Middle', 'nona' ),
+				'id'            => 'footer-middle',
+				'description'   => __( 'Sidebar area located at the bottom of the theme in the middle of the layout.', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+				'after_widget'  => '</div><!-- .footer-widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer Right', 'nona' ),
+				'id'            => 'footer-right',
+				'description'   => __( 'Sidebar area located at the bottom of the theme to the right side of the layout.', 'nona' ),
+				'before_widget' => '<div class="widget-top"></div><div id="%1$s" class="footer-widget %2$s">',
+				'after_widget'  => '</div><!--.footer-widget--><div class="widget-bottom"></div>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+	}
+
+}
 add_action( 'widgets_init', 'nona_widgets' );
 
 
@@ -462,14 +452,11 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 			if ( $site_tagline && ( is_home() || is_front_page() ) ) {
 				$nona_title_text .= "$sep$site_tagline";
 			}
-			/** End if - site tagline */
 
 			/** Add a page number if necessary */
 			if ( $paged >= 2 || $page >= 2 ) {
 				$nona_title_text .= $sep . sprintf( __( 'Page %s', 'nona' ), max( $paged, $page ) );
 			}
-
-			/** End if - paged */
 
 			return $nona_title_text;
 
@@ -478,18 +465,14 @@ if ( ! function_exists( 'nona_wp_title' ) ) {
 			return null;
 
 		}
-		/** End if - sanity check for WordPress 4.1 */
 
 	}
-	/** End function - title */
 
 }
-/** End if - function exists */
 add_filter( 'wp_title', 'nona_wp_title', 10, 2 );
 
 
 if ( ! function_exists( 'nona_enqueue_comment_reply' ) ) {
-
 	/**
 	 * Enqueue Comment Reply Script
 	 * If the page being viewed is a single post/page; and, comments are open; and,
@@ -509,13 +492,10 @@ if ( ! function_exists( 'nona_enqueue_comment_reply' ) ) {
 		if ( is_singular() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		/** End if - is singular */
 
 	}
-	/** End function - enqueue comment reply */
 
 }
-/** End if - function exists */
 add_action( 'comment_form_before', 'nona_enqueue_comment_reply' );
 
 
@@ -536,11 +516,8 @@ function nona_show_featured_image( $size ) {
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( $size, array( 'class' => 'aligncenter' ) );
 	}
-	/** End if - has post thumbnail */
 
 }
-
-/** End function - show featured image */
 
 /** ------------------------------------------------------------------------- */
 
