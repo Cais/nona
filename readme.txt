@@ -1,6 +1,6 @@
 ==== Nona ====
 === Readme.Txt ===
-Last revised January 2016
+Last revised February 2016
 
 == Table of Contents ==
 * Recent Changelog
@@ -10,7 +10,14 @@ Last revised January 2016
 * Review Tickets
 
 == Recent Changelog ==
-
+== Version 1.9.3 ==
+* Released February 2016
+* Update copyright year
+* Update required version to WordPress 4.1 (no sanity check)
+* Added `id` to sidebar widget definitions
+* Added sanity check before registering widgets
+* Added `screen-reader-text` required CSS definitions
+* Remove extraneous/minor comments to clean up code
 
 == Version 1.9.2 ==
 Changelog: December 27, 2014
